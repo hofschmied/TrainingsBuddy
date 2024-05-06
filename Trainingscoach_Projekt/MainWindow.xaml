@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Canvas Background="AliceBlue">
+    <Canvas Background="Red">
     
     </Canvas>
 </Window>
