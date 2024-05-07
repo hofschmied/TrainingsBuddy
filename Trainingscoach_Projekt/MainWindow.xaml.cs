@@ -24,5 +24,20 @@ namespace Trainingscoach_Projekt
         {
             InitializeComponent();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItemLoad_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItemSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

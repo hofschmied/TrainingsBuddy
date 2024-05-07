@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Canvas Background="Red">
-    
-    </Canvas>
+        Title="Trainingseinheit erstellen" Height="450" Width="800">
+
+    <Grid RenderTransformOrigin="1.588,0.493" Background="#333333">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="STEP 1: Erstelle und wähle deine Grundtrainingseinheit" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="28"/>
+        <Button Grid.Row="1" Grid.Column="0" x:Name="buttonHinzufuegen" Content="Hinzufügen" Margin="15">
+        </Button>
+
+        <Button Grid.Row="2" Grid.Column="0" x:Name="buttonLoeschen" Content="Löschen" Margin="15">
+        </Button>
+
+        <Button Grid.Row="3" Grid.Column="0" x:Name="buttonErrungenschaften" Content="Errungenschaften" Margin="15">
+        </Button>
+
+        <ListBox x:Name="ListBoxGrundeinheit" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="1" Grid.RowSpan="2" Margin="10"/>
+
+        <Menu Grid.Row="0" Grid.Column="0" Background="#333333">
+            <MenuItem Header="_Datei" Click="MenuItem_Click" Background="White">
+                <MenuItem Name="MenuItemLoad" Header="_Laden" Click="MenuItemLoad_Click"/>
+                <MenuItem Name="MenuItemSave" Header="_Speichern" Click="MenuItemSave_Click"/>
+            </MenuItem>
+        </Menu>
+    </Grid>
 </Window>
