@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="GrundtrainingseinheitenWindow" Height="250" Width="800">
+        Title="GrundtrainingseinheitenWindow" Height="265" Width="800">
     <Grid Background="#333333">
 
 
@@ -22,13 +22,20 @@
 
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="STEP 2: Wähle deine Trainingseinheit aus" Background="LightGray" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="28" Height="38" Width="500"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="STEP 2: Wähle deine Trainingseinheit aus"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" Margin="0,10,0,0">
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF383838"/>
+                    <GradientStop Color="#FF2B5762" Offset="0.875"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
 
 
-        <Label Grid.Column="0" Grid.Row="1" Content="Session Name " FontSize="25" Background="White" Margin="8"/>
-        <Label Grid.Column="0" Grid.Row="2" Content="Trainingseinheit " FontSize="25" Background="White" Margin="8"/>
-        <TextBox x:Name="TextBoxTrainingsName" Grid.Column="1" Grid.Row="1" Margin="0,10,0,10" Background="LightGray" HorizontalAlignment="Center" Width="420" TextChanged="TextBoxTrainingsName_TextChanged"/>
-        <ComboBox x:Name="GrundTrainingsEinheitBox" Margin="90,10,90,10" SelectionChanged="FachBox_SelectionChanged" Grid.Column="1" Grid.Row="2">
+        <Label Grid.Column="0" Grid.Row="1" Content="Session Name" FontSize="20" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3,3,3,3" Margin="8"/>
+        <Label Grid.Column="0" Grid.Row="2" Content="Trainingseinheit " FontSize="20" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3,3,3,3" Margin="8"/>
+        <TextBox x:Name="TextBoxTrainingsName" Grid.Column="1" Grid.Row="1" Margin="0,10,0,10"  HorizontalAlignment="Center" Width="410" Background="#FFEEEEEE" BorderBrush="#FF737373" Foreground="Black" BorderThickness="3,3,3,3" TextChanged="TextBoxTrainingsName_TextChanged"/>
+        <ComboBox x:Name="GrundTrainingsEinheitBox" Margin="90,10,90,10" Background="#FFEEEEEE" BorderBrush="#FF737373" Foreground="Black" BorderThickness="3,3,3,3" SelectionChanged="FachBox_SelectionChanged" Grid.Column="1" Grid.Row="2">
             <ComboBoxItem Content="Bein-Training"/>
             <ComboBoxItem Content="Arm-Training"/>
             <ComboBoxItem Content="Rücken-Training"/>
