@@ -23,5 +23,19 @@ namespace Trainingscoach_Projekt
         {
             InitializeComponent();
         }
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Handle the selection changed event here
+        }
+
+        private void TextBoxTrainingsName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void FachBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
