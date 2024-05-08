@@ -8,6 +8,12 @@ namespace Trainingscoach_Projekt
 {
     class GrundtrainingseinheitDaten
     {
-        public string grundTrainingsEinheitText;
+        public string sessionName;
+        List<string> grundEinheitList = new List<string>();
+
+        public void listBoxAdd()
+        {
+
+        }
     }
 }
