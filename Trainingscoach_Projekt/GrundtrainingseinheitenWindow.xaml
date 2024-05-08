@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="GrundtrainingseinheitenWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="GrundtrainingseinheitenWindow" Height="250" Width="800">
+    <Grid Background="#333333">
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="20"/>
+
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="STEP 2: Wähle deine Trainingseinheit aus" Background="LightGray" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" Height="38" Width="500" Grid.Column="1"/>
+
+
+        <Label Grid.Column="0" Grid.Row="1" Content="Session Name " FontSize="25" Background="White" Margin="8"/>
+        <Label Grid.Column="0" Grid.Row="2" Content="Trainingseinheit " FontSize="25" Background="White" Margin="8"/>
+        <TextBox x:Name="TextBoxTrainingsName" Grid.Column="1" Grid.Row="1" Margin="0,10,0,10" Background="LightGray" HorizontalAlignment="Center" Width="420" TextChanged="TextBoxTrainingsName_TextChanged"/>
+        <ComboBox x:Name="FachBox" Margin="90,10,90,10" SelectionChanged="FachBox_SelectionChanged" Grid.Column="1" Grid.Row="2">
+            <ComboBoxItem Content="Mathematik"/>
+            <ComboBoxItem Content="Englisch"/>
+            <ComboBoxItem Content="Deutsch"/>
+        </ComboBox>
+
+
+
     </Grid>
 </Window>

@@ -9,5 +9,6 @@ namespace Trainingscoach_Projekt
     class GrundtrainingseinheitDaten
     {
         public string grundTrainingsEinheitText;
+
     }
 }
