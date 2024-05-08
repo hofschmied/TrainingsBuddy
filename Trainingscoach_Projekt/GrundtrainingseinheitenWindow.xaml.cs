@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Trainingscoach_Projekt
 {
@@ -19,6 +20,10 @@ namespace Trainingscoach_Projekt
     /// </summary>
     public partial class GrundtrainingseinheitenWindow : Window
     {
+        MainWindow mainWindow;
+
+        public string uebergabeText { get; set; }
+
         public GrundtrainingseinheitenWindow()
         {
             InitializeComponent();
@@ -36,6 +41,20 @@ namespace Trainingscoach_Projekt
         private void FachBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.uebergabeText= TextBoxTrainingsName.Text.ToString();
+            ComboBoxItem selectedItem = (ComboBoxItem)GrundTrainingsEinheitBox.SelectedItem;
+            uebergabeText += " (" + selectedItem.Content.ToString() + ")";
+           
+            this.Close();
+        }
+
+        private void buttonCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

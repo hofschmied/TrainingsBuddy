@@ -20,6 +20,8 @@ namespace Trainingscoach_Projekt
     /// </summary>
     public partial class MainWindow : Window
     {
+        public GrundtrainingseinheitDaten daten;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -44,6 +46,9 @@ namespace Trainingscoach_Projekt
         {
             GrundtrainingseinheitenWindow window = new GrundtrainingseinheitenWindow();
             window.ShowDialog();
+            string uebergabeText = window.uebergabeText;
+            ListBoxGrundeinheit.Items.Add(uebergabeText);
+
         }
     }
 }
