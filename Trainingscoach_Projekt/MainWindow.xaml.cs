@@ -39,5 +39,10 @@ namespace Trainingscoach_Projekt
         {
 
         }
+
+        private void buttonHinzufuegen_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

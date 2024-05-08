@@ -30,7 +30,7 @@
         <Button Grid.Row="3" Grid.Column="0" x:Name="buttonErrungenschaften" Content="Errungenschaften" Margin="15" FontSize="25">
         </Button>
 
-        <ListBox x:Name="ListBoxGrundeinheit" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="1" Grid.RowSpan="2" Margin="10"/>
+        <ListBox x:Name="ListBoxGrundeinheit" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="1" Grid.RowSpan="2" Margin="10" Background="LightGray"/>
 
         <Menu Grid.Row="0" Grid.Column="0" Background="#333333">
             <MenuItem Header="_Datei" Click="MenuItem_Click" Background="LightGray">
