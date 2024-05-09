@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Trainingscoach_Projekt
 {
@@ -11,14 +12,14 @@ namespace Trainingscoach_Projekt
     {
 
         public string sessionName;
-        public string grundEinheit;
+        public ComboBox grundEinheit;
         public GrundtrainingseinheitDaten()
         {
             this.sessionName = string.Empty;
-            this.grundEinheit = string.Empty;
+            
         }
 
-        public GrundtrainingseinheitDaten(string sessionName, string grundEinheit)
+        public GrundtrainingseinheitDaten(string sessionName, ComboBox grundEinheit)
         {
             this.sessionName = sessionName;
             this.grundEinheit = grundEinheit;

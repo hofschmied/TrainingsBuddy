@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Globalization;
 
 namespace Trainingscoach_Projekt
 {
@@ -20,7 +21,7 @@ namespace Trainingscoach_Projekt
     /// </summary>
     public partial class GrundtrainingseinheitenWindow : Window
     {
-        MainWindow mainWindow;
+        GrundtrainingseinheitDaten grundtrainingseinheitDaten;
 
         public string uebergabeText { get; set; }
 
@@ -30,7 +31,7 @@ namespace Trainingscoach_Projekt
         }
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Handle the selection changed event here
+            
         }
 
         private void TextBoxTrainingsName_TextChanged(object sender, TextChangedEventArgs e)
@@ -42,15 +43,31 @@ namespace Trainingscoach_Projekt
         {
 
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void buttonOK_Click(object sender, RoutedEventArgs e)
         {
-            this.uebergabeText= TextBoxTrainingsName.Text.ToString();
-            ComboBoxItem selectedItem = (ComboBoxItem)GrundTrainingsEinheitBox.SelectedItem;
-            uebergabeText += " (" + selectedItem.Content.ToString() + ")";
-           
-            this.Close();
+            if (GrundTrainingsEinheitBox.SelectedItem != null)
+            {
+                if (grundtrainingseinheitDaten == null)
+                {
+                    grundtrainingseinheitDaten = new GrundtrainingseinheitDaten();
+                }
+
+                grundtrainingseinheitDaten.grundEinheit = GrundTrainingsEinheitBox;
+
+                string selectedGrundEinheit = (GrundTrainingsEinheitBox.SelectedItem as ComboBoxItem).Content.ToString();
+
+                grundtrainingseinheitDaten.sessionName = TextBoxTrainingsName.Text;
+
+                this.uebergabeText = grundtrainingseinheitDaten.sessionName + " (" + selectedGrundEinheit + ") (" + DateTime.Now + ")";
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bitte wählen Sie eine Grund-Trainingseinheit aus.");
+            }
         }
+
 
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {

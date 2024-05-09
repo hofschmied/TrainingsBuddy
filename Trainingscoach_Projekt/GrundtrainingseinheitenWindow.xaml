@@ -44,7 +44,7 @@
             <ComboBoxItem Content="Ganzkörper-Training"/>
             <ComboBoxItem Content="Cardio"/>
         </ComboBox>
-        <Button x:Name="buttonOK" Grid.Column="1" Background="White" Content="OK" HorizontalAlignment="Left" Height="30" Margin="325,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="80" Click="Button_Click"/>
+        <Button x:Name="buttonOK" Grid.Column="1" Background="White" Content="OK" HorizontalAlignment="Left" Height="30" Margin="325,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="80" Click="buttonOK_Click"/>
         <Button x:Name="buttonCancel" Grid.Column="1" Background="White" Content="CANCEL" HorizontalAlignment="Left" Height="30" Margin="430,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="80" Click="buttonCancel_Click"/>
     </Grid>
 </Window>
