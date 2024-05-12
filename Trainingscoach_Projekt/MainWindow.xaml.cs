@@ -65,9 +65,12 @@ namespace Trainingscoach_Projekt
 
         private void buttonAuswaehlen_Click(object sender, RoutedEventArgs e)
         {
-            buttonClicked = false;
             AuswaehlenSpezifischeUebungFenster spezifischesFenster = new AuswaehlenSpezifischeUebungFenster(ListBoxGrundeinheit);
             ListBoxSelect();
-            spezifischesFenster.ShowDialog();        }
+            spezifischesFenster.ShowDialog();
+
+            buttonClicked = true;
+            ListBoxSelect();
+        }
     }
 }
