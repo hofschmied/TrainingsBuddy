@@ -21,10 +21,22 @@ namespace Trainingscoach_Projekt
     public partial class MainWindow : Window
     {
         public GrundtrainingseinheitDaten daten;
+        private bool buttonClicked = false;
 
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public void ListBoxSelect()
+        {
+            AuswaehlenSpezifischeUebungFenster spezifischeUebungFenster = new AuswaehlenSpezifischeUebungFenster(ListBoxGrundeinheit);
+
+            if (ListBoxGrundeinheit.SelectedIndex == -1 && buttonClicked == false)
+            {
+                MessageBox.Show("Bitte wählen Sie eine Trainings-Session aus. ");
+
+            }
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -50,5 +62,12 @@ namespace Trainingscoach_Projekt
             ListBoxGrundeinheit.Items.Add(uebergabeText);
 
         }
+
+        private void buttonAuswaehlen_Click(object sender, RoutedEventArgs e)
+        {
+            buttonClicked = false;
+            AuswaehlenSpezifischeUebungFenster spezifischesFenster = new AuswaehlenSpezifischeUebungFenster(ListBoxGrundeinheit);
+            ListBoxSelect();
+            spezifischesFenster.ShowDialog();        }
     }
 }

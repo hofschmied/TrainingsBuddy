@@ -28,6 +28,7 @@ namespace Trainingscoach_Projekt
         public GrundtrainingseinheitenWindow()
         {
             InitializeComponent();
+
         }
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
