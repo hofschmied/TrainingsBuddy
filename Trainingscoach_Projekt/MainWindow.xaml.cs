@@ -20,7 +20,7 @@ namespace Trainingscoach_Projekt
     /// </summary>
     public partial class MainWindow : Window
     {
-        public GrundtrainingseinheitDaten daten;
+        public GrundtrainingseinheitDaten daten = new GrundtrainingseinheitDaten();
         private bool buttonClicked = false;
 
         public MainWindow()
