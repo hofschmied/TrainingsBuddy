@@ -25,6 +25,16 @@ namespace Trainingscoach_Projekt
             this.grundEinheit = grundEinheit;
         }
 
+
+        public void Remove()
+        {
+            ListBox ListBoxName = ((MainWindow)System.Windows.Application.Current.MainWindow).ListBoxGrundeinheit;
+            if (ListBoxName.SelectedItem != null)
+            {
+                ListBoxName.Items.Remove(ListBoxName.SelectedItem);
+            }
+        }
+
         public override string ToString()
         {
             return $"{sessionName}  ( {grundEinheit} )";

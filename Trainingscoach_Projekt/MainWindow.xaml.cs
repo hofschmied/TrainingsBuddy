@@ -20,7 +20,7 @@ namespace Trainingscoach_Projekt
     /// </summary>
     public partial class MainWindow : Window
     {
-        public GrundtrainingseinheitDaten daten;
+        public GrundtrainingseinheitDaten daten = new GrundtrainingseinheitDaten();
         private bool buttonClicked = false;
 
         public MainWindow()
@@ -71,6 +71,12 @@ namespace Trainingscoach_Projekt
 
             buttonClicked = true;
             ListBoxSelect();
+        }
+
+
+        private void ButtonLoeschen_Click(object sender, RoutedEventArgs e)
+        {
+            daten.Remove();
         }
     }
 }
