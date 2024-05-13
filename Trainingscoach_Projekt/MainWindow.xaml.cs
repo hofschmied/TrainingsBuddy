@@ -32,10 +32,15 @@ namespace Trainingscoach_Projekt
         {
             AuswaehlenSpezifischeUebungFenster spezifischeUebungFenster = new AuswaehlenSpezifischeUebungFenster(ListBoxGrundeinheit);
 
-            if (ListBoxGrundeinheit.SelectedIndex == -1 && buttonClicked == false)
+            if (ListBoxGrundeinheit.SelectedIndex == -1)
             {
                 MessageBox.Show("Bitte wählen Sie eine Trainings-Session aus. ");
 
+            }
+
+            else
+            {
+                spezifischeUebungFenster.ShowDialog();
             }
         }
 
@@ -66,11 +71,12 @@ namespace Trainingscoach_Projekt
         private void buttonAuswaehlen_Click(object sender, RoutedEventArgs e)
         {
             AuswaehlenSpezifischeUebungFenster spezifischesFenster = new AuswaehlenSpezifischeUebungFenster(ListBoxGrundeinheit);
-            ListBoxSelect();
             spezifischesFenster.ShowDialog();
 
-            buttonClicked = true;
+
             ListBoxSelect();
         }
+
+
     }
 }
