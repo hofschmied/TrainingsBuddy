@@ -78,5 +78,9 @@ namespace Trainingscoach_Projekt
         }
 
 
+        private void buttonLoeschen_Click(object sender, RoutedEventArgs e)
+        {
+            daten.Remove();
+        }
     }
 }
