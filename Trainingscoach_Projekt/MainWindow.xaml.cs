@@ -70,10 +70,6 @@ namespace Trainingscoach_Projekt
 
         private void buttonAuswaehlen_Click(object sender, RoutedEventArgs e)
         {
-            AuswaehlenSpezifischeUebungFenster spezifischesFenster = new AuswaehlenSpezifischeUebungFenster(ListBoxGrundeinheit);
-            spezifischesFenster.ShowDialog();
-
-
             ListBoxSelect();
         }
 
