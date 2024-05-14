@@ -25,6 +25,8 @@ namespace Trainingscoach_Projekt
 
         public string uebergabeText { get; set; }
 
+        public List<string> strings = new List<string>();
+
         public GrundtrainingseinheitenWindow()
         {
             InitializeComponent();
@@ -60,6 +62,8 @@ namespace Trainingscoach_Projekt
                 grundtrainingseinheitDaten.sessionName = TextBoxTrainingsName.Text;
 
                 this.uebergabeText = grundtrainingseinheitDaten.sessionName + " (" + selectedGrundEinheit + ") (" + DateTime.Now + ")";
+
+                strings.Add(grundtrainingseinheitDaten.sessionName);
 
                 this.Close();
             }

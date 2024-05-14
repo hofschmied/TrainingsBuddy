@@ -15,15 +15,13 @@ using System.Windows.Shapes;
 namespace Trainingscoach_Projekt
 {
     /// <summary>
-    /// Interaction logic for AuswaehlenSpezifischeUebungFenster.xaml
+    /// Interaction logic for BrustTrainingsFenster.xaml
     /// </summary>
-    public partial class AuswaehlenSpezifischeUebungFenster : Window
+    public partial class BrustTrainingsFenster : Window
     {
-        public ListBox listBox;
-        public AuswaehlenSpezifischeUebungFenster(ListBox listBox)
+        public BrustTrainingsFenster()
         {
             InitializeComponent();
-            this.listBox = listBox;
         }
     }
 }

@@ -28,19 +28,56 @@ namespace Trainingscoach_Projekt
             InitializeComponent();
         }
 
-        public void ListBoxSelect()
+        public void FensterAuswahl()
         {
-            AuswaehlenSpezifischeUebungFenster spezifischeUebungFenster = new AuswaehlenSpezifischeUebungFenster(ListBoxGrundeinheit);
-
             if (ListBoxGrundeinheit.SelectedIndex == -1)
             {
-                MessageBox.Show("Bitte wählen Sie eine Trainings-Session aus. ");
-
+                MessageBox.Show("Bitte wählen Sie eine Trainings-Session aus.");
             }
-
             else
             {
-                spezifischeUebungFenster.ShowDialog();
+                string selectedItem = ListBoxGrundeinheit.SelectedItem.ToString();
+
+                if (selectedItem.Contains("Bein-Training"))
+                {
+                    BeinTrainingsFenster beinTrainingsFenster = new BeinTrainingsFenster();
+                    beinTrainingsFenster.ShowDialog();
+                }
+                else if (selectedItem.Contains("Arm-Training"))
+                {
+                    ArmTrainingsFenster armTrainingsFenster = new ArmTrainingsFenster();
+                    armTrainingsFenster.ShowDialog();
+                }
+
+                else if (selectedItem.Contains("Rücken-Training"))
+                {
+                    RueckenTrainingsFenster rueckenTrainingsFenster = new RueckenTrainingsFenster();
+                    rueckenTrainingsFenster.ShowDialog();
+                }
+
+                else if (selectedItem.Contains("Brust-Training"))
+                {
+                    BrustTrainingsFenster brustTrainingsFenster = new BrustTrainingsFenster();
+                    brustTrainingsFenster.ShowDialog();
+                }
+
+                else if (selectedItem.Contains("Bauch-Training"))
+                {
+                    BauchTrainingsFenster bauchTrainingsFenster = new BauchTrainingsFenster();
+                    bauchTrainingsFenster.ShowDialog();
+                }
+
+                else if (selectedItem.Contains("Ganzkörper-Training"))
+                {
+                    GanzKörperTrainingsFenster ganzKörperTrainingsFenster = new GanzKörperTrainingsFenster();
+                    ganzKörperTrainingsFenster.ShowDialog();
+                }
+
+                else if (selectedItem.Contains("Cardio"))
+                {
+                    CardioFenster cardioFenster = new CardioFenster();
+                    cardioFenster.ShowDialog();
+                }
             }
         }
 
@@ -70,7 +107,7 @@ namespace Trainingscoach_Projekt
 
         private void buttonAuswaehlen_Click(object sender, RoutedEventArgs e)
         {
-            ListBoxSelect();
+            FensterAuswahl();
         }
 
 
