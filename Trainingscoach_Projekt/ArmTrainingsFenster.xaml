@@ -21,6 +21,7 @@
             <RowDefinition Height="150"/>
             <RowDefinition Height="150"/>
             <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4" Text="STEP 2: Wählen und passen Sie beliebiege Übungen an" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" Margin="10,10,0,0">
