@@ -17,13 +17,13 @@
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="150"/>
+            <RowDefinition Height="149"/>
+            <RowDefinition Height="112"/>
+            <RowDefinition Height="189"/>
             <RowDefinition Height="150"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Text="STEP 2: Wählen und passen Sie beliebiege Übungen an" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" Margin="0,10,0,0">
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Text="STEP 2: Wählen und passen Sie beliebiege Übungen an" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" Margin="0,10,0,0" Height="37" Width="718">
             <TextBlock.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF383838"/>
@@ -31,5 +31,22 @@
                 </LinearGradientBrush>
             </TextBlock.Background>
         </TextBlock>
+
+
+        <TextBlock Grid.Column="2" Grid.ColumnSpan="2" Text="Bein-Training" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" Foreground="White" FontWeight="Bold" Height="38" Width="176">
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF383838"/>
+                    <GradientStop Color="#FF2B5762" Offset="0.875"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+
+        <Label Grid.Column="0" Grid.Row="1" Content="Squats" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3,3,3,3" Margin="0,8,0,8" Width="118"/>
+
+
+        <Image x:Name="hinzufuegen" Grid.Row="2" Grid.Column="0" Source="/src/pictures/Beinuebungen/squats.png" Grid.ColumnSpan="2" Margin="-26,0,170,10"/>
+
+
     </Grid>
 </Window>

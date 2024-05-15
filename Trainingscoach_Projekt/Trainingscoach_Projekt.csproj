@@ -9,8 +9,16 @@
 
   <ItemGroup>
     <None Remove="src\pictures\addButton.png" />
+    <None Remove="src\pictures\Beinuebungen\squats.png" />
     <None Remove="src\pictures\buttonWhite.png" />
     <None Remove="src\pictures\plus.png" />
+    <None Remove="src\pictures\squats.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="src\pictures\Beinuebungen\squats.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
