@@ -9,12 +9,13 @@
 
   <ItemGroup>
     <None Remove="src\pictures\addButton.png" />
-    <None Remove="src\pictures\Armuebungen\arnoldDips.png" />
-    <None Remove="src\pictures\Armuebungen\kickpacks.png" />
-    <None Remove="src\pictures\Armuebungen\liegestuetze.png" />
-    <None Remove="src\pictures\Armuebungen\szcurls.png" />
-    <None Remove="src\pictures\Armuebungen\trizepsdruecken.png" />
+    <None Remove="src\pictures\Beinuebungen\Beinpresse%281%29.png" />
     <None Remove="src\pictures\Beinuebungen\Beinpresse.png" />
+    <None Remove="src\pictures\Beinuebungen\beinstrecker.png" />
+    <None Remove="src\pictures\Beinuebungen\bulgarian splits squats.png" />
+    <None Remove="src\pictures\Beinuebungen\deadlift.png" />
+    <None Remove="src\pictures\Beinuebungen\Kreuzheben.png" />
+    <None Remove="src\pictures\Beinuebungen\lunges.png" />
     <None Remove="src\pictures\Beinuebungen\squats.png" />
     <None Remove="src\pictures\buttonWhite.png" />
     <None Remove="src\pictures\plus.png" />
@@ -22,22 +23,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="src\pictures\Armuebungen\arnoldDips.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="src\pictures\Armuebungen\kickpacks.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="src\pictures\Armuebungen\liegestuetze.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="src\pictures\Armuebungen\szcurls.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="src\pictures\Armuebungen\trizepsdruecken.png">
+    <Content Include="src\pictures\Beinuebungen\Beinpresse(1).png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="src\pictures\Beinuebungen\Beinpresse.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="src\pictures\Beinuebungen\beinstrecker.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="src\pictures\Beinuebungen\bulgarian splits squats.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="src\pictures\Beinuebungen\deadlift.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="src\pictures\Beinuebungen\Kreuzheben.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="src\pictures\Beinuebungen\lunges.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="src\pictures\Beinuebungen\squats.png">
@@ -48,7 +52,9 @@
   <ItemGroup>
     <Resource Include="src\pictures\Armuebungen\hanteln.png" />
     <Resource Include="src\pictures\buttonWhite.png" />
-    <Resource Include="src\pictures\plus.png" />
+    <Content Include="src\pictures\plus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
