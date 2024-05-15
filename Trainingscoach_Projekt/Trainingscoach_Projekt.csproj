@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="src\pictures\addButton.png" />
+    <None Remove="src\pictures\Armuebungen\hanteln.png" />
     <None Remove="src\pictures\Beinuebungen\squats.png" />
     <None Remove="src\pictures\buttonWhite.png" />
     <None Remove="src\pictures\plus.png" />
@@ -22,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="src\pictures\Armuebungen\hanteln.png" />
     <Resource Include="src\pictures\buttonWhite.png" />
     <Resource Include="src\pictures\plus.png" />
   </ItemGroup>
