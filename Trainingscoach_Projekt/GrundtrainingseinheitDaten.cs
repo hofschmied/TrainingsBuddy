@@ -25,7 +25,7 @@ namespace Trainingscoach_Projekt
             this.grundEinheit = grundEinheit;
         }
 
-        
+
         public void Remove()
         {
             ListBox ListBoxName = ((MainWindow)System.Windows.Application.Current.MainWindow).ListBoxGrundeinheit;
