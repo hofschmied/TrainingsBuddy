@@ -48,15 +48,42 @@
 
         <Image x:Name="hanteln" Grid.Row="1" Grid.Column="0" Source="/src/pictures/Armuebungen/hanteln.png" Margin="0,105,10,11" Grid.RowSpan="2"/>
 
-        <Button Grid.Row="3" Grid.Column="0" x:Name="buttonAddHanteln" Content="Add" Margin="15" FontSize="25"  FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3,3,3,3">
-        </Button>
+        <Image x:Name="hinzufuegen_hammercurls" Grid.Row="3" Grid.Column="0" Source="/src/pictures/plus.png"/>
 
         <Label Grid.Row="1" Grid.Column="1" Content="Arnold-Dips" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF"  Margin="10,10,0,6" Width="210" Grid.ColumnSpan="2"  
         ></Label>
 
-        <Image x:Name="arnoldDips" Grid.Row="1" Grid.Column="1" Source="/src/pictures/Armuebungen/hanteln.png" Margin="0,105,10,11" Grid.RowSpan="2"/>
-        <Button Grid.Row="3" Grid.Column="1" x:Name="buttonAddArnoldDips" Content="Add" Margin="10,15,10,15" FontSize="25"  FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3,3,3,3"/>
+        <Image x:Name="arnoldDips" Grid.Row="1" Grid.Column="1" Source="/src/pictures/Armuebungen/arnoldDips.png" Margin="0,105,10,11" Grid.RowSpan="2"/>
+        <Image x:Name="hinzufuegen_squats" Grid.Row="3" Grid.Column="1" Source="/src/pictures/plus.png"/>
 
+        <Label Grid.Row="1" Grid.Column="2" Content="Pushups" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF"  Margin="25,10,0,6" Width="210" Grid.ColumnSpan="2"  
+        ></Label>
+        <Image x:Name="pushUps" Grid.Row="1" Grid.Column="2" Source="/src/pictures/Armuebungen/liegestuetze.png" Margin="0,105,10,11" Grid.RowSpan="2" Cursor="Arrow"/>
 
+        <Image x:Name="liegestuetze_squats" Grid.Row="3" Grid.Column="2" Source="/src/pictures/plus.png"/>
+
+        <Label Grid.Row="1" Grid.Column="3" Content="Bicep Press" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF"  Margin="10,10,0,6" Width="210" Grid.ColumnSpan="2"  
+        ></Label>
+
+        <Image x:Name="trizepsDruecken" Grid.Row="1" Grid.Column="3" Source="/src/pictures/Armuebungen/trizepsdruecken.png" Margin="0,105,10,11" Grid.RowSpan="2"/>
+
+        <Image x:Name="trizeos_squats" Grid.Row="3" Grid.Column="3" Source="/src/pictures/plus.png"/>
+
+        <Label Grid.Row="1" Grid.Column="3" Content="Bicep Press" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF"  Margin="10,10,0,6" Width="210" Grid.ColumnSpan="2"  
+        ></Label>
+
+        <Label Grid.Row="1" Grid.Column="4" Content="Kickbacks" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF"  Margin="10,10,0,6" Width="210" Grid.ColumnSpan="2"  
+        ></Label>
+
+        <Image x:Name="kickbacks" Grid.Row="1" Grid.Column="4" Source="/src/pictures/Armuebungen/kickpacks.png" Margin="0,105,10,11" Grid.RowSpan="2"/>
+
+        <Image x:Name="kickpacksButton" Grid.Row="3" Grid.Column="4" Source="/src/pictures/plus.png"/>
+
+        <Label Grid.Row="1" Grid.Column="5" Content="SZ-Curls" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF"  Margin="10,10,0,6" Width="210" Grid.ColumnSpan="2"  
+       ></Label>
+
+        <Image x:Name="szCurls" Grid.Row="1" Grid.Column="5" Source="/src/pictures/Armuebungen/szcurls.png" Margin="0,105,10,11" Grid.RowSpan="2"/>
+
+        <Image x:Name="szCurlsButton" Grid.Row="3" Grid.Column="5" Source="/src/pictures/plus.png"/>
     </Grid>
 </Window>

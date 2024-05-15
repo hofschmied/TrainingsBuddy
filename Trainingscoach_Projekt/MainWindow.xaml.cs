@@ -96,7 +96,7 @@ namespace Trainingscoach_Projekt
 
         }
 
-        private void kleineHinzufuegenAktion(object sender, RoutedEventArgs e)
+        private void buttonHinzufuegen_Click(object sender, RoutedEventArgs e)
         {
             GrundtrainingseinheitenWindow window = new GrundtrainingseinheitenWindow();
             window.ShowDialog();
