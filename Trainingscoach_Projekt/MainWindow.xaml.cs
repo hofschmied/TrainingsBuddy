@@ -96,14 +96,14 @@ namespace Trainingscoach_Projekt
 
         }
 
-        private void buttonHinzufuegen_Click(object sender, RoutedEventArgs e)
+        private void kleineHinzufuegenAktion(object sender, RoutedEventArgs e)
         {
             GrundtrainingseinheitenWindow window = new GrundtrainingseinheitenWindow();
             window.ShowDialog();
             string uebergabeText = window.uebergabeText;
             ListBoxGrundeinheit.Items.Add(uebergabeText);
-
         }
+
 
         private void buttonAuswaehlen_Click(object sender, RoutedEventArgs e)
         {

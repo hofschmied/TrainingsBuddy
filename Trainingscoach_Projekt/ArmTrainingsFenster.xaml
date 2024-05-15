@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="Arm-Trainings Übungen" Height="750" Width="1400">
+        Title="Arm-Trainings Übungen" Height="950" Width="1700">
     <Grid Background="#333333">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -24,7 +24,7 @@
             <RowDefinition Height="150"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4" Text="STEP 2: Wählen und passen Sie beliebiege Übungen an" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" Margin="10,10,0,0">
+        <TextBlock Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4" Text="STEP 2: Wählen und passen Sie beliebiege Übungen an" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" Margin="86,10,0,0" Width="728">
             <TextBlock.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF383838"/>

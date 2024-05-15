@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:Trainingscoach_Projekt"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <BitmapImage x:Key="buttonWhite" UriSource="\src\pictures\plus.png"></BitmapImage>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

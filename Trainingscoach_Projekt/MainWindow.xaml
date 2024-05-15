@@ -30,7 +30,10 @@
             </TextBlock.Background>
         </TextBlock>
 
-        <Button Grid.Row="1" Grid.Column="0" x:Name="buttonHinzufuegen" Content="Hinzufügen" Margin="15" FontSize="25" Click="buttonHinzufuegen_Click" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3,3,3,3"/>
+        
+        <Image x:Name="hinzufuegen" Grid.Row="1" Grid.Column="0" Source="/src/pictures/plus.png" MouseLeftButtonDown="kleineHinzufuegenAktion"/>
+ 
+
 
         <Button Grid.Row="3" Grid.Column="3" x:Name="buttonLoeschen" Content="Löschen" Margin="15" FontSize="25" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3,3,3,3" Click="buttonLoeschen_Click">
         </Button>
