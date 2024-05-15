@@ -17,9 +17,9 @@
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="149"/>
-            <RowDefinition Height="112"/>
-            <RowDefinition Height="189"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="200"/>
             <RowDefinition Height="150"/>
         </Grid.RowDefinitions>
 
@@ -42,10 +42,40 @@
             </TextBlock.Background>
         </TextBlock>
 
-        <Label Grid.Column="0" Grid.Row="1" Content="Squats" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3,3,3,3" Margin="0,8,0,8" Width="118"/>
+        <TextBlock Grid.Row="1" Text="squats" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="35" Foreground="White" FontWeight="Bold" Height="73" Width="176">
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF383838"/>
+                    <GradientStop Color="#FF2B5762" Offset="0.875"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+        <Image Grid.Row="1" Grid.Column="0" Source="/src/pictures/Beinuebungen/squats.png" Margin="0,107,0,145" Grid.RowSpan="3" />
 
 
-        <Image x:Name="hinzufuegen" Grid.Row="2" Grid.Column="0" Source="/src/pictures/Beinuebungen/squats.png" Grid.ColumnSpan="2" Margin="-26,0,170,10"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="leg press" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="35" Foreground="White" FontWeight="Bold" Height="73" Width="176">
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF383838"/>
+                    <GradientStop Color="#FF2B5762" Offset="0.875"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+        <Image Grid.Row="2" Source="/src/pictures/Beinuebungen/Beinpresse.png"  Margin="183,15,19,15" Grid.ColumnSpan="2" />
+
+
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="lunges" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="35" Foreground="White" FontWeight="Bold" Height="73" Width="176">
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF383838"/>
+                    <GradientStop Color="#FF2B5762" Offset="0.875"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+        <Image Grid.Row="1" Grid.Column="1" Source="/src/pictures/Beinuebungen/lunges.png" Margin="164,95,18,125" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+
+
+        <Image Grid.Row="1" Grid.Column="2" Source="/src/pictures/Beinuebungen/deadlift.png" Margin="192,109,192,146" Grid.RowSpan="3" Grid.ColumnSpan="3"/>
 
 
     </Grid>
