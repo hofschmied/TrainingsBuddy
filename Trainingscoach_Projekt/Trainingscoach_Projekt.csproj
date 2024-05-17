@@ -9,6 +9,11 @@
 
   <ItemGroup>
     <None Remove="src\pictures\addButton.png" />
+    <None Remove="src\pictures\Armuebungen\arnoldDips.png" />
+    <None Remove="src\pictures\Armuebungen\kickpacks.png" />
+    <None Remove="src\pictures\Armuebungen\liegestuetze.png" />
+    <None Remove="src\pictures\Armuebungen\szcurls.png" />
+    <None Remove="src\pictures\Armuebungen\trizepsdruecken.png" />
     <None Remove="src\pictures\Beinuebungen\Beinpresse%281%29.png" />
     <None Remove="src\pictures\Beinuebungen\Beinpresse.png" />
     <None Remove="src\pictures\Beinuebungen\beinstrecker.png" />
@@ -23,6 +28,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="src\pictures\Armuebungen\arnoldDips.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="src\pictures\Armuebungen\kickpacks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="src\pictures\Armuebungen\liegestuetze.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="src\pictures\Armuebungen\szcurls.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="src\pictures\Armuebungen\trizepsdruecken.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="src\pictures\Beinuebungen\Beinpresse(1).png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

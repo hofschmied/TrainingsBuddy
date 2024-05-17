@@ -87,3 +87,6 @@ Neues Fenster für die spezifische Trainingseinheit wurde erstellt und bearbeite
 
 ## Tag 6 (14.Mai 2024)
 Es wurde für jede Grund- Trainingseinheit ein Fenster erstellt, dass auf die Wünsche des Benutzers eingeht.
+
+## Tag 7 (15.Mai 2024)
+Die spezifischen Einheiten wurden in das Grund- Trainingseinheiten Fenster implementiert.
