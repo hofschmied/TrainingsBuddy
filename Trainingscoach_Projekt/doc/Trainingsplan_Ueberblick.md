@@ -90,3 +90,7 @@ Es wurde für jede Grund- Trainingseinheit ein Fenster erstellt, dass auf die W�
 
 ## Tag 7 (15.Mai 2024)
 Die spezifischen Einheiten wurden in das Grund- Trainingseinheiten Fenster implementiert.
+
+## Tag 8 (19.Mai 2024)
+spezifische Einheiten für das Bauch-Fenster wurden hinzugefügt
+Erster Info Button wurde geadded
