@@ -28,7 +28,7 @@
     <None Remove="src\pictures\Beinuebungen\Kreuzheben.png" />
     <None Remove="src\pictures\Beinuebungen\lunges.png" />
     <None Remove="src\pictures\Beinuebungen\squats.png" />
-    <None Remove="src\pictures\buttonWhite.png" />
+    <None Remove="src\pictures\info.png" />
     <None Remove="src\pictures\plus.png" />
     <None Remove="src\pictures\squats.png" />
   </ItemGroup>
@@ -97,7 +97,9 @@
     <Resource Include="src\pictures\Bauchuebungen\windmuehle.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="src\pictures\buttonWhite.png" />
+    <Resource Include="src\pictures\info.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="src\pictures\plus.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

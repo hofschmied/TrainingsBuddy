@@ -23,5 +23,10 @@ namespace Trainingscoach_Projekt
         {
             InitializeComponent();
         }
+
+        private void info_button_crunches(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Crunches, klein aber fein. ");
+        }
     }
 }

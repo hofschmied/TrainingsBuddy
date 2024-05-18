@@ -51,6 +51,7 @@
             </TextBlock.Background>
         </TextBlock>
         <Image Grid.Row="2" Grid.Column="0" Source="/src/pictures/Bauchuebungen/crunches.png" Margin="6,24,18,41"/>
+        <Image Grid.Row="1" Grid.Column="0" Source="/src/pictures/info.png" Margin="34,89,46,10" MouseLeftButtonDown="info_button_crunches" RenderTransformOrigin="0.75,0.5"/>
         <Image x:Name="hinzufuegen_squats" Grid.Row="3" Grid.Column="0" Source="/src/pictures/plus.png"/>
 
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Crunches Rope" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" Foreground="White" FontWeight="Bold" Height="140" Width="196">
