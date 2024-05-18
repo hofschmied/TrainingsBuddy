@@ -70,7 +70,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="src\pictures\Armuebungen\hanteln.png" />
+    <Content Include="src\pictures\Armuebungen\hanteln.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="src\pictures\buttonWhite.png" />
     <Content Include="src\pictures\plus.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
