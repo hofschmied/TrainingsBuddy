@@ -14,6 +14,12 @@
     <None Remove="src\pictures\Armuebungen\liegestuetze.png" />
     <None Remove="src\pictures\Armuebungen\szcurls.png" />
     <None Remove="src\pictures\Armuebungen\trizepsdruecken.png" />
+    <None Remove="src\pictures\Bauchuebungen\crunches.png" />
+    <None Remove="src\pictures\Bauchuebungen\crunches_seil.png" />
+    <None Remove="src\pictures\Bauchuebungen\kerze.png" />
+    <None Remove="src\pictures\Bauchuebungen\situps.png" />
+    <None Remove="src\pictures\Bauchuebungen\situpsball.png.jpg" />
+    <None Remove="src\pictures\Bauchuebungen\windmuehle.png" />
     <None Remove="src\pictures\Beinuebungen\Beinpresse%281%29.png" />
     <None Remove="src\pictures\Beinuebungen\Beinpresse.png" />
     <None Remove="src\pictures\Beinuebungen\beinstrecker.png" />
@@ -73,6 +79,24 @@
     <Content Include="src\pictures\Armuebungen\hanteln.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="src\pictures\Bauchuebungen\crunches.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Bauchuebungen\crunches_seil.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Bauchuebungen\kerze.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Bauchuebungen\situps.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Bauchuebungen\situpsball.png.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Bauchuebungen\windmuehle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="src\pictures\buttonWhite.png" />
     <Content Include="src\pictures\plus.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
