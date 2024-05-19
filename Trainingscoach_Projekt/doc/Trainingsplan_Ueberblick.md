@@ -94,3 +94,6 @@ Die spezifischen Einheiten wurden in das Grund- Trainingseinheiten Fenster imple
 ## Tag 8 (19.Mai 2024)
 spezifische Einheiten für das Bauch-Fenster wurden hinzugefügt
 Erster Info Button wurde geadded
+
+## Tag 9 (19.Mai 2024)
+das Design der Einheiten-Fenster wurde komplett geändert/umstrukturiert
