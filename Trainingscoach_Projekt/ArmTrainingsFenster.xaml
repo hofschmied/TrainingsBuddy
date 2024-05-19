@@ -5,25 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="Arm-Trainings Übungen" Height="650" Width="1200">
+        Title="Arm-Trainings Übungen" Height="500" Width="1200">
     <Grid Background="#333333">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="210"/>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="200"/>
-
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="149"/>
-            <RowDefinition Height="112"/>
-            <RowDefinition Height="189"/>
-            <RowDefinition Height="150"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Text="STEP 3: Wählen und passen Sie beliebiege Übungen an" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" Margin="0,10,0,0" Height="37" Width="718">
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Text="STEP 3: Wählen und passen Sie beliebiege Übungen an" 
+                   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" 
+                   Margin="0,20,0,20">
             <TextBlock.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF383838"/>
@@ -32,58 +32,60 @@
             </TextBlock.Background>
         </TextBlock>
 
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,20">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
+                <Image Source="/src/pictures/Armuebungen/hanteln.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                <Label Content="Hammercurls" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                </StackPanel>
+            </StackPanel>
 
-        <TextBlock Grid.Column="2" Grid.ColumnSpan="2" Text="Bein-Training" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" Foreground="White" FontWeight="Bold" Height="38" Width="176">
-            <TextBlock.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF383838"/>
-                    <GradientStop Color="#FF2B5762" Offset="0.875"/>
-                </LinearGradientBrush>
-            </TextBlock.Background>
-        </TextBlock>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
+                <Image Source="/src/pictures/Armuebungen/arnoldDips.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                <Label Content="Arnold-Dips" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                </StackPanel>
+            </StackPanel>
 
-        <Label Grid.Row="1" Content="Hammercurls" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF"  Margin="0,8,0,8" Width="210"  
-        ></Label>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
+                <Image Source="/src/pictures/Armuebungen/liegestuetze.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                <Label Content="Pushups" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                </StackPanel>
+            </StackPanel>
 
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
+                <Image Source="/src/pictures/Armuebungen/trizepsdruecken.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                <Label Content="Bicep Press" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                </StackPanel>
+            </StackPanel>
 
-        <Image x:Name="hanteln" Grid.Row="1" Grid.Column="0" Source="/src/pictures/Armuebungen/hanteln.png" Margin="0,105,10,11" Grid.RowSpan="2"/>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
+                <Image Source="/src/pictures/Armuebungen/kickpacks.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                <Label Content="Kickbacks" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                </StackPanel>
+            </StackPanel>
 
-        <Image x:Name="hinzufuegen_hammercurls" Grid.Row="3" Grid.Column="0" Source="/src/pictures/plus.png"/>
-
-        <Label Grid.Row="1" Grid.Column="1" Content="Arnold-Dips" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF"  Margin="10,10,0,6" Width="210" Grid.ColumnSpan="2"  
-        ></Label>
-
-        <Image x:Name="arnoldDips" Grid.Row="1" Grid.Column="1" Source="/src/pictures/Armuebungen/arnoldDips.png" Margin="0,105,10,11" Grid.RowSpan="2"/>
-        <Image x:Name="hinzufuegen_squats" Grid.Row="3" Grid.Column="1" Source="/src/pictures/plus.png"/>
-
-        <Label Grid.Row="1" Grid.Column="2" Content="Pushups" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF"  Margin="25,10,0,6" Width="210" Grid.ColumnSpan="2"  
-        ></Label>
-        <Image x:Name="pushUps" Grid.Row="1" Grid.Column="2" Source="/src/pictures/Armuebungen/liegestuetze.png" Margin="0,105,10,11" Grid.RowSpan="2" Cursor="Arrow"/>
-
-        <Image x:Name="liegestuetze_squats" Grid.Row="3" Grid.Column="2" Source="/src/pictures/plus.png"/>
-
-        <Label Grid.Row="1" Grid.Column="3" Content="Bicep Press" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF"  Margin="10,10,0,6" Width="210" Grid.ColumnSpan="2"  
-        ></Label>
-
-        <Image x:Name="trizepsDruecken" Grid.Row="1" Grid.Column="3" Source="/src/pictures/Armuebungen/trizepsdruecken.png" Margin="0,105,10,11" Grid.RowSpan="2"/>
-
-        <Image x:Name="trizeos_squats" Grid.Row="3" Grid.Column="3" Source="/src/pictures/plus.png"/>
-
-        <Label Grid.Row="1" Grid.Column="3" Content="Bicep Press" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF"  Margin="10,10,0,6" Width="210" Grid.ColumnSpan="2"  
-        ></Label>
-
-        <Label Grid.Row="1" Grid.Column="4" Content="Kickbacks" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF"  Margin="10,10,0,6" Width="210" Grid.ColumnSpan="2"  
-        ></Label>
-
-        <Image x:Name="kickbacks" Grid.Row="1" Grid.Column="4" Source="/src/pictures/Armuebungen/kickpacks.png" Margin="0,105,10,11" Grid.RowSpan="2"/>
-
-        <Image x:Name="kickpacksButton" Grid.Row="3" Grid.Column="4" Source="/src/pictures/plus.png"/>
-
-        <Label Grid.Row="1" Grid.Column="5" Content="SZ-Curls" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF"  Margin="10,10,0,6" Width="210" Grid.ColumnSpan="2"  
-       ></Label>
-
-        <Image x:Name="szCurls" Grid.Row="1" Grid.Column="5" Source="/src/pictures/Armuebungen/szcurls.png" Margin="0,105,10,11" Grid.RowSpan="2"/>
-
-        <Image x:Name="szCurlsButton" Grid.Row="3" Grid.Column="5" Source="/src/pictures/plus.png"/>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
+                <Image Source="/src/pictures/Armuebungen/szcurls.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                <Label Content="SZ-Curls" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
