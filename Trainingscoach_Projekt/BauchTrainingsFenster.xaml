@@ -24,7 +24,7 @@
 
 
 
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Text="STEP 2: Wählen und passen Sie beliebiege Übungen an" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" Margin="0,10,0,0" Height="37" Width="718">
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Text="STEP 3: Wählen und passen Sie beliebiege Übungen an" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" Margin="0,10,0,0" Height="37" Width="718">
             <TextBlock.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF383838"/>
@@ -106,7 +106,7 @@
                 </LinearGradientBrush>
             </TextBlock.Background>
         </TextBlock>
-        <Image Grid.Row="2" Grid.Column="4" Source="/src/pictures/Bauchuebungen/situpsball.png.jpg" Margin="0,20,51,36" HorizontalAlignment="Right" Width="254" Grid.ColumnSpan="2"/>
+        <Image Grid.Row="2" Grid.Column="4" Source="/src/pictures/Bauchuebungen/situpsball.png.jpg" Margin="0,17,39,39" HorizontalAlignment="Right" Width="254" Grid.ColumnSpan="2"/>
         <Image x:Name="hinzufuegen_legextensions" Grid.Row="3" Grid.Column="5" Source="/src/pictures/plus.png" Margin="17,0,-17,0"/>
     </Grid>
 </Window>

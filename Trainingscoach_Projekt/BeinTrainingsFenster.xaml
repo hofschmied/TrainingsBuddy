@@ -25,7 +25,7 @@
 
     
 
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Text="STEP 2: Wählen und passen Sie beliebiege Übungen an" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" Margin="0,10,0,0" Height="37" Width="718">
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Text="STEP 3: Wählen und passen Sie beliebiege Übungen an" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" Margin="0,10,0,0" Height="37" Width="718">
             <TextBlock.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF383838"/>
