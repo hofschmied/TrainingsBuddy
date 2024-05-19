@@ -5,12 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="Brust-Trainings Übungen" Height="500" Width="1270">
+        Title="Brust-Trainings Übungen" Height="500" Width="1270"
+       WindowStyle="None"
+       ResizeMode="NoResize"
+       MouseDown="Window_MausRunter">
 
     <Grid Background="#333333">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="STEP 3: Wählen und passen Sie beliebiege Übungen an"
@@ -81,5 +85,9 @@
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+            <Image Source="/src/pictures/minimizeButton.png" Width="50" Height="Auto" Margin="0,0,10,20" Cursor="Hand" MouseDown="fensterMinimieren"/>
+            <Image Source="/src/pictures/closeButton.png" Width="50" Height="Auto" Margin="0,0,0,10" Cursor="Hand" MouseDown="fensterSchließen"/>
+        </StackPanel>
     </Grid>
 </Window>

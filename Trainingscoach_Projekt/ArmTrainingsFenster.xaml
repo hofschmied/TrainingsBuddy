@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="Arm-Trainings Übungen" Height="500" Width="1200">
+        Title="Arm-Trainings Übungen" Height="500" Width="1200"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        MouseDown="Window_MausRunter">
     <Grid Background="#333333">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -87,5 +90,11 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
+        <Border Background="#333333" Grid.Row="0" Grid.Column="5">
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+                <Image Source="/src/pictures/minimizeButton.png" Width="50" Height="Auto" Margin="0,0,10,20" Cursor="Hand" MouseDown="fensterMinimieren"/>
+                <Image Source="/src/pictures/closeButton.png" Width="50" Height="Auto" Margin="0,0,0,10" Cursor="Hand" MouseDown="fensterSchließen"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

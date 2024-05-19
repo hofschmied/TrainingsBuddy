@@ -28,5 +28,30 @@ namespace Trainingscoach_Projekt
         {
             MessageBox.Show("Crunches, klein aber fein. ");
         }
+
+        private void Window_MausRunter(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                if (e.ChangedButton == MouseButton.Left)
+                {
+                    this.DragMove();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Platzhalter");
+            }
+        }
+
+        private void fensterSchließen(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void fensterMinimieren(object sender, MouseButtonEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
     }
 }

@@ -28,8 +28,17 @@
     <None Remove="src\pictures\Beinuebungen\Kreuzheben.png" />
     <None Remove="src\pictures\Beinuebungen\lunges.png" />
     <None Remove="src\pictures\Beinuebungen\squats.png" />
+    <None Remove="src\pictures\Brustuebungen\Butterfly.png" />
+    <None Remove="src\pictures\closeButton.png" />
     <None Remove="src\pictures\info.png" />
+    <None Remove="src\pictures\minimizeButton.png" />
     <None Remove="src\pictures\plus.png" />
+    <None Remove="src\pictures\Rueckentraining\goodmornings.png" />
+    <None Remove="src\pictures\Rueckentraining\hyperextensions.png" />
+    <None Remove="src\pictures\Rueckentraining\kreuzheben.png" />
+    <None Remove="src\pictures\Rueckentraining\latziehen.png" />
+    <None Remove="src\pictures\Rueckentraining\ruderhanteln.png" />
+    <None Remove="src\pictures\Rueckentraining\shrugs.png" />
     <None Remove="src\pictures\squats.png" />
   </ItemGroup>
 
@@ -79,6 +88,15 @@
     <Content Include="src\pictures\Armuebungen\hanteln.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="src\pictures\Brustuebungen\Butterfly.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Rueckentraining\shrugs.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\closeButton.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="src\pictures\Bauchuebungen\crunches.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -100,9 +118,27 @@
     <Resource Include="src\pictures\info.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Content Include="src\pictures\plus.png">
+    <Resource Include="src\pictures\minimizeButton.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
+    <Resource Include="src\pictures\plus.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Rueckentraining\goodmornings.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Rueckentraining\hyperextensions.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Rueckentraining\kreuzheben.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Rueckentraining\latziehen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Rueckentraining\ruderhanteln.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
