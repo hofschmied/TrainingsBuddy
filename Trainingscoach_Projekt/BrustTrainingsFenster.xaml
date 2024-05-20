@@ -31,7 +31,7 @@
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,20">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
-                    <Image Source="/src/pictures/Beinuebungen/squats.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                    <Image Source="/src/pictures/Brustuebungen/Liegestütze.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Push Ups" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                         <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
@@ -40,7 +40,7 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
-                    <Image Source="/src/pictures/Beinuebungen/Beinpresse(1).png" Width="150" Height="150" Margin="0,0,0,10"/>
+                    <Image Source="/src/pictures/Brustuebungen/Butterfly.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Butterfly" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                         <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
@@ -49,7 +49,7 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
-                    <Image Source="/src/pictures/Beinuebungen/lunges.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                    <Image Source="/src/pictures/Brustuebungen/cablefly.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Cable Fly" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                         <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
@@ -58,8 +58,8 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
-                    <Image Source="/src/pictures/Beinuebungen/deadlift.png" Width="150" Height="150" Margin="0,0,0,10"/>
-                    <Label Content="Dumbell Pullover" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                    <Image Source="/src/pictures/Brustuebungen/dumbbell pullover.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                    <Label Content="Dumbbell Pullover" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                         <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
@@ -67,8 +67,8 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
-                    <Image Source="/src/pictures/Beinuebungen/bulgarian splits squats.png" Width="150" Height="150" Margin="0,0,0,10"/>
-                    <Label Content="Dumbell Flys" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                    <Image Source="/src/pictures/Brustuebungen/fliegende.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                    <Label Content="Dumbbell Flys" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                         <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
@@ -76,7 +76,7 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
-                    <Image Source="/src/pictures/Beinuebungen/beinstrecker.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                    <Image Source="/src/pictures/Brustuebungen/Benchpress.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Bench Press" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                         <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
