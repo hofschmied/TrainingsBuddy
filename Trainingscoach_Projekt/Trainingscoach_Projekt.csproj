@@ -29,6 +29,12 @@
     <None Remove="src\pictures\Beinuebungen\lunges.png" />
     <None Remove="src\pictures\Beinuebungen\squats.png" />
     <None Remove="src\pictures\Brustuebungen\Butterfly.png" />
+    <None Remove="src\pictures\Cardio\cycling.png" />
+    <None Remove="src\pictures\Cardio\ellipticaltrainer.png" />
+    <None Remove="src\pictures\Cardio\ropejumping.png" />
+    <None Remove="src\pictures\Cardio\rowing.png" />
+    <None Remove="src\pictures\Cardio\stepmill.png" />
+    <None Remove="src\pictures\Cardio\treadmill.png" />
     <None Remove="src\pictures\closeButton.png" />
     <None Remove="src\pictures\info.png" />
     <None Remove="src\pictures\minimizeButton.png" />
@@ -89,6 +95,24 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="src\pictures\Brustuebungen\Butterfly.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Cardio\cycling.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Cardio\ellipticaltrainer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Cardio\ropejumping.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Cardio\rowing.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Cardio\stepmill.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Cardio\treadmill.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="src\pictures\Rueckentraining\shrugs.png">
