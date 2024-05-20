@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="Bein-Trainings Übungen" Height="500" Width="1270"
+        Title="Bein-Trainings Übungen" Height="500" Width="1300"
         WindowStyle="None"
         ResizeMode="NoResize"
         MouseDown="Window_MausRunter">

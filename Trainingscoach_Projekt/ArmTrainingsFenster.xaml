@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="Arm-Trainings Übungen" Height="500" Width="1200"
+        Title="Arm-Trainings Übungen" Height="500" Width="1300"
         WindowStyle="None"
         ResizeMode="NoResize"
         MouseDown="Window_MausRunter">
