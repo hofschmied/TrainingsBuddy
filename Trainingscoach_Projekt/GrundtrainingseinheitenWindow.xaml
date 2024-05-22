@@ -19,7 +19,6 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="60"/>
             <RowDefinition Height="60"/>
-
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="1" Text="STEP 2: Wähle deine Trainingseinheit aus"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" Margin="0,10,0,0">

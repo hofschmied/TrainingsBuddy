@@ -1,0 +1,44 @@
+﻿<Window x:Class="Trainingscoach_Projekt.DatenFenster"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Trainingscoach_Projekt"
+        mc:Ignorable="d"
+        Title="DatenFenster" Height="300" Width="450">
+    <Grid Background="#333333">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="STEP 4:" FontSize="15" FontWeight="Bold" Foreground="White"></TextBlock>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Bestimmen Sie die Eigenschaften" FontSize="15" FontWeight="Bold" Foreground="White"></TextBlock>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Einheiten Name: " Margin="10,15,4,15" FontSize="15" FontWeight="Bold" Foreground="White"></TextBlock>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Dauer (min): " Margin="10,15,4,15" FontSize="15" FontWeight="Bold" Foreground="White"></TextBlock>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Anzahl Sets: " Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Foreground="White"></TextBlock>
+
+        <TextBlock x:Name="einheitenName" Grid.Row="1" Grid.Column="1" Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Background="LightGray"></TextBlock>
+
+        <TextBox x:Name="anzahlSets" Grid.Row="2" Grid.Column="1" Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Background="LightGray"></TextBox>
+
+        <TextBox x:Name="dauer" Grid.Row="3" Grid.Column="1" Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Background="LightGray"></TextBox>
+        <Button Grid.Column="1" Content="OK" HorizontalAlignment="Left" Margin="170,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="20" Width="60"/>
+        <Button Grid.Column="1" Content="CANCEL" HorizontalAlignment="Left" Margin="245,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="20" Width="60"/>
+
+        
+    </Grid>
+</Window>

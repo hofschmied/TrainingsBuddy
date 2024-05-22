@@ -58,6 +58,39 @@ namespace Trainingscoach_Projekt
             MessageBox.Show("Sie beginnen mit einer liegenden Ausgangsposition und heben den Oberkörper mit leichter Krümmung an. ");
         }
 
+        private void addButtonPushUps(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.ShowDialog();
+        }
+
+        private void addButtonSitUps(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.ShowDialog();
+        }
+        private void addButtonSquats(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.ShowDialog();
+        }
+
+        private void addButtonButterfly(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.ShowDialog();
+        }
+        private void addButtonBulgarianSplitsSquats(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.ShowDialog();
+        }
+
+        private void addButtonCrunches(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.ShowDialog();
+        }
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)
         {
             try
