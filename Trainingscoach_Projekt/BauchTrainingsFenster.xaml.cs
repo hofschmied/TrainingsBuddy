@@ -24,9 +24,34 @@ namespace Trainingscoach_Projekt
             InitializeComponent();
         }
 
-        private void info_button_crunches(object sender, MouseButtonEventArgs e)
+        private void infoButtonCrunches(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Crunches, klein aber fein. ");
+            MessageBox.Show("Sie beginnen mit einer liegenden Ausgangsposition und heben den Oberkörper mit leichter Krümmung an. ");
+        }
+
+        private void infoButtonRope(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Kniend heben Sie das Seil in der Hand und heben den Oberkörper an. Wenn Sie sich wieder zurück krümmen, ziehen Sie das Seil mit sich mit. ");
+        }
+
+        private void infoButtonTouchToeTwist(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Diese Übung führen Sie im Stehen aus. Sie bewegen ihre Hand zum entgegengesetzt Fuß. Stärkt die seitlichen und geraden Bauchmuskeln. ");
+        }
+
+        private void infoButtonCandle(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Diese Übung ist zugleich auch eine Yoga Figur. Sie legen sich zunächst am Boden Dannach halten Sie ihren Körper in vertikaler Position nach oben. Je mehr sie die Position halten, desto besser. ");
+        }
+
+        private void infoButtonSitUps(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Sie legen sich bei dieser Übung mit dem Rücken auf dem Boden und halten bei dieser Übung ihre Füße aufgestellt. Schließlich bewegen Sie ihren Oberkörper langsam nach oben. ");
+        }
+
+        private void infoButtonSitUpsBall(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Sie legen sich bei dieser Übung auf einen Gymnastik-Ball und stellen ihre Füße auf den Boden. Schließlich bewegen Sie ihren Oberkörper langsam nach oben. ");
         }
 
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)

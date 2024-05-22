@@ -92,7 +92,7 @@
         </StackPanel>
         <Border Background="#333333" Grid.Row="0" Grid.Column="5">
             <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Source="/src/pictures/minimizeButton.png" Width="50" Height="Auto" Margin="0,0,10,20" Cursor="Hand" MouseDown="fensterMinimieren"/>
+                <Image Source="/src/pictures/minimizeButton.png" Width="50" Height="Auto" Margin="0,0,10,10" Cursor="Hand" MouseDown="fensterMinimieren"/>
                 <Image Source="/src/pictures/closeButton.png" Width="50" Height="Auto" Margin="0,0,0,10" Cursor="Hand" MouseDown="fensterSchließen"/>
             </StackPanel>
         </Border>
