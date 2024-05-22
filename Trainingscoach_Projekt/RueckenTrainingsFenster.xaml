@@ -41,7 +41,7 @@
                 <Label Content="Good Mornings" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                     <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseRightButtonDown="InfoButtonGoodMornings"/>
                 </StackPanel>
             </StackPanel>
 
@@ -50,7 +50,7 @@
                 <Label Content="Deadlift" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                     <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonDeadlift"/>
                 </StackPanel>
             </StackPanel>
 
@@ -59,7 +59,7 @@
                 <Label Content="Pull Down" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                     <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonPullDown"/>
                 </StackPanel>
             </StackPanel>
 
@@ -68,7 +68,7 @@
                 <Label Content="Row Dumbells" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                     <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonRowDumbbells"/>
                 </StackPanel>
             </StackPanel>
 
@@ -77,7 +77,7 @@
                 <Label Content="Shrugs" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                     <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonShrugs"/>
                 </StackPanel>
             </StackPanel>
 
@@ -86,7 +86,7 @@
                 <Label Content="Hyperextensions" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                     <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonHyperextensions"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

@@ -41,7 +41,7 @@
                 <Label Content="Hammercurls" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                     <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonHammercurls"/>
                 </StackPanel>
             </StackPanel>
 
@@ -50,7 +50,7 @@
                 <Label Content="Arnold-Dips" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                     <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonArnoldDips"/>
                 </StackPanel>
             </StackPanel>
 
@@ -59,16 +59,16 @@
                 <Label Content="Pushups" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                     <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonPushups"/>
                 </StackPanel>
             </StackPanel>
 
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
                 <Image Source="/src/pictures/Armuebungen/trizepsdruecken.png" Width="150" Height="150" Margin="0,0,0,10"/>
-                <Label Content="Bicep Press" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                <Label Content="Tricep Press" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                     <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonTricepPress"/>
                 </StackPanel>
             </StackPanel>
 
@@ -77,7 +77,7 @@
                 <Label Content="Kickbacks" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                     <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonKickbacks"/>
                 </StackPanel>
             </StackPanel>
 
@@ -86,7 +86,7 @@
                 <Label Content="SZ-Curls" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                     <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonSZCurls" />
                 </StackPanel>
             </StackPanel>
         </StackPanel>

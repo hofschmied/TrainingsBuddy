@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -10,6 +12,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Shapes;
 
 namespace Trainingscoach_Projekt
@@ -47,6 +50,43 @@ namespace Trainingscoach_Projekt
         private void fensterMinimieren(object sender, MouseButtonEventArgs e)
         {
             WindowState = WindowState.Minimized;
+        }
+
+        private void InfoButtonCycling(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Steigen Sie sich auf das Fahrrad auf und treten Sie die Pedale.");
+        }
+
+        private void InfoButtonRunning(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Stehen Sie auf das Laufband und schalten Sie es ein. " +
+                "Nun können Sie die Geschwindigkeit angeben und anfangen zu laufen.");
+        }
+
+        private void InfoButtonJumping(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Holen Sie sich ein SpringSeil und Schwingen Sie es über Ihren Kopf. " +
+                "Springen Sie kurz bevor das Seil ihre Beine berührt. Wiederholen Sie diesen Ablauf.");
+        }
+
+        private void InfoButtonStepMill(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Stehen Sie auf der Maschiene und Schalten Sie es ein. " +
+                "Sie können nun die Geschwindigkeit angeben. Sobald die Maschiene startet können Sie treppenlaufen.");
+        }
+
+        private void InfoButtonEllipticalTrainer(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Bei einem Ellipsentrainer setzen Sie nicht mit den Füßen auf dem Boden auf, " +
+                "sondern die Füße durchlaufen eine elliptische Bewegung in der Luft. Beim Laufen hingegen stoßen die Füße auf den Boden auf, " +
+                "und Knöchel und Knie spüren die Belastung, was zu Verletzungen führen kann.");
+        }
+
+        private void InfoButtonRowing(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Beim Rudern kommt es auf flüssige Bewegungen an, nicht auf kraftvolles Reißen und Loslassen. " +
+                "Die Ruderstange wird kraftvoll zum Körper gezogen und wieder zurückgeführt, " +
+                "dabei kommt es nie zu einem kompletten Lockerlassen und Wiederansetzen der Kraft.");
         }
     }
 }
