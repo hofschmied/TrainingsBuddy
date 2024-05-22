@@ -28,7 +28,12 @@
     <None Remove="src\pictures\Beinuebungen\Kreuzheben.png" />
     <None Remove="src\pictures\Beinuebungen\lunges.png" />
     <None Remove="src\pictures\Beinuebungen\squats.png" />
+    <None Remove="src\pictures\Brustuebungen\Benchpress.png" />
     <None Remove="src\pictures\Brustuebungen\Butterfly.png" />
+    <None Remove="src\pictures\Brustuebungen\cablefly.png" />
+    <None Remove="src\pictures\Brustuebungen\dumbbell pullover.png" />
+    <None Remove="src\pictures\Brustuebungen\fliegende.png" />
+    <None Remove="src\pictures\Brustuebungen\Liegestütze.png" />
     <None Remove="src\pictures\Cardio\cycling.png" />
     <None Remove="src\pictures\Cardio\ellipticaltrainer.png" />
     <None Remove="src\pictures\Cardio\ropejumping.png" />
@@ -94,7 +99,22 @@
     <Content Include="src\pictures\Armuebungen\hanteln.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="src\pictures\Brustuebungen\Benchpress.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="src\pictures\Brustuebungen\Butterfly.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Brustuebungen\cablefly.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Brustuebungen\dumbbell pullover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Brustuebungen\fliegende.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\pictures\Brustuebungen\Liegestütze.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="src\pictures\Cardio\cycling.png">

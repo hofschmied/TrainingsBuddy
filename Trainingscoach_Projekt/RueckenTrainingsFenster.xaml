@@ -11,12 +11,13 @@
         MouseDown="Window_MausRunter">
     <Grid Background="#333333">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="217*"/>
+            <ColumnDefinition Width="217*"/>
+            <ColumnDefinition Width="217*"/>
+            <ColumnDefinition Width="217*"/>
+            <ColumnDefinition Width="217*"/>
+            <ColumnDefinition Width="127*"/>
+            <ColumnDefinition Width="90*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -24,9 +25,9 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Text="STEP 3: Wählen und passen Sie beliebiege Übungen an" 
-                   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" 
-                   Margin="0,20,0,20">
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="4" Text="STEP 3: Wählen und passen Sie beliebiege Übungen an" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="28" Foreground="White" FontWeight="Bold" 
+                   Margin="74,0,0,0">
             <TextBlock.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF383838"/>
@@ -35,7 +36,7 @@
             </TextBlock.Background>
         </TextBlock>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,20">
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,20,0,0">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
                 <Image Source="/src/pictures/Rueckentraining/goodmornings.png" Width="150" Height="150" Margin="0,0,0,10"/>
                 <Label Content="Good Mornings" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
@@ -90,9 +91,9 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        <Border Background="#333333" Grid.Row="0" Grid.Column="5">
+        <Border Background="#333333" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="3" Margin="216,0,0,0">
             <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Source="/src/pictures/minimizeButton.png" Width="50" Height="Auto" Margin="0,0,10,20" Cursor="Hand" MouseDown="fensterMinimieren"/>
+                <Image Source="/src/pictures/minimizeButton.png" Width="50" Height="Auto" Margin="0,0,10,10" Cursor="Hand" MouseDown="fensterMinimieren"/>
                 <Image Source="/src/pictures/closeButton.png" Width="50" Height="Auto" Margin="0,0,0,10" Cursor="Hand" MouseDown="fensterSchließen"/>
             </StackPanel>
         </Border>

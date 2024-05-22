@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,6 +23,36 @@ namespace Trainingscoach_Projekt
         public BrustTrainingsFenster()
         {
             InitializeComponent();
+        }
+
+        private void infoButtonPushUps(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Sie legen sich zunächst flach mit dem Bauch auf den Boden. Stützen sie sich anschließend auf ihern Händen und Zehen ab. Nun senken Sie sich wieder und wiederholen diese Übung. ");
+        }
+
+        private void infoButtonButterfly(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Sie setzen sich aufrecht auf einem Gerät und bewegen das Gewicht, indem Sie Ihre gespreizten Arme vor Ihrem Oberkörper zusammendrücken .");
+        }
+
+        private void infoButtonCableFly(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Sie nehmen ein Seil an einem Gerät und halten es an beiden Armen. Nun spreitzen sie ihre Arme auseinander und ziehen es zusammen. Wiederholen Sie diese Übung am Besten.");
+        }
+
+        private void infoButtonDumbbellPullover(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Strecken Sie Ihre Arme zur Decke über Ihre Brust. Ihre Handflächen sollten einander zugewandt sein und Ihre Ellbogen sollten leicht gebeugt sein. strecken Sie die Gewichte nach hinten und über Ihren Kopf und wieder zurück.");
+        }
+
+        private void infoButtonDumbbellFlys(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Strecken Sie Ihre Arme zur Decke über Ihre Brust. Ihre Handflächen sollten einander zugewandt sein und Ihre Ellbogen sollten leicht gebeugt sein. strecken Sie die Gewichte nach außen und wieder nach innen.");
+        }
+
+        private void infoButtonBenchPress(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Legen Sie sich mit dem Rücken auf eine Bank und drücken Sie mit beiden Händen eine Großhantel nach oben und wieder zurück.");
         }
 
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)

@@ -32,8 +32,8 @@
                     <Image Source="/src/pictures/Bauchuebungen/crunches.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Crunches" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" />
+                        <Image Source="/src/pictures/info.png" MouseLeftButtonDown = "infoButtonCrunches" Width="30" Height="30" Cursor="Hand" Margin="5"/>
                     </StackPanel>
                 </StackPanel>
 
@@ -42,7 +42,7 @@
                     <Label Content="Crunches Rope" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                         <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="infoButtonRope"/>
                     </StackPanel>
                 </StackPanel>
 
@@ -51,7 +51,7 @@
                     <Label Content="Touch-Toe-Twist" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                         <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="infoButtonTouchToeTwist"/>
                     </StackPanel>
                 </StackPanel>
 
@@ -60,7 +60,7 @@
                     <Label Content="Candle" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                         <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="infoButtonCandle"/>
                     </StackPanel>
                 </StackPanel>
 
@@ -69,7 +69,7 @@
                     <Label Content="Sit Ups" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                         <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                        <Image Source="/src/pictures/info.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="infoButtonSitUps"/>
                     </StackPanel>
                 </StackPanel>
 
@@ -78,14 +78,14 @@
                     <Label Content="Sit Ups Ball" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                         <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
-                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="infoButtonSitUpsBall"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
             <Image Source="/src/pictures/minimizeButton.png" Width="50" Height="Auto" Margin="0,0,10,20" Cursor="Hand" MouseDown="fensterMinimieren"/>
-            <Image Source="/src/pictures/closeButton.png" Width="50" Height="Auto" Margin="0,0,0,10" Cursor="Hand" MouseDown="fensterSchließen"/>
+            <Image Source="/src/pictures/closeButton.png" Width="50" Height="Auto" Margin="0,0,0,20" Cursor="Hand" MouseDown="fensterSchließen"/>
         </StackPanel>
     </Grid>
 </Window>
