@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="DatenFenster" Height="300" Width="450">
+        Title="DatenFenster" Height="320" Width="460">
     <Grid Background="#333333">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="130"/>
@@ -31,7 +31,7 @@
 
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Anzahl Sets: " Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Foreground="White"></TextBlock>
 
-        <TextBlock x:Name="einheitenName" Grid.Row="1" Grid.Column="1" Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Background="LightGray"></TextBlock>
+        <TextBlock x:Name="einheitenName" Text=" " Grid.Row="1" Grid.Column="1" Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Background="LightGray"></TextBlock>
 
         <TextBox x:Name="anzahlSets" Grid.Row="2" Grid.Column="1" Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Background="LightGray"></TextBox>
 

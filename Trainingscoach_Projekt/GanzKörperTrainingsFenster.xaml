@@ -5,14 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="Ganzkörpers-Trainings Übungen" Height="500" Width="1300"
-       WindowStyle="None"
-       ResizeMode="NoResize"
-       MouseDown="Window_MausRunter">
+        Title="Ganzkörpers-Trainings Übungen" Height="600" Width="1300"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        MouseDown="Window_MausRunter">
     <Grid Background="#333333">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="STEP 3: Wählen und passen Sie beliebiege Übungen an"
@@ -83,7 +85,22 @@
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="20,0,20,0">
+            <ListBox Name="exerciseListBox" Background="#444" Foreground="White">
+                <ListBoxItem>Übung 1</ListBoxItem>
+                <ListBoxItem>Übung 2</ListBoxItem>
+                <ListBoxItem>Übung 3</ListBoxItem>
+            </ListBox>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,10">
+            <Button Content="Löschen" Width="100" Height="30" Margin="10"/>
+            <Button Content="Start" Width="100" Height="30" Margin="10"/>
+            <Button Content="Zurück" Width="100" Height="30" Margin="10"/>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,10,10,0">
             <Image Source="/src/pictures/minimizeButton.png" Width="50" Height="Auto" Margin="0,0,10,10" Cursor="Hand" MouseDown="fensterMinimieren"/>
             <Image Source="/src/pictures/closeButton.png" Width="50" Height="Auto" Margin="0,0,0,10" Cursor="Hand" MouseDown="fensterSchließen"/>
         </StackPanel>

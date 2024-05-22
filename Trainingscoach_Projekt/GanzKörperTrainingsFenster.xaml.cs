@@ -61,34 +61,40 @@ namespace Trainingscoach_Projekt
         private void addButtonPushUps(object sender, MouseButtonEventArgs e)
         {
             DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "Push-Ups";
             daten.ShowDialog();
         }
 
         private void addButtonSitUps(object sender, MouseButtonEventArgs e)
         {
             DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "Sit-Ups";
             daten.ShowDialog();
         }
         private void addButtonSquats(object sender, MouseButtonEventArgs e)
         {
             DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "Squats";
             daten.ShowDialog();
         }
 
         private void addButtonButterfly(object sender, MouseButtonEventArgs e)
         {
             DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "Butterfly";
             daten.ShowDialog();
         }
         private void addButtonBulgarianSplitsSquats(object sender, MouseButtonEventArgs e)
         {
             DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "BulgarianSplitsSquats";
             daten.ShowDialog();
         }
 
         private void addButtonCrunches(object sender, MouseButtonEventArgs e)
         {
             DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "Crunches";
             daten.ShowDialog();
         }
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)
