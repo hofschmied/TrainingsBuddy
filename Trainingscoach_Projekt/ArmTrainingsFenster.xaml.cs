@@ -93,46 +93,47 @@ namespace Trainingscoach_Projekt
                 "Danach wieder in Ausgangsposition zurückkehren.");
         }
 
-        private void addButtonHammercurls(object sender, MouseButtonEventArgs e)
+        private void zeigeDataFenster(string nachricht)
         {
             DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "Hammercurls";
+            daten.einheitenName.Text = nachricht;
             daten.ShowDialog();
+            uebungListBox.Items.Add(daten.nutzer);
+        }
+
+        private void addButtonHammercurls(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Hammercurls");
         }
 
         private void addButtonArnoldDips(object sender, MouseButtonEventArgs e)
         {
-            DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "Arnold-Dips";
-            daten.ShowDialog();
+            zeigeDataFenster("Arnold-Dips");
         }
 
         private void addButtonPushups(object sender, MouseButtonEventArgs e)
         {
-            DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "Push-Ups";
-            daten.ShowDialog();
+            zeigeDataFenster("Push-Ups");
         }
 
         private void addButtonTricepPress(object sender, MouseButtonEventArgs e)
         {
-            DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "Tricep Press";
-            daten.ShowDialog();
+            zeigeDataFenster("Tricep-Press");
         }
 
         private void addButtonKickbacks(object sender, MouseButtonEventArgs e)
         {
-            DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "Kickbacks";
-            daten.ShowDialog();
+            zeigeDataFenster("Kickbacks");
         }
 
         private void addButtonSZCurls(object sender, MouseButtonEventArgs e)
         {
-            DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "SZ-Curls";
-            daten.ShowDialog();
+            zeigeDataFenster("SZ-Curls");
+        }
+
+        private void buttonCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 

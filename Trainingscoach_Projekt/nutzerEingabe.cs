@@ -20,7 +20,7 @@ namespace Trainingscoach_Projekt;
 
         public override string ToString()
         {
-            return $"Übungsname: {einheitenName}, Anzahl Sets: {anzahlSets}, Dauer: {dauer} ";
+            return $"Übungsname: {einheitenName}, Anzahl Sets: {anzahlSets}, Dauer: {dauer} min";
         }
     
         public void Remove()

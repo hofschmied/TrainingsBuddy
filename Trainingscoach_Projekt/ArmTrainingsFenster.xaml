@@ -5,27 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="Arm-Trainings Übungen" Height="500" Width="1300"
+        Title="Arm-Trainings Übungen" Height="600" Width="1300"
         WindowStyle="None"
         ResizeMode="NoResize"
         MouseDown="Window_MausRunter">
     <Grid Background="#333333">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Text="STEP 3: Wählen und passen Sie beliebiege Übungen an" 
-                   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" 
+        <TextBlock Grid.Row="0" Text="STEP 3: Wählen und passen Sie beliebiege Übungen an"
+                   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold"
                    Margin="0,20,0,20">
             <TextBlock.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -35,82 +28,78 @@
             </TextBlock.Background>
         </TextBlock>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,20">
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
-                <Image Source="/src/pictures/Armuebungen/hanteln.png" Width="150" Height="150" Margin="0,0,0,10"/>
-                <Label Content="Hammercurls" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                    <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonHammercurls"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonHammercurls"/>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,20">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
+                    <Image Source="/src/pictures/Armuebungen/hanteln.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                    <Label Content="Hammercurls" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" MouseLeftButtonDown="addButtonHammercurls"/>
+                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonHammercurls"/>
+                    </StackPanel>
                 </StackPanel>
-            </StackPanel>
 
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
-                <Image Source="/src/pictures/Armuebungen/arnoldDips.png" Width="150" Height="150" Margin="0,0,0,10"/>
-                <Label Content="Arnold-Dips" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                    <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonArnoldDips"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonArnoldDips"/>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
+                    <Image Source="/src/pictures/Armuebungen/arnoldDips.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                    <Label Content="Arnold-Dips" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonArnoldDips"/>
+                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonArnoldDips"/>
+                    </StackPanel>
                 </StackPanel>
-            </StackPanel>
 
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
-                <Image Source="/src/pictures/Armuebungen/liegestuetze.png" Width="150" Height="150" Margin="0,0,0,10"/>
-                <Label Content="Push-Ups" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                    <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonPushups"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonPushups"/>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
+                    <Image Source="/src/pictures/Armuebungen/liegestuetze.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                    <Label Content="Push-Ups" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonPushups"/>
+                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonPushups"/>
+                    </StackPanel>
                 </StackPanel>
-            </StackPanel>
 
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
-                <Image Source="/src/pictures/Armuebungen/trizepsdruecken.png" Width="150" Height="150" Margin="0,0,0,10"/>
-                <Label Content="Tricep Press" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                    <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonTricepPress"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonTricepPress"/>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
+                    <Image Source="/src/pictures/Armuebungen/trizepsdruecken.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                    <Label Content="Tricep Press" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonTricepPress"/>
+                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonTricepPress"/>
+                    </StackPanel>
                 </StackPanel>
-            </StackPanel>
 
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
-                <Image Source="/src/pictures/Armuebungen/kickpacks.png" Width="150" Height="150" Margin="0,0,0,10"/>
-                <Label Content="Kickbacks" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                    <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonKickbacks"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonKickbacks"/>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
+                    <Image Source="/src/pictures/Armuebungen/kickpacks.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                    <Label Content="Kickbacks" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonKickbacks"/>
+                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonKickbacks"/>
+                    </StackPanel>
                 </StackPanel>
-            </StackPanel>
 
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
-                <Image Source="/src/pictures/Armuebungen/szcurls.png" Width="150" Height="150" Margin="0,0,0,10"/>
-                <Label Content="SZ-Curls" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                    <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonSZCurls"/>
-                    <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonSZCurls" />
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
+                    <Image Source="/src/pictures/Armuebungen/szcurls.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                    <Label Content="SZ-Curls" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonSZCurls"/>
+                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonSZCurls"/>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
-        </StackPanel>
-        <Border Background="#333333" Grid.Row="0" Grid.Column="5">
-            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Source="/src/pictures/minimizeButton.png" Width="50" Height="Auto" Margin="0,0,10,10" Cursor="Hand" MouseDown="fensterMinimieren"/>
-                <Image Source="/src/pictures/closeButton.png" Width="50" Height="Auto" Margin="0,0,0,10" Cursor="Hand" MouseDown="fensterSchließen"/>
-            </StackPanel>
-        </Border>
+        </ScrollViewer>
 
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="20,0,20,0">
-            <ListBox Name="exerciseListBox" Background="#444" Foreground="White">
-                <ListBoxItem>Übung 1</ListBoxItem>
-                <ListBoxItem>Übung 2</ListBoxItem>
-                <ListBoxItem>Übung 3</ListBoxItem>
+            <ListBox Grid.Row="2" Name="uebungListBox" MinHeight="100" MaxHeight="100" Background="#444" Foreground="White">
             </ListBox>
         </ScrollViewer>
 
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,10">
-            <Button Content="Löschen" Width="100" Height="30" Margin="10"/>
-            <Button Content="Start" Width="100" Height="30" Margin="10"/>
-            <Button Content="Zurück" Width="100" Height="30" Margin="10"/>
+            <Button x:Name="buttonLoeschen" Content="Löschen" Width="100" Height="30" Margin="10"/>
+            <Button x:Name="buttonOK" Content="OK" Width="100" Height="30" Margin="10"/>
+            <Button x:Name="buttonCancel" Content="Cancel" Width="100" Height="30" Margin="10" Click="buttonCancel_Click"/>
         </StackPanel>
 
-       
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,10,10,0">
+            <Image Source="/src/pictures/minimizeButton.png" Width="50" Height="Auto" Margin="0,0,10,10" Cursor="Hand" MouseDown="fensterMinimieren"/>
+            <Image Source="/src/pictures/closeButton.png" Width="50" Height="Auto" Margin="0,0,0,10" Cursor="Hand" MouseDown="fensterSchließen"/>
+        </StackPanel>
     </Grid>
 </Window>
