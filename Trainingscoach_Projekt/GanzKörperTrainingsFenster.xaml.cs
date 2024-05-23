@@ -58,44 +58,40 @@ namespace Trainingscoach_Projekt
             MessageBox.Show("Sie beginnen mit einer liegenden Ausgangsposition und heben den Oberkörper mit leichter Krümmung an. ");
         }
 
-        private void addButtonPushUps(object sender, MouseButtonEventArgs e)
+        private void zeigeDataFenster(string nachricht)
         {
             DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "Push-Ups";
+            daten.einheitenName.Text = nachricht;
             daten.ShowDialog();
+            uebungListBox.Items.Add(daten.nutzer);
+        }
+
+        private void addButtonPushUps(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Push-Ups");
         }
 
         private void addButtonSitUps(object sender, MouseButtonEventArgs e)
         {
-            DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "Sit-Ups";
-            daten.ShowDialog();
+            zeigeDataFenster("Sit-Ups");
         }
         private void addButtonSquats(object sender, MouseButtonEventArgs e)
         {
-            DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "Squats";
-            daten.ShowDialog();
+            zeigeDataFenster("Squats");
         }
 
         private void addButtonButterfly(object sender, MouseButtonEventArgs e)
         {
-            DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "Butterfly";
-            daten.ShowDialog();
+            zeigeDataFenster("Butterfly");
         }
         private void addButtonBulgarianSplitsSquats(object sender, MouseButtonEventArgs e)
         {
-            DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "BulgarianSplitsSquats";
-            daten.ShowDialog();
+            zeigeDataFenster("Bulgarian-Splits-Squats");
         }
 
         private void addButtonCrunches(object sender, MouseButtonEventArgs e)
         {
-            DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "Crunches";
-            daten.ShowDialog();
+
         }
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)
         {
@@ -120,6 +116,12 @@ namespace Trainingscoach_Projekt
         private void fensterMinimieren(object sender, MouseButtonEventArgs e)
         {
             WindowState = WindowState.Minimized;
+        }
+
+        private void buttonLoeschen_Click(object sender, RoutedEventArgs e)
+        {
+            nutzerEingabe nutzer = new nutzerEingabe();
+            nutzer.Remove();
         }
     }
 }

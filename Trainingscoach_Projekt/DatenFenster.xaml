@@ -36,7 +36,7 @@
         <TextBox x:Name="anzahlSets" Grid.Row="2" Grid.Column="1" Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Background="LightGray"></TextBox>
 
         <TextBox x:Name="dauer" Grid.Row="3" Grid.Column="1" Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Background="LightGray"></TextBox>
-        <Button Grid.Column="1" Content="OK" HorizontalAlignment="Left" Margin="170,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="20" Width="60"/>
+        <Button Grid.Column="1" Content="OK" HorizontalAlignment="Left" Margin="170,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="20" Width="60" Click="Button_Click"/>
         <Button Grid.Column="1" Content="CANCEL" HorizontalAlignment="Left" Margin="245,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="20" Width="60"/>
 
         

@@ -7,12 +7,9 @@
         mc:Ignorable="d"
         Title="GrundtrainingseinheitenWindow" Height="265" Width="800">
     <Grid Background="#333333">
-
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
-
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -30,11 +27,12 @@
             </TextBlock.Background>
         </TextBlock>
 
+        <Label Grid.Column="0" Grid.Row="1" Content="Session Name" FontSize="20" FontWeight="Bold" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3" Margin="8"/>
+        <Label Grid.Column="0" Grid.Row="2" Content="Trainingseinheit" FontSize="20" FontWeight="Bold" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3" Margin="8"/>
 
-        <Label Grid.Column="0" Grid.Row="1" Content="Session Name" FontSize="20" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3,3,3,3" Margin="8"/>
-        <Label Grid.Column="0" Grid.Row="2" Content="Trainingseinheit " FontSize="20" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3,3,3,3" Margin="8"/>
-        <TextBox x:Name="TextBoxTrainingsName" Grid.Column="1" Grid.Row="1" Margin="0,10,0,10"  HorizontalAlignment="Center" Width="410" Background="#FFEEEEEE" BorderBrush="#FF737373" Foreground="Black" BorderThickness="3,3,3,3" TextChanged="TextBoxTrainingsName_TextChanged"/>
-        <ComboBox x:Name="GrundTrainingsEinheitBox" Margin="89,8,91,12" Background="#FFEEEEEE" BorderBrush="#FF737373" Foreground="Black" BorderThickness="3,3,3,3" SelectionChanged="FachBox_SelectionChanged" Grid.Column="1" Grid.Row="2">
+        <TextBox x:Name="TextBoxTrainingsName" Grid.Column="1" Grid.Row="1" Margin="0,10,0,10"  HorizontalAlignment="Center" Width="410" Background="#FFEEEEEE" BorderBrush="#FF737373" Foreground="Black" BorderThickness="3" TextChanged="TextBoxTrainingsName_TextChanged"/>
+
+        <ComboBox x:Name="GrundTrainingsEinheitBox" Grid.Column="1" Grid.Row="2" Margin="0,10,0,10" HorizontalAlignment="Center" Width="410" Background="#FFEEEEEE" BorderBrush="#FF737373" Foreground="Black" BorderThickness="3" SelectionChanged="FachBox_SelectionChanged">
             <ComboBoxItem Content="Bein-Training"/>
             <ComboBoxItem Content="Arm-Training"/>
             <ComboBoxItem Content="Rücken-Training"/>
@@ -43,7 +41,8 @@
             <ComboBoxItem Content="Ganzkörper-Training"/>
             <ComboBoxItem Content="Cardio"/>
         </ComboBox>
-        <Button x:Name="buttonOK" Grid.Column="1" Background="White" Content="OK" HorizontalAlignment="Left" Height="30" Margin="325,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="80" Click="buttonOK_Click"/>
-        <Button x:Name="buttonCancel" Grid.Column="1" Background="White" Content="CANCEL" HorizontalAlignment="Left" Height="30" Margin="430,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="80" Click="buttonCancel_Click"/>
+
+        <Button x:Name="buttonOK" Grid.Column="1" Grid.Row="3" Background="White" Content="OK" HorizontalAlignment="Left" Height="30" Margin="325,10,0,0" VerticalAlignment="Top" Width="80" Click="buttonOK_Click"/>
+        <Button x:Name="buttonCancel" Grid.Column="1" Grid.Row="3" Background="White" Content="CANCEL" HorizontalAlignment="Left" Height="30" Margin="430,10,0,0" VerticalAlignment="Top" Width="80" Click="buttonCancel_Click"/>
     </Grid>
 </Window>

@@ -19,9 +19,22 @@ namespace Trainingscoach_Projekt
     /// </summary>
     public partial class DatenFenster : Window
     {
+        public nutzerEingabe nutzer;
+
         public DatenFenster()
         {
             InitializeComponent();
+        }
+
+        private void ListBoxItemsAdd()
+        {
+            nutzer = new nutzerEingabe(einheitenName.Text, int.Parse(anzahlSets.Text), double.Parse(dauer.Text));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ListBoxItemsAdd();
+            this.Close();
         }
     }
 }
