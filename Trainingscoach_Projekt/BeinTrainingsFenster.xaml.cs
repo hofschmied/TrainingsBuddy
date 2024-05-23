@@ -97,5 +97,47 @@ namespace Trainingscoach_Projekt
                 "Halten Sie den Rücken an der Rückenlehne und beugen Sie den Rücken nicht. " +
                 "Atmen Sie aus und senken Sie das Gewicht wieder in die Ausgangsposition.");
         }
+
+        private void addButtonSquats(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "Squats";
+            daten.ShowDialog();
+        }
+
+        private void addButtonLegPress(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "Leg Press";
+            daten.ShowDialog();
+        }
+
+        private void addButtonLunges(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "Lunges";
+            daten.ShowDialog();
+        }
+
+        private void addButtonDeadlift(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "Deadlift";
+            daten.ShowDialog();
+        }
+
+        private void addButtonBulgarianSplitsSquats(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "Bulgarian Splits Squats";
+            daten.ShowDialog();
+        }
+
+        private void addButtonLegExtensions(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "Leg Extensions";
+            daten.ShowDialog();
+        }
     }
 }

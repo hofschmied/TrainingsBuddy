@@ -92,6 +92,48 @@ namespace Trainingscoach_Projekt
                 "Ziehen sie die SZ-Stange mit den Unterarme nach Oben, bis die Arme einen 90° Winkel haben. " +
                 "Danach wieder in Ausgangsposition zurückkehren.");
         }
+
+        private void addButtonHammercurls(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "Hammercurls";
+            daten.ShowDialog();
+        }
+
+        private void addButtonArnoldDips(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "Arnold-Dips";
+            daten.ShowDialog();
+        }
+
+        private void addButtonPushups(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "Push-Ups";
+            daten.ShowDialog();
+        }
+
+        private void addButtonTricepPress(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "Tricep Press";
+            daten.ShowDialog();
+        }
+
+        private void addButtonKickbacks(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "Kickbacks";
+            daten.ShowDialog();
+        }
+
+        private void addButtonSZCurls(object sender, MouseButtonEventArgs e)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = "SZ-Curls";
+            daten.ShowDialog();
+        }
     }
 
 }
