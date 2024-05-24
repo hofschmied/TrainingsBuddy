@@ -98,46 +98,43 @@ namespace Trainingscoach_Projekt
                 "Atmen Sie aus und senken Sie das Gewicht wieder in die Ausgangsposition.");
         }
 
-        private void addButtonSquats(object sender, MouseButtonEventArgs e)
+        private void zeigeDataFenster(string nachricht)
         {
             DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "Squats";
+            daten.einheitenName.Text = nachricht;
             daten.ShowDialog();
+            //uebungListBox.Items.Add(daten.nutzer);
+        }
+
+        private void addButtonSquats(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Squats");
         }
 
         private void addButtonLegPress(object sender, MouseButtonEventArgs e)
         {
-            DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "Leg Press";
-            daten.ShowDialog();
+            zeigeDataFenster("Leg Press");
         }
 
         private void addButtonLunges(object sender, MouseButtonEventArgs e)
         {
-            DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "Lunges";
-            daten.ShowDialog();
+            zeigeDataFenster("Lunges");
         }
 
         private void addButtonDeadlift(object sender, MouseButtonEventArgs e)
         {
-            DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "Deadlift";
-            daten.ShowDialog();
+            zeigeDataFenster("Deadlift");
         }
 
         private void addButtonBulgarianSplitsSquats(object sender, MouseButtonEventArgs e)
         {
-            DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "Bulgarian Splits Squats";
-            daten.ShowDialog();
+            zeigeDataFenster("Bulgarian Splits Squats");
         }
 
         private void addButtonLegExtensions(object sender, MouseButtonEventArgs e)
         {
-            DatenFenster daten = new DatenFenster();
-            daten.einheitenName.Text = "Leg Extensions";
-            daten.ShowDialog();
+            zeigeDataFenster("Leg Extensions");
         }
+        
     }
 }

@@ -99,5 +99,43 @@ namespace Trainingscoach_Projekt
                 "Im Anschluss kehren Sie mit Ihrem Oberkörper in die Ausgangsposition zurück. " +
                 "Die Kraft kommt ausschließlich aus dem unteren Rücken.");
         }
+
+        private void zeigeDataFenster(string nachricht)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = nachricht;
+            daten.ShowDialog();
+            //uebungListBox.Items.Add(daten.nutzer);
+        }
+
+        private void addButtonGoodMornings(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Good Mornings");
+        }
+
+        private void addButtonDeadlift(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Deadlift");
+        }
+
+        private void addButtonPullDown(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Pull Down");
+        }
+
+        private void addButtonRowDumbbels(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Row Dumbbels");
+        }
+
+        private void addButtonShrugs(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Shrugs");
+        }
+
+        private void addButtonHyperextensions(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Hyperextensions");
+        }
     }
 }
