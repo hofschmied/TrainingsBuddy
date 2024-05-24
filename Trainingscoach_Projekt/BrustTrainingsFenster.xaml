@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="Brust-Trainings Übungen" Height="500" Width="1300"
+        Title="Brust-Trainings Übungen" Height="600" Width="1300"
        WindowStyle="None"
        ResizeMode="NoResize"
        MouseDown="Window_MausRunter">
@@ -14,7 +14,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="STEP 3: Wählen und passen Sie beliebiege Übungen an"
@@ -32,9 +33,9 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,20">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
                     <Image Source="/src/pictures/Brustuebungen/Liegestütze.png" Width="150" Height="150" Margin="0,0,0,10"/>
-                    <Label Content="Push Ups" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                    <Label Content="Push-Ups" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonPushUps"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="infoButtonPushUps"/>
                     </StackPanel>
                 </StackPanel>
@@ -43,7 +44,7 @@
                     <Image Source="/src/pictures/Brustuebungen/Butterfly.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Butterfly" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonButterfly"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="infoButtonButterfly"/>
                     </StackPanel>
                 </StackPanel>
@@ -52,7 +53,7 @@
                     <Image Source="/src/pictures/Brustuebungen/cablefly.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Cable Fly" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonCableFly"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="infoButtonCableFly"/>
                     </StackPanel>
                 </StackPanel>
@@ -61,7 +62,7 @@
                     <Image Source="/src/pictures/Brustuebungen/dumbbell pullover.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Dumbbell Pullover" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonDumbbellPullover"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="infoButtonDumbbellPullover"/>
                     </StackPanel>
                 </StackPanel>
@@ -70,7 +71,7 @@
                     <Image Source="/src/pictures/Brustuebungen/fliegende.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Dumbbell Flys" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonDumbbellFlys"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="infoButtonDumbbellFlys"/>
                     </StackPanel>
                 </StackPanel>
@@ -79,12 +80,24 @@
                     <Image Source="/src/pictures/Brustuebungen/Benchpress.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Bench Press" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonBenchPress"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="infoButtonBenchPress"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
+
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="20,0,20,0">
+            <ListBox Grid.Row="2" Name="uebungListBox" MinHeight="100" MaxHeight="100" Background="#444" Foreground="White">
+            </ListBox>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,10">
+            <Button x:Name="buttonLoeschen" Content="Löschen" Width="100" Height="30" Margin="10"/>
+            <Button x:Name="buttonOK" Content="OK" Width="100" Height="30" Margin="10"/>
+            <Button x:Name="buttonCancel" Content="Cancel" Width="100" Height="30" Margin="10" Click="buttonCancel_Click"/>
+        </StackPanel>
+
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
             <Image Source="/src/pictures/minimizeButton.png" Width="50" Height="Auto" Margin="0,0,10,10" Cursor="Hand" MouseDown="fensterMinimieren"/>
             <Image Source="/src/pictures/closeButton.png" Width="50" Height="Auto" Margin="0,0,0,10" Cursor="Hand" MouseDown="fensterSchließen"/>

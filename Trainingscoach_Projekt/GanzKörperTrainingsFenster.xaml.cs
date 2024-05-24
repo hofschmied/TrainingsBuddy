@@ -118,10 +118,9 @@ namespace Trainingscoach_Projekt
             WindowState = WindowState.Minimized;
         }
 
-        private void buttonLoeschen_Click(object sender, RoutedEventArgs e)
+        private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
-            nutzerEingabe nutzer = new nutzerEingabe();
-            nutzer.Remove();
+            this.Close();
         }
     }
 }

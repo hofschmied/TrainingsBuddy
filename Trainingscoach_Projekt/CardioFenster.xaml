@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-            Title="Cardio Übungen" Height="500" Width="1300"
+            Title="Cardio Übungen" Height="600" Width="1300"
    WindowStyle="None"
    ResizeMode="NoResize"
    MouseDown="Window_MausRunter">
@@ -13,6 +13,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="STEP 3: Wählen und passen Sie beliebiege Übungen an"
@@ -32,7 +34,7 @@
                     <Image Source="/src/pictures/Cardio/cycling.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Cycling" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonCycling"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonCycling"/>
                     </StackPanel>
                 </StackPanel>
@@ -41,7 +43,7 @@
                     <Image Source="/src/pictures/Cardio/treadmill.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Treadmill Running" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonTreadmillRunning"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonRunning"/>
                     </StackPanel>
                 </StackPanel>
@@ -50,16 +52,16 @@
                     <Image Source="/src/pictures/Cardio/ropejumping.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Rope Jumping" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonRopeJumping"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonJumping"/>
                     </StackPanel>
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
                     <Image Source="/src/pictures/Cardio/stepmill.png" Width="150" Height="150" Margin="0,0,0,10"/>
-                    <Label Content="Step Mill" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                    <Label Content="Stepmill" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonStepMill"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonStepMill"/>
                     </StackPanel>
                 </StackPanel>
@@ -68,7 +70,7 @@
                     <Image Source="/src/pictures/Cardio/ellipticaltrainer.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Elliptical Trainer" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonEllipticalTrainer"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonEllipticalTrainer"/>
                     </StackPanel>
                 </StackPanel>
@@ -77,12 +79,24 @@
                     <Image Source="/src/pictures/Cardio/rowing.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Stationary Rowing" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonStationaryRowing"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="InfoButtonRowing"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
+
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="20,0,20,0">
+            <ListBox Grid.Row="2" Name="uebungListBox" MinHeight="100" MaxHeight="100" Background="#444" Foreground="White">
+            </ListBox>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,10">
+            <Button x:Name="buttonLoeschen" Content="Löschen" Width="100" Height="30" Margin="10"/>
+            <Button x:Name="buttonOK" Content="OK" Width="100" Height="30" Margin="10"/>
+            <Button x:Name="buttonCancel" Content="Cancel" Width="100" Height="30" Margin="10" Click="buttonCancel_Click"/>
+        </StackPanel>
+
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
             <Image Source="/src/pictures/minimizeButton.png" Width="50" Height="Auto" Margin="0,0,10,10" Cursor="Hand" MouseDown="fensterMinimieren" RenderTransformOrigin="0.6,0.828"/>
             <Image Source="/src/pictures/closeButton.png" Width="50" Height="Auto" Margin="0,0,0,10" Cursor="Hand" MouseDown="fensterSchließen"/>

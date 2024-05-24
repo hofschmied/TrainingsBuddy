@@ -88,5 +88,48 @@ namespace Trainingscoach_Projekt
                 "Die Ruderstange wird kraftvoll zum Körper gezogen und wieder zurückgeführt, " +
                 "dabei kommt es nie zu einem kompletten Lockerlassen und Wiederansetzen der Kraft.");
         }
+
+        private void zeigeDataFenster(string nachricht)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = nachricht;
+            daten.ShowDialog();
+            uebungListBox.Items.Add(daten.nutzer);
+        }
+
+        private void addButtonCycling(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Cycling");
+        }
+
+        private void addButtonTreadmillRunning(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Treadmill Running");
+        }
+
+        private void addButtonRopeJumping(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Rope Jumping");
+        }
+
+        private void addButtonStepMill(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Stepmill");
+        }
+
+        private void addButtonEllipticalTrainer(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Elliptical Trainer");
+        }
+
+        private void addButtonStationaryRowing(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Stationary Rowing");
+        }
+
+        private void buttonCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

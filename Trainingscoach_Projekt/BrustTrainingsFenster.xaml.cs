@@ -79,5 +79,48 @@ namespace Trainingscoach_Projekt
         {
             WindowState = WindowState.Minimized;
         }
+
+        private void zeigeDataFenster(string nachricht)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = nachricht;
+            daten.ShowDialog();
+            uebungListBox.Items.Add(daten.nutzer);
+        }
+
+        private void addButtonPushUps(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Push-Ups");
+        }
+
+        private void addButtonButterfly(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Butterfly");
+        }
+
+        private void addButtonCableFly(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Cable Fly");
+        }
+
+        private void addButtonDumbbellPullover(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Dumbbell Pullover");
+        }
+
+        private void addButtonDumbbellFlys(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Dumbbell Flys");
+        }
+
+        private void addButtonBenchPress(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Bench Press");
+        }
+
+        private void buttonCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

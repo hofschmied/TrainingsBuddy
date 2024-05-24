@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="Bauch-Trainings Übungen" Height="500" Width="1300"
+        Title="Bauch-Trainings Übungen" Height="600" Width="1300"
         WindowStyle="None"
         ResizeMode="NoResize"
         MouseDown="Window_MausRunter">
@@ -13,6 +13,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="STEP 3: Wählen und passen Sie beliebiege Übungen an" 
@@ -32,8 +34,8 @@
                     <Image Source="/src/pictures/Bauchuebungen/crunches.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Crunches" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" />
-                        <Image Source="/src/pictures/info.png" MouseLeftButtonDown = "infoButtonCrunches" Width="30" Height="30" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonCrunches"/>
+                        <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown = "infoButtonCrunches"/>
                     </StackPanel>
                 </StackPanel>
 
@@ -41,7 +43,7 @@
                     <Image Source="/src/pictures/Bauchuebungen/crunches_seil.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Crunches Rope" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonCrunchesRope"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="infoButtonRope"/>
                     </StackPanel>
                 </StackPanel>
@@ -50,7 +52,7 @@
                     <Image Source="/src/pictures/Bauchuebungen/windmuehle.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Touch-Toe-Twist" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonTouchToeTwist"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="infoButtonTouchToeTwist"/>
                     </StackPanel>
                 </StackPanel>
@@ -59,30 +61,42 @@
                     <Image Source="/src/pictures/Bauchuebungen/kerze.png" Width="150" Height="150" Margin="0,0,0,10"/>
                     <Label Content="Candle" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonCandle"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="infoButtonCandle"/>
                     </StackPanel>
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
                     <Image Source="/src/pictures/Bauchuebungen/situps.png" Width="150" Height="150" Margin="0,0,0,10"/>
-                    <Label Content="Sit Ups" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                    <Label Content="Sit-Ups" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonSitUps"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="infoButtonSitUps"/>
                     </StackPanel>
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
                     <Image Source="/src/pictures/Bauchuebungen/situpsball.png.jpg" Width="150" Height="150" Margin="0,0,0,10"/>
-                    <Label Content="Sit Ups Ball" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                    <Label Content="Sit-Ups-Ball" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5"/>
+                        <Image Source="/src/pictures/plus.png" Width="50" Height="50" Cursor="Hand" Margin="5" MouseLeftButtonDown="addButtonSitUpsBall"/>
                         <Image Source="/src/pictures/info.png" Width="30" Height="30" Cursor="Hand" Margin="5" MouseLeftButtonDown="infoButtonSitUpsBall"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
+
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="20,0,20,0">
+            <ListBox Grid.Row="2" Name="uebungListBox" MinHeight="100" MaxHeight="100" Background="#444" Foreground="White">
+            </ListBox>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,10">
+            <Button x:Name="buttonLoeschen" Content="Löschen" Width="100" Height="30" Margin="10"/>
+            <Button x:Name="buttonOK" Content="OK" Width="100" Height="30" Margin="10"/>
+            <Button x:Name="buttonCancel" Content="Cancel" Width="100" Height="30" Margin="10" Click="buttonCancel_Click"/>
+        </StackPanel>
+
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
             <Image Source="/src/pictures/minimizeButton.png" Width="50" Height="Auto" Margin="0,0,10,20" Cursor="Hand" MouseDown="fensterMinimieren"/>
             <Image Source="/src/pictures/closeButton.png" Width="50" Height="Auto" Margin="0,0,0,20" Cursor="Hand" MouseDown="fensterSchließen"/>

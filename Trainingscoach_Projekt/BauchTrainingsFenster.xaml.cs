@@ -78,5 +78,48 @@ namespace Trainingscoach_Projekt
         {
             WindowState = WindowState.Minimized;
         }
+
+        private void zeigeDataFenster(string nachricht)
+        {
+            DatenFenster daten = new DatenFenster();
+            daten.einheitenName.Text = nachricht;
+            daten.ShowDialog();
+            uebungListBox.Items.Add(daten.nutzer);
+        }
+
+        private void addButtonCrunches(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Crunches");
+        }
+
+        private void addButtonCrunchesRope(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Crunches Rope");
+        }
+
+        private void addButtonTouchToeTwist(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Touch-Toe-Twist");
+        }
+
+        private void addButtonCandle(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Candle");
+        }
+
+        private void addButtonSitUps(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Sit-Ups");
+        }
+
+        private void addButtonSitUpsBall(object sender, MouseButtonEventArgs e)
+        {
+            zeigeDataFenster("Sit-Ups-Ball");
+        }
+
+        private void buttonCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
