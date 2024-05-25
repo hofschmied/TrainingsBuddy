@@ -135,6 +135,13 @@ namespace Trainingscoach_Projekt
         {
             this.Close();
         }
+
+        private void buttonOK_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            HauptprogrammTimer timer = new HauptprogrammTimer();
+            timer.ShowDialog();
+        }
     }
 
 }

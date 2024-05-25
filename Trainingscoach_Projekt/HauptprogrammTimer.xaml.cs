@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,33 @@ namespace Trainingscoach_Projekt
         public HauptprogrammTimer()
         {
             InitializeComponent();
+        }
+
+        private void Window_MausRunter(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                if (e.ChangedButton == MouseButton.Left)
+                {
+                    this.DragMove();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Platzhalter");
+            }
+        }
+
+        private void Button_Click_Spotify(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start("C:\\Program Files\\WindowsApps\\SpotifyAB.SpotifyMusic_1.238.720.0_x64__zpdnekdrzrea0\\Spotify.exe");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Spotify konnte nicht geöffnet werden: " + ex.Message);
+            }
         }
     }
 }
