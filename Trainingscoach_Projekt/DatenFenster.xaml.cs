@@ -1,22 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Trainingscoach_Projekt
 {
-    /// <summary>
-    /// Interaction logic for DatenFenster.xaml
-    /// </summary>
     public partial class DatenFenster : Window
     {
         public nutzerEingabe nutzer;
@@ -33,8 +19,24 @@ namespace Trainingscoach_Projekt
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ListBoxItemsAdd();
-            this.Close();
+            if (anzahlSets.Text == "" || dauer.Text == "")
+            {
+                MessageBox.Show("Bitte geben Sie gültige Werte ein.");
+                return;
+            }
+
+            try
+            {
+                int sets = int.Parse(anzahlSets.Text);
+                double dauerWert = double.Parse(dauer.Text);
+
+                ListBoxItemsAdd();
+                this.Close();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Bitte geben Sie gültige Zahlenwerte ein.");
+            }
         }
     }
 }
