@@ -105,7 +105,7 @@ namespace Trainingscoach_Projekt
             DatenFenster daten = new DatenFenster();
             daten.einheitenName.Text = nachricht;
             daten.ShowDialog();
-            //uebungListBox.Items.Add(daten.nutzer);
+            uebungListBox.Items.Add(daten.nutzer);
         }
 
         private void addButtonGoodMornings(object sender, MouseButtonEventArgs e)
@@ -136,6 +136,11 @@ namespace Trainingscoach_Projekt
         private void addButtonHyperextensions(object sender, MouseButtonEventArgs e)
         {
             zeigeDataFenster("Hyperextensions");
+        }
+
+        private void buttonCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
