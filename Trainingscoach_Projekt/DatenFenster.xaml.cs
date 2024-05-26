@@ -38,5 +38,10 @@ namespace Trainingscoach_Projekt
                 MessageBox.Show("Bitte geben Sie gültige Zahlenwerte ein.");
             }
         }
+
+        private void Button_Click_Cancel(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
