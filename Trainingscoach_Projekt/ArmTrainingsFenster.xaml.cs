@@ -136,10 +136,21 @@ namespace Trainingscoach_Projekt
             this.Close();
         }
 
+        private void Add()
+        {
+            TimerDaten timerDaten = new TimerDaten();
+
+            foreach (var item in uebungListBox.Items)
+            {
+                timerDaten.timerDaten.Add(item.ToString());
+            }
+        }
+
         private void buttonOK_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Add();
             HauptprogrammTimer timer = new HauptprogrammTimer();
+            this.Close();
             timer.ShowDialog();
         }
     }

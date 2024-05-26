@@ -7,10 +7,9 @@ using System.Windows.Shapes;
 
 namespace Trainingscoach_Projekt
 {
-    internal class TimerDaten
+    public class TimerDaten
     {
         public List<string> timerDaten = new List<string>();
         public Rectangle timerGrafisch;
-
     }
 }
