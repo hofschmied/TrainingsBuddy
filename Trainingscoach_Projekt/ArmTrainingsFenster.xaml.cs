@@ -20,6 +20,7 @@ namespace Trainingscoach_Projekt
     public partial class ArmTrainingsFenster : Window
     {
         ListBox listbox;
+        
 
         public ArmTrainingsFenster()
         {
@@ -152,6 +153,14 @@ namespace Trainingscoach_Projekt
             HauptprogrammTimer timer = new HauptprogrammTimer();
             this.Close();
             timer.ShowDialog();
+        }
+
+        private void buttonLoeschen_Click(object sender, RoutedEventArgs e)
+        {            
+            if (uebungListBox.SelectedItem != null)
+            {
+                uebungListBox.Items.Remove(uebungListBox.SelectedItem);
+            }
         }
     }
 
