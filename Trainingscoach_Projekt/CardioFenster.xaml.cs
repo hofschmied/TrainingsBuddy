@@ -131,5 +131,13 @@ namespace Trainingscoach_Projekt
         {
             this.Close();
         }
+
+        private void buttonLoeschen_Click(object sender, RoutedEventArgs e)
+        {
+            if (uebungListBox.SelectedItem != null)
+            {
+                uebungListBox.Items.Remove(uebungListBox.SelectedItem);
+            }
+        }
     }
 }
