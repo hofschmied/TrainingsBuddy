@@ -49,7 +49,7 @@
             <TextBlock Text="Länge der Einheit (min):" Foreground="White" FontSize="16" />
             <TextBox x:Name="laengeEinheit" FontSize="16" Background="LightGray"/>
             <TextBlock Text="Deine Übungen:" Foreground="White" FontSize="16" Padding="10"/>
-            <ItemsControl MinHeight="100" Background="LightGray"></ItemsControl>
+            <ItemsControl x:Name="derzeitigeUebungne" MinHeight="100" Background="LightGray"></ItemsControl>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
