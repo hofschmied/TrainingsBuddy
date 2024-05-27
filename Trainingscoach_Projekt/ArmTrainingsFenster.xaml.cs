@@ -149,10 +149,18 @@ namespace Trainingscoach_Projekt
 
         private void buttonOK_Click(object sender, RoutedEventArgs e)
         {
-            Add();
-            HauptprogrammTimer timer = new HauptprogrammTimer();
-            this.Close();
-            timer.ShowDialog();
+            if (uebungListBox.Items.Count == 0)
+            {
+                MessageBox.Show("Bitte tragen Sie Übungen ein ");
+            }
+
+            else
+            {
+                Add();
+                HauptprogrammTimer timer = new HauptprogrammTimer();
+                this.Close();
+                timer.ShowDialog();
+            }
         }
 
         private void buttonLoeschen_Click(object sender, RoutedEventArgs e)
