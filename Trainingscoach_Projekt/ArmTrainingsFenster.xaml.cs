@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Trainingscoach_Projekt
 {
@@ -143,16 +144,39 @@ namespace Trainingscoach_Projekt
 
             foreach (var item in uebungListBox.Items)
             {
-                timerDaten.timerDaten.Add(item.ToString());
+                try
+                {
+                    timerDaten.timerDaten.Add(item.ToString());
+
+                }
+                catch 
+                {
+                    MessageBox.Show("Bitte geben Sie gültige Werte ein.");
+                }
             }
         }
 
         private void buttonOK_Click(object sender, RoutedEventArgs e)
         {
-            Add();
-            HauptprogrammTimer timer = new HauptprogrammTimer();
-            this.Close();
-            timer.ShowDialog();
+            if (uebungListBox.Items.Count == 0)
+            {
+                MessageBox.Show("Bitte wählen Sie die Übungen aus.");
+                return;
+            }
+
+            try
+            {
+                Add();
+                HauptprogrammTimer timer = new HauptprogrammTimer();
+                this.Close();
+                timer.ShowDialog();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Bitte geben Sie gültige Werte ein.");
+            }
+
+
         }
 
         private void buttonLoeschen_Click(object sender, RoutedEventArgs e)
