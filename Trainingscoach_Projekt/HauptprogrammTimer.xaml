@@ -9,6 +9,7 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         MouseDown="Window_MausRunter">
+
     <Grid Background="#333333">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -20,6 +21,13 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+
+        <Menu Grid.Row="0" Grid.Column="0" Background="#333333">
+            <MenuItem Header="_Datei" Click="MenuItem_Click" Background="LightGray">
+                <MenuItem Name="MenuItemLoad" Header="_Laden"/>
+                <MenuItem Name="MenuItemSave" Header="_Speichern"/>
+            </MenuItem>
+        </Menu>
 
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Los-gehts! " 
                    HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" 

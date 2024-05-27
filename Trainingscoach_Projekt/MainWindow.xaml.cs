@@ -81,21 +81,6 @@ namespace Trainingscoach_Projekt
             }
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MenuItemLoad_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MenuItemSave_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void buttonHinzufuegen_Click(object sender, RoutedEventArgs e)
         {
             GrundtrainingseinheitenWindow window = new GrundtrainingseinheitenWindow();
