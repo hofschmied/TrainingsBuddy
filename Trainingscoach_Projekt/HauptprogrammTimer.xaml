@@ -61,5 +61,7 @@
             <Image Source="/src/pictures/minimizeButton.png" Width="50" Height="Auto" Margin="0,0,10,10" Cursor="Hand"/>
             <Image Source="/src/pictures/closeButton.png" Width="50" Height="Auto" Margin="0,0,0,10" Cursor="Hand"/>
         </StackPanel>
+
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal" Grid.Row="0" Grid.Column="2" ></StackPanel>
     </Grid>
 </Window>
