@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Trainingscoach_Projekt
 {
@@ -20,8 +19,8 @@ namespace Trainingscoach_Projekt
     /// </summary>
     public partial class ArmTrainingsFenster : Window
     {
-        ListBox listbox;
-        
+
+        TimerDaten timerDaten = new TimerDaten();
 
         public ArmTrainingsFenster()
         {
@@ -140,35 +139,34 @@ namespace Trainingscoach_Projekt
 
         private void Add()
         {
-            TimerDaten timerDaten = new TimerDaten();
-
             foreach (var item in uebungListBox.Items)
             {
                 try
                 {
                     timerDaten.timerDaten.Add(item.ToString());
-
                 }
                 catch 
                 {
-                    MessageBox.Show("Bitte geben Sie gültige Werte ein.");
+                    MessageBox.Show("Bitte geben Sie gültige Werte ein. ");
                 }
             }
         }
 
         private void buttonOK_Click(object sender, RoutedEventArgs e)
         {
+
+            HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten);
+
             if (uebungListBox.Items.Count == 0)
             {
-                MessageBox.Show("Bitte tragen Sie Übungen ein ");
+                MessageBox.Show("Bitte tragen Sie Übungen ein. ");
             }
 
             else
             {
                 Add();
-                HauptprogrammTimer timer = new HauptprogrammTimer();
-                this.Close();
                 timer.ShowDialog();
+                this.Close();
             }
         }
 

@@ -130,46 +130,5 @@ namespace Trainingscoach_Projekt
                 uebungListBox.Items.Remove(uebungListBox.SelectedItem);
             }
         }
-
-        private void Add()
-        {
-            TimerDaten timerDaten = new TimerDaten();
-
-            foreach (var item in uebungListBox.Items)
-            {
-                try
-                {
-                    timerDaten.timerDaten.Add(item.ToString());
-
-                }
-                catch
-                {
-                    MessageBox.Show("Bitte geben Sie gültige Werte ein.");
-                }
-            }
-        }
-
-        private void buttonOK_Click(object sender, RoutedEventArgs e)
-        {
-            if (uebungListBox.Items.Count == 0)
-            {
-                MessageBox.Show("Bitte wählen Sie die Übungen aus.");
-                return;
-            }
-
-            try
-            {
-                Add();
-                HauptprogrammTimer timer = new HauptprogrammTimer();
-                this.Close();
-                timer.ShowDialog();
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Bitte geben Sie gültige Werte ein.");
-            }
-
-
-        }
     }
 }
