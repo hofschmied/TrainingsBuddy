@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Media;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace Trainingscoach_Projekt
@@ -10,7 +8,6 @@ namespace Trainingscoach_Projekt
     {
         private DispatcherTimer timer;
         private TimeSpan time;
-        private double totalSeconds;
 
         public HauptprogrammTimer()
         {
@@ -25,10 +22,9 @@ namespace Trainingscoach_Projekt
             if (int.TryParse(laengeEinheit.Text, out int minutes) && minutes > 0)
             {
                 time = TimeSpan.FromMinutes(minutes);
-                totalSeconds = time.TotalSeconds;
-                TimerTextBlock.Text = time.ToString("mm\\:ss");
+                TimerProgressBar.Maximum = time.TotalSeconds;
+                TimerProgressBar.Value = time.TotalSeconds;
                 timer.Start();
-                UpdateProgressPath(1); // Set initial progress to 100%
             }
             else
             {
@@ -40,7 +36,7 @@ namespace Trainingscoach_Projekt
         {
             timer.Stop();
             TimerTextBlock.Text = "00:00";
-            UpdateProgressPath(0); // Reset progress path
+            TimerProgressBar.Value = 0;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -49,38 +45,13 @@ namespace Trainingscoach_Projekt
             {
                 time = time.Add(TimeSpan.FromSeconds(-1));
                 TimerTextBlock.Text = time.ToString("mm\\:ss");
-                double percentage = time.TotalSeconds / totalSeconds;
-                UpdateProgressPath(percentage);
+                TimerProgressBar.Value = time.TotalSeconds;
             }
             else
             {
                 timer.Stop();
                 MessageBox.Show("Zeit abgelaufen!", "Timer", MessageBoxButton.OK, MessageBoxImage.Information);
-                UpdateProgressPath(0); // Reset progress path
             }
-        }
-
-        private void UpdateProgressPath(double percentage)
-        {
-            double angle = 360 * percentage;
-            double radians = (Math.PI / 180) * angle;
-            double x = 100 + 90 * Math.Cos(radians - Math.PI / 2);
-            double y = 100 + 90 * Math.Sin(radians - Math.PI / 2);
-
-            PathFigure pathFigure = new PathFigure();
-            pathFigure.StartPoint = new Point(100, 10);
-
-            ArcSegment arcSegment = new ArcSegment();
-            arcSegment.Point = new Point(x, y);
-            arcSegment.Size = new Size(90, 90);
-            arcSegment.SweepDirection = SweepDirection.Clockwise;
-            arcSegment.IsLargeArc = angle >= 180.0;
-
-            PathGeometry pathGeometry = new PathGeometry();
-            pathFigure.Segments.Add(arcSegment);
-            pathGeometry.Figures.Add(pathFigure);
-
-            progressPath.Data = pathGeometry;
         }
 
         private void Button_Click_Spotify(object sender, RoutedEventArgs e)
