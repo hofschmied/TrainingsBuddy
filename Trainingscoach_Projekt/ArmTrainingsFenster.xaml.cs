@@ -137,26 +137,8 @@ namespace Trainingscoach_Projekt
             this.Close();
         }
 
-        private void Add()
-        {
-            foreach (var item in uebungListBox.Items)
-            {
-                try
-                {
-                    timerDaten.timerDaten.Add(item.ToString());
-                }
-                catch 
-                {
-                    MessageBox.Show("Bitte geben Sie gültige Werte ein. ");
-                }
-            }
-        }
-
         private void buttonOK_Click(object sender, RoutedEventArgs e)
         {
-
-            HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten);
-
             if (uebungListBox.Items.Count == 0)
             {
                 MessageBox.Show("Bitte tragen Sie Übungen ein. ");
@@ -164,9 +146,14 @@ namespace Trainingscoach_Projekt
 
             else
             {
-                Add();
-                timer.ShowDialog();
+                foreach (var item in uebungListBox.Items)
+                {
+                    timerDaten.timerDaten.Add((nutzerEingabe)item);
+                }
+
+                HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten);
                 this.Close();
+                timer.ShowDialog();
             }
         }
 

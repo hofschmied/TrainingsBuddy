@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
 
         <Menu Grid.Row="0" Grid.Column="0" Background="#333333">
-            <MenuItem Header="_Datei" Click="MenuItem_Click" Background="LightGray">
+            <MenuItem Header="_Datei" Background="LightGray">
                 <MenuItem Name="MenuItemLoad" Header="_Laden"/>
                 <MenuItem Name="MenuItemSave" Header="_Speichern"/>
             </MenuItem>
@@ -42,19 +42,19 @@
 
         <StackPanel Grid.Row="1" Grid.Column="0" Margin="20">
             <TextBlock Text="Derzeitige Trainingseinheit:" Foreground="White" FontSize="16" Margin="0,0,0,5"/>
-            <TextBlock Name="derzeitigeTrainingEinheitTextBox" Background="LightGray" FontSize="16" Margin="0,0,0,10"/>
+            <TextBlock x:Name="derzeitigeTrainingEinheitTextBox" Background="LightGray" FontSize="16" Margin="0,0,0,10"/>
             <TextBlock Text="Spotify öffnen:" Foreground="White" FontSize="16" Margin="0,0,0,5"/>
             <Button Content="Öffnen" HorizontalAlignment="Left" Width="100" Height="30" Margin="10" Click="Button_Click_Spotify"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock x:Name="TimerTextBlock" Text="00:00" Foreground="White" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-80,0,0"/>
-            <ProgressBar x:Name="TimerProgressBar" Width="200" Height="20" Minimum="0" Maximum="100" Value="100" Margin="0,10,0,0"/>
+            <ProgressBar x:Name="TimerProgressBar" Width="200" Height="20" Minimum="0" Maximum="100" Value="0" Margin="0,10,0,0"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2" Margin="20">
             <TextBlock Text="Anzahl Sets:" Foreground="White" FontSize="16" Padding="5"/>
-            <TextBlock Name="setsAnzahl" FontSize="16" Background="LightGray" Margin="0,0,0,10" />
+            <TextBlock x:Name="setsAnzahl" FontSize="16" Background="LightGray" Margin="0,0,0,10" />
             <TextBlock Text="Länge der Einheit (min):" Foreground="White" FontSize="16" />
             <TextBlock x:Name="laengeEinheit" FontSize="16" Background="LightGray"/>
             <TextBlock Text="Deine Übungen:" Foreground="White" FontSize="16" Padding="10"/>

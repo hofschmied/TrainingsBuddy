@@ -9,7 +9,7 @@ namespace Trainingscoach_Projekt
 {
     public class TimerDaten
     {
-        public List<string> timerDaten = new List<string>();
+        public List<nutzerEingabe> timerDaten = new List<nutzerEingabe>();
         public Rectangle timerGrafisch;
     }
 }
