@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Threading;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Trainingscoach_Projekt
 {
@@ -17,8 +15,11 @@ namespace Trainingscoach_Projekt
         public HauptprogrammTimer(List<nutzerEingabe> timerDaten)
         {
             InitializeComponent();
+            timer = new DispatcherTimer();
             this.timerDaten = timerDaten;
             derzeitigeUebungen.ItemsSource = this.timerDaten;
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += timerJaDerTicktSchoen;
             felderBefulleLeereSchachteln();
         }
 
@@ -32,16 +33,42 @@ namespace Trainingscoach_Projekt
                 laengeEinheit.Text = nutzer.dauer.ToString();
             }
         }
-      
-        private void Button_Click_Spotify(object sender, RoutedEventArgs e)
+
+        private void timerJaDerTicktSchoen(object sender, EventArgs e)
         {
-           
+            if (time > TimeSpan.Zero)
+            {
+                time = time.Add(TimeSpan.FromSeconds(-1));
+                TimerTextBlock.Text = time.ToString(@"mm\:ss");
+                TimerProgressBar.Value = 100 * (time.TotalSeconds / (Convert.ToDouble(laengeEinheit.Text) * 60));
+            }
+            else
+            {
+                timer.Stop();
+                TimerTextBlock.Text = "00:00";
+            }
         }
 
-                   
-        private void Window_MausRunter(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            if (e.ChangedButton == System.Windows.Input.MouseButton.Left)
+            time = TimeSpan.FromMinutes(Convert.ToInt32(laengeEinheit.Text)); 
+            TimerTextBlock.Text = time.ToString(@"mm\:ss");
+            timer.Start();
+        }
+
+        private void StopButton_Click(object sender, RoutedEventArgs e)
+        {
+            timer.Stop();
+        }
+
+        private void Button_Click_Spotify(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Window_MausRunter(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }
 
@@ -53,16 +80,6 @@ namespace Trainingscoach_Projekt
         private void fensterMinimieren(object sender, MouseButtonEventArgs e)
         {
             WindowState = WindowState.Minimized;
-        }
-
-        private void StartButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void StopButton_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

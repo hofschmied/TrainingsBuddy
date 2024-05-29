@@ -30,7 +30,7 @@ namespace Trainingscoach_Projekt;
             ListBox listBox = ganzKoerper.uebungListBox;
             if (listBox.SelectedItem != null)
             {
-            listBox.Items.Remove(listBox.SelectedItem);
+                listBox.Items.Remove(listBox.SelectedItem);
             }
         }
 
@@ -43,7 +43,6 @@ namespace Trainingscoach_Projekt;
 
         public nutzerEingabe()
         {
-
+                
         }
-
 }
