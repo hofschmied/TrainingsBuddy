@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Threading;
 
 namespace Trainingscoach_Projekt
@@ -20,10 +21,10 @@ namespace Trainingscoach_Projekt
             derzeitigeUebungen.ItemsSource = this.timerDaten;
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timerJaDerTicktSchoen;
-            felderBefulleLeereSchachteln();
+            felderBefuelleLeereKartons();
         }
 
-        private void felderBefulleLeereSchachteln()
+        private void felderBefuelleLeereKartons()
         {
             if (timerDaten[0] != null)
             {
@@ -44,7 +45,19 @@ namespace Trainingscoach_Projekt
 
                 if (TimerTextBlock.Text == "00:00")
                 {
-                    MessageBox.Show("Abenteuer abgeschlossen");
+                    int neuSetsAnzahl = Convert.ToInt32(setsAnzahl.Text) - 1;
+                    setsAnzahl.Text = neuSetsAnzahl.ToString();
+                    double zeit = Convert.ToDouble(laengeEinheit.Text);
+                    taskErledigtSound();
+                    time = TimeSpan.FromMinutes(zeit);
+                    TimerTextBlock.Text = time.ToString(@"mm\:ss");
+                    timer.Start();
+
+                    if (neuSetsAnzahl == 0)
+                    {
+                        timer.Stop();
+                        verdientePause();
+                    }
                 }
             }
             else
@@ -69,7 +82,23 @@ namespace Trainingscoach_Projekt
             }
         }
 
+        private void verdientePause()
+        {
+            derzeitigeTrainingEinheitTextBox.Text = "Gönn dir eine kleine Pause!";
+            setsAnzahl.Text = "Sorg dich nicht um Sets, genieß deine Pause";
+            laengeEinheit.Text = "5";
+            time = TimeSpan.FromMinutes(5);
+            TimerTextBlock.Text = time.ToString(@"mm\:ss");
+            timer.Start();
+        }
 
+        private void taskErledigtSound()
+        {
+            Uri uri = new Uri(@"C:\Users\david\Documents\Schule\POS\Trainingscoach_Projekt\Trainingscoach_Projekt\src\sounds\taskFertig.mp3");
+            var hoerKasette = new MediaPlayer();
+            hoerKasette.Open(uri);
+            hoerKasette.Play();
+        }
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
@@ -78,7 +107,7 @@ namespace Trainingscoach_Projekt
 
         private void Button_Click_Spotify(object sender, RoutedEventArgs e)
         {
-            
+         
         }
 
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)
