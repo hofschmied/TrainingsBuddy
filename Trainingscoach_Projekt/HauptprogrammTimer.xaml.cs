@@ -98,7 +98,7 @@ namespace Trainingscoach_Projekt
         private void taskErledigtSound()
         {
             Uri uri = new Uri(@"C:\Users\david\Documents\Schule\POS\Trainingscoach_Projekt\Trainingscoach_Projekt\src\sounds\taskFertig.mp3");
-            var hoerKasette = new MediaPlayer();N
+            var hoerKasette = new MediaPlayer();
             hoerKasette.Open(uri);
             hoerKasette.Play();
         }
