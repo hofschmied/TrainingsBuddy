@@ -12,6 +12,7 @@ namespace Trainingscoach_Projekt
         private DispatcherTimer timer;
         private TimeSpan time;
         private List<nutzerEingabe> timerDaten = new List<nutzerEingabe>();
+        private MediaPlayer pausenMusikPlayer;
 
         public HauptprogrammTimer(List<nutzerEingabe> timerDaten)
         {
@@ -21,6 +22,7 @@ namespace Trainingscoach_Projekt
             derzeitigeUebungen.ItemsSource = this.timerDaten;
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timerJaDerTicktSchoen;
+            pausenMusikPlayer = new MediaPlayer();
             felderBefuelleLeereKartons();
         }
 
@@ -84,20 +86,46 @@ namespace Trainingscoach_Projekt
 
         private void verdientePause()
         {
-            derzeitigeTrainingEinheitTextBox.Text = "Gönn dir eine kleine Pause!";
-            setsAnzahl.Text = "Sorg dich nicht um Sets, genieß deine Pause";
+            derzeitigeTrainingEinheitTextBox.Text = "Zeit für eine Pause!";
+            setsAnzahl.Text = "Schwing doch gerne dein Tanzbein!";
             laengeEinheit.Text = "5";
             time = TimeSpan.FromMinutes(5);
             TimerTextBlock.Text = time.ToString(@"mm\:ss");
             timer.Start();
+            pausenMusik();
         }
 
         private void taskErledigtSound()
         {
             Uri uri = new Uri(@"C:\Users\david\Documents\Schule\POS\Trainingscoach_Projekt\Trainingscoach_Projekt\src\sounds\taskFertig.mp3");
-            var hoerKasette = new MediaPlayer();
+            var hoerKasette = new MediaPlayer();N
             hoerKasette.Open(uri);
             hoerKasette.Play();
+        }
+
+        private void pausenMusik()
+        {
+            try
+            {
+                Uri uri = new Uri(@"C:\Users\david\Documents\Schule\POS\Trainingscoach_Projekt\Trainingscoach_Projekt\src\sounds\pausenMusik.mp3");
+                pausenMusikPlayer.Open(uri);
+                pausenMusikPlayer.Play();
+
+                pausenMusikPlayer.MediaEnded += (s, e) =>
+                {
+                    pausenMusikPlayer.Position = TimeSpan.Zero;
+                    pausenMusikPlayer.Play();
+                };
+
+                if (derzeitigeTrainingEinheitTextBox.Text != "Zeit für eine Pause!")
+                {
+                    pausenMusikPlayer.Stop();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fehler beim einlesen der Musik: " + ex.Message);
+            }
         }
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
