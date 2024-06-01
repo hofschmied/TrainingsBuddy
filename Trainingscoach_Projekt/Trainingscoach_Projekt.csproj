@@ -51,6 +51,8 @@
     <None Remove="src\pictures\Rueckentraining\ruderhanteln.png" />
     <None Remove="src\pictures\Rueckentraining\shrugs.png" />
     <None Remove="src\pictures\squats.png" />
+    <None Remove="src\sounds\pausenMusik.mp3" />
+    <None Remove="src\sounds\taskFertig.mp3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -183,6 +185,12 @@
     <Resource Include="src\pictures\Rueckentraining\ruderhanteln.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Content Include="src\sounds\pausenMusik.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="src\sounds\taskFertig.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

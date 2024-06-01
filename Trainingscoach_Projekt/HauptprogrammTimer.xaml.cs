@@ -24,6 +24,8 @@ namespace Trainingscoach_Projekt
             timer.Tick += timerJaDerTicktSchoen;
             pausenMusikPlayer = new MediaPlayer();
             felderBefuelleLeereKartons();
+
+            this.Closing += HauptprogrammTimer_Closing;
         }
 
         private void felderBefuelleLeereKartons()
@@ -97,7 +99,7 @@ namespace Trainingscoach_Projekt
 
         private void taskErledigtSound()
         {
-            Uri uri = new Uri(@"C:\Users\david\Documents\Schule\POS\Trainingscoach_Projekt\Trainingscoach_Projekt\src\sounds\taskFertig.mp3");
+            Uri uri = new Uri("src/sounds/taskFertig.mp3", UriKind.Relative);
             var hoerKasette = new MediaPlayer();
             hoerKasette.Open(uri);
             hoerKasette.Play();
@@ -107,7 +109,7 @@ namespace Trainingscoach_Projekt
         {
             try
             {
-                Uri uri = new Uri(@"C:\Users\david\Documents\Schule\POS\Trainingscoach_Projekt\Trainingscoach_Projekt\src\sounds\pausenMusik.mp3");
+                Uri uri = new Uri("src/sounds/pausenMusik.mp3", UriKind.Relative);
                 pausenMusikPlayer.Open(uri);
                 pausenMusikPlayer.Play();
 
@@ -116,16 +118,16 @@ namespace Trainingscoach_Projekt
                     pausenMusikPlayer.Position = TimeSpan.Zero;
                     pausenMusikPlayer.Play();
                 };
-
-                if (derzeitigeTrainingEinheitTextBox.Text != "Zeit für eine Pause!")
-                {
-                    pausenMusikPlayer.Stop();
-                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Fehler beim einlesen der Musik: " + ex.Message);
+                MessageBox.Show("Fehler beim Einlesen der Musik: " + ex.Message);
             }
+        }
+
+        private void HauptprogrammTimer_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            pausenMusikPlayer.Stop();
         }
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
@@ -135,7 +137,7 @@ namespace Trainingscoach_Projekt
 
         private void Button_Click_Spotify(object sender, RoutedEventArgs e)
         {
-         
+           
         }
 
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)
