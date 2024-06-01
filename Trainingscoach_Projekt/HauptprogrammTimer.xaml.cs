@@ -41,6 +41,11 @@ namespace Trainingscoach_Projekt
                 time = time.Add(TimeSpan.FromSeconds(-1));
                 TimerTextBlock.Text = time.ToString(@"mm\:ss");
                 TimerProgressBar.Value = 100 * (time.TotalSeconds / (Convert.ToDouble(laengeEinheit.Text) * 60));
+
+                if (TimerTextBlock.Text == "00:00")
+                {
+                    MessageBox.Show("Abenteuer abgeschlossen");
+                }
             }
             else
             {
@@ -51,10 +56,20 @@ namespace Trainingscoach_Projekt
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            time = TimeSpan.FromMinutes(Convert.ToInt32(laengeEinheit.Text)); 
-            TimerTextBlock.Text = time.ToString(@"mm\:ss");
-            timer.Start();
+            try
+            {
+                double zeit = Convert.ToDouble(laengeEinheit.Text);
+                time = TimeSpan.FromMinutes(zeit);
+                TimerTextBlock.Text = time.ToString(@"mm\:ss");
+                timer.Start();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Bitte geben Sie eine gültige Zahl ein.");
+            }
         }
+
+
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
