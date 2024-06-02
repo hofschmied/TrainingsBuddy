@@ -188,8 +188,22 @@ namespace Trainingscoach_Projekt
 
         private void Button_Click_Spotify(object sender, RoutedEventArgs e)
         {
-            // Implement Spotify functionality here
+            try
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = "cmd",
+                    Arguments = $"/c start https://open.spotify.com/playlist/37i9dQZF1DX5FlZmJ3JWL1",
+                    CreateNoWindow = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Fehler beim Öffnen des Standard-Browsers: {ex.Message}");
+            }
         }
+
+
 
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)
         {
