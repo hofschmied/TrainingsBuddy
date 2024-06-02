@@ -13,6 +13,8 @@ namespace Trainingscoach_Projekt
         private TimeSpan time;
         private List<nutzerEingabe> timerDaten = new List<nutzerEingabe>();
         private MediaPlayer pausenMusikPlayer;
+        private bool pause = false; 
+        private int naechsteSets;
 
         public HauptprogrammTimer(List<nutzerEingabe> timerDaten)
         {
@@ -36,6 +38,7 @@ namespace Trainingscoach_Projekt
                 derzeitigeTrainingEinheitTextBox.Text = nutzer.einheitenName;
                 setsAnzahl.Text = nutzer.anzahlSets.ToString();
                 laengeEinheit.Text = nutzer.dauer.ToString();
+                naechsteSets = nutzer.anzahlSets;
             }
         }
 
@@ -45,22 +48,30 @@ namespace Trainingscoach_Projekt
             {
                 time = time.Add(TimeSpan.FromSeconds(-1));
                 TimerTextBlock.Text = time.ToString(@"mm\:ss");
-                TimerProgressBar.Value = 100 * (time.TotalSeconds / (Convert.ToDouble(laengeEinheit.Text) * 60));
+                TimerProgressBar.Value = 100 * (time.TotalSeconds / (pause ? 15 : Convert.ToDouble(laengeEinheit.Text) * 60));
 
                 if (TimerTextBlock.Text == "00:00")
                 {
-                    int neuSetsAnzahl = Convert.ToInt32(setsAnzahl.Text) - 1;
-                    setsAnzahl.Text = neuSetsAnzahl.ToString();
-                    double zeit = Convert.ToDouble(laengeEinheit.Text);
-                    taskErledigtSound();
-                    time = TimeSpan.FromMinutes(zeit);
-                    TimerTextBlock.Text = time.ToString(@"mm\:ss");
-                    timer.Start();
+                    timer.Stop();
 
-                    if (neuSetsAnzahl == 0)
+                    if (pause)
                     {
-                        timer.Stop();
-                        verdientePause();
+                        pause = false;
+                        StartNextSet();
+                    }
+                    else
+                    {
+                        naechsteSets--;
+                        setsAnzahl.Text = naechsteSets.ToString();
+
+                        if (naechsteSets > 0)
+                        {
+                            setsPause();
+                        }
+                        else
+                        {
+                            verdientePause();
+                        }
                     }
                 }
 
@@ -102,6 +113,29 @@ namespace Trainingscoach_Projekt
             pausenMusik();
         }
 
+        private void setsPause()
+        {
+            Uri uri = new Uri("src/sounds/kleinePause.mp3", UriKind.Relative);
+            var hoerKasette = new MediaPlayer();
+            hoerKasette.Open(uri);
+            hoerKasette.Play();
+
+
+            derzeitigeTrainingEinheitTextBox.Text = "Kleine Verschnaufpause ";
+            time = TimeSpan.FromSeconds(15);
+            TimerTextBlock.Text = time.ToString(@"mm\:ss");
+            pause = true;
+            timer.Start();
+        }
+
+        private void StartNextSet()
+        {
+            derzeitigeTrainingEinheitTextBox.Text = timerDaten[0].einheitenName;
+            time = TimeSpan.FromMinutes(Convert.ToDouble(laengeEinheit.Text));
+            TimerTextBlock.Text = time.ToString(@"mm\:ss");
+            timer.Start();
+        }
+
         private void taskErledigtSound()
         {
             Uri uri = new Uri("src/sounds/taskFertig.mp3", UriKind.Relative);
@@ -131,6 +165,11 @@ namespace Trainingscoach_Projekt
                     pausenMusikPlayer.Position = TimeSpan.Zero;
                     pausenMusikPlayer.Play();
                 };
+
+                if (TimerTextBlock.Text == "00:03")
+                {
+                    pausenMusikPlayer.Stop();
+                }
             }
             catch (Exception ex)
             {
@@ -150,7 +189,7 @@ namespace Trainingscoach_Projekt
 
         private void Button_Click_Spotify(object sender, RoutedEventArgs e)
         {
-           
+            // Implement Spotify functionality here
         }
 
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)

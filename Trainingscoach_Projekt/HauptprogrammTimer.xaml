@@ -53,9 +53,9 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2" Margin="20">
-            <TextBlock Text="Anzahl Sets:" Foreground="White" FontSize="16" Padding="5"/>
+            <TextBlock Text="Übrige Sets:" Foreground="White" FontSize="16" Padding="5"/>
             <TextBlock x:Name="setsAnzahl" FontSize="16" Background="LightGray" Margin="0,0,0,10" />
-            <TextBlock Text="Länge der Einheit (min):" Foreground="White" FontSize="16" />
+            <TextBlock Text="Länge der Gesamteinheit (min):" Foreground="White" FontSize="16" />
             <TextBlock x:Name="laengeEinheit" FontSize="16" Background="LightGray"/>
             <TextBlock Text="Deine Übungen:" Foreground="White" FontSize="16" Padding="10"/>
             <ListBox x:Name="derzeitigeUebungen" MinHeight="100" Background="LightGray"></ListBox>
