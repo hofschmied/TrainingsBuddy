@@ -63,6 +63,11 @@ namespace Trainingscoach_Projekt
                         verdientePause();
                     }
                 }
+
+                if (TimerTextBlock.Text == "00:03")
+                {
+                    countDownSound();
+                }
             }
             else
             {
@@ -100,6 +105,14 @@ namespace Trainingscoach_Projekt
         private void taskErledigtSound()
         {
             Uri uri = new Uri("src/sounds/taskFertig.mp3", UriKind.Relative);
+            var hoerKasette = new MediaPlayer();
+            hoerKasette.Open(uri);
+            hoerKasette.Play();
+        }
+
+        private void countDownSound()
+        {
+            Uri uri = new Uri("src/sounds/3secs.mp3", UriKind.Relative);
             var hoerKasette = new MediaPlayer();
             hoerKasette.Open(uri);
             hoerKasette.Play();

@@ -51,6 +51,7 @@
     <None Remove="src\pictures\Rueckentraining\ruderhanteln.png" />
     <None Remove="src\pictures\Rueckentraining\shrugs.png" />
     <None Remove="src\pictures\squats.png" />
+    <None Remove="src\sounds\3secs.mp3" />
     <None Remove="src\sounds\pausenMusik.mp3" />
     <None Remove="src\sounds\taskFertig.mp3" />
   </ItemGroup>
@@ -99,6 +100,9 @@
 
   <ItemGroup>
     <Content Include="src\pictures\Armuebungen\hanteln.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="src\sounds\3secs.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="src\pictures\Brustuebungen\Benchpress.png">
