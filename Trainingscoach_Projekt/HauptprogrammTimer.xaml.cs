@@ -57,7 +57,7 @@ namespace Trainingscoach_Projekt
                     if (pause)
                     {
                         pause = false;
-                        StartNextSet();
+                        startNaechstesSet();
                     }
                     else
                     {
@@ -115,11 +115,10 @@ namespace Trainingscoach_Projekt
 
         private void setsPause()
         {
-            Uri uri = new Uri("src/sounds/kleinePause.mp3", UriKind.Relative);
+            Uri uri = new Uri("src/sounds/pausenMusik.mp3", UriKind.Relative);
             var hoerKasette = new MediaPlayer();
             hoerKasette.Open(uri);
             hoerKasette.Play();
-
 
             derzeitigeTrainingEinheitTextBox.Text = "Kleine Verschnaufpause ";
             time = TimeSpan.FromSeconds(15);
@@ -128,7 +127,7 @@ namespace Trainingscoach_Projekt
             timer.Start();
         }
 
-        private void StartNextSet()
+        private void startNaechstesSet()
         {
             derzeitigeTrainingEinheitTextBox.Text = timerDaten[0].einheitenName;
             time = TimeSpan.FromMinutes(Convert.ToDouble(laengeEinheit.Text));
