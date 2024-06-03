@@ -156,27 +156,9 @@ namespace Trainingscoach_Projekt
 
         private void pausenMusik()
         {
-            try
-            {
-                Uri uri = new Uri("src/sounds/pausenMusik.mp3", UriKind.Relative);
-                pausenMusikPlayer.Open(uri);
-                pausenMusikPlayer.Play();
-
-                pausenMusikPlayer.MediaEnded += (s, e) =>
-                {
-                    pausenMusikPlayer.Position = TimeSpan.Zero;
-                    pausenMusikPlayer.Play();
-                };
-
-                if (TimerTextBlock.Text == "00:03")
-                {
-                    pausenMusikPlayer.Stop();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Fehler beim Einlesen der Musik: " + ex.Message);
-            }
+           Uri uri = new Uri("src/sounds/pausenMusik.mp3", UriKind.Relative);
+           pausenMusikPlayer.Open(uri);
+           pausenMusikPlayer.Play();
         }
 
         private void HauptprogrammTimer_Closing(object sender, System.ComponentModel.CancelEventArgs e)

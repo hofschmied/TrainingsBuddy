@@ -5,7 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="GrundtrainingseinheitenWindow" Height="265" Width="800">
+        Title="Grundtrainingseinheiten" Height="300" Width="900"        
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        MouseDown="Window_MausRunter">
+
+    <Window.Resources>
+        <Style x:Key="ModernButtonStyle" TargetType="Button">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FF3A6073" Offset="0.0"/>
+                        <GradientStop Color="#FF16222A" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="15"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="BorderBrush" Value="#FFA9EDFF"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border Background="{TemplateBinding Background}" CornerRadius="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#FF232323" BlurRadius="10" ShadowDepth="5"/>
+                                </Border.Effect>
+                            </Border>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#FF56CCF2" Offset="0.0"/>
+                                <GradientStop Color="#FF2F80ED" Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
     <Grid Background="#333333">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -15,24 +65,27 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="60"/>
             <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="STEP 2: Wähle deine Trainingseinheit aus"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" Margin="0,10,0,0">
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="STEP 2: Wähle deine Trainingseinheit aus" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" Margin="0,10,0,0">
             <TextBlock.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF383838"/>
                     <GradientStop Color="#FF2B5762" Offset="0.875"/>
                 </LinearGradientBrush>
             </TextBlock.Background>
+            <TextBlock.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="2"/>
+            </TextBlock.Effect>
         </TextBlock>
 
-        <Label Grid.Column="0" Grid.Row="1" Content="Session Name" FontSize="20" FontWeight="Bold" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3" Margin="8"/>
-        <Label Grid.Column="0" Grid.Row="2" Content="Trainingseinheit" FontSize="20" FontWeight="Bold" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3" Margin="8"/>
+        <Label Grid.Column="0" Grid.Row="1" Content="Session Name" FontSize="20" FontWeight="Bold" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3" Margin="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Grid.Column="0" Grid.Row="2" Content="Trainingseinheit" FontSize="20" FontWeight="Bold" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3" Margin="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-        <TextBox x:Name="TextBoxTrainingsName" Grid.Column="1" Grid.Row="1" Margin="0,10,0,10"  HorizontalAlignment="Center" Width="410" Background="#FFEEEEEE" BorderBrush="#FF737373" Foreground="Black" BorderThickness="3" TextChanged="TextBoxTrainingsName_TextChanged"/>
+        <TextBox x:Name="TextBoxTrainingsName" Grid.Column="1" Grid.Row="1" Margin="45,8,0,12" HorizontalAlignment="Left" Width="410" Background="#FFEEEEEE" BorderBrush="#FF737373" Foreground="Black" BorderThickness="3" TextChanged="TextBoxTrainingsName_TextChanged"/>
 
-        <ComboBox x:Name="GrundTrainingsEinheitBox" Grid.Column="1" Grid.Row="2" Margin="0,10,0,10" HorizontalAlignment="Center" Width="410" Background="#FFEEEEEE" BorderBrush="#FF737373" Foreground="Black" BorderThickness="3" SelectionChanged="FachBox_SelectionChanged">
+        <ComboBox x:Name="GrundTrainingsEinheitBox" Grid.Column="1" Grid.Row="2" Margin="45,8,0,12" HorizontalAlignment="Left" Width="410" Background="#FFEEEEEE" BorderBrush="#FF737373" Foreground="Black" BorderThickness="3" SelectionChanged="FachBox_SelectionChanged">
             <ComboBoxItem Content="Bein-Training"/>
             <ComboBoxItem Content="Arm-Training"/>
             <ComboBoxItem Content="Rücken-Training"/>
@@ -42,7 +95,14 @@
             <ComboBoxItem Content="Cardio"/>
         </ComboBox>
 
-        <Button x:Name="buttonOK" Grid.Column="1" Grid.Row="3" Background="White" Content="OK" HorizontalAlignment="Left" Height="30" Margin="325,10,0,0" VerticalAlignment="Top" Width="80" Click="buttonOK_Click"/>
-        <Button x:Name="buttonCancel" Grid.Column="1" Grid.Row="3" Background="White" Content="CANCEL" HorizontalAlignment="Left" Height="30" Margin="430,10,0,0" VerticalAlignment="Top" Width="80" Click="buttonCancel_Click"/>
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="45,0,0,0">
+            <Button x:Name="buttonOK" FontSize="17" Content="OK" Style="{StaticResource ModernButtonStyle}" Width="80" Height="30" Click="buttonOK_Click"/>
+            <Button x:Name="buttonCancel" FontSize="17" Content="CANCEL" Style="{StaticResource ModernButtonStyle}" Width="80" Height="35" Click="buttonCancel_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,10,10,0">
+            <Image Source="/src/pictures/minimizeButton.png" Width="50" Height="Auto" Margin="0,0,10,10" Cursor="Hand" MouseDown="fensterMinimieren"/>
+            <Image Source="/src/pictures/closeButton.png" Width="50" Height="Auto" Margin="0,0,0,10" Cursor="Hand" MouseDown="fensterSchließen"/>
+        </StackPanel>
     </Grid>
 </Window>

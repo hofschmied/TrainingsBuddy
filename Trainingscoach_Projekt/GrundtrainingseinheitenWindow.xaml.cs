@@ -16,9 +16,6 @@ using System.Globalization;
 
 namespace Trainingscoach_Projekt
 {
-    /// <summary>
-    /// Interaction logic for GrundtrainingseinheitenWindow.xaml
-    /// </summary>
     public partial class GrundtrainingseinheitenWindow : Window
     {
         GrundtrainingseinheitDaten grundtrainingseinheitDaten;
@@ -73,6 +70,30 @@ namespace Trainingscoach_Projekt
             }
         }
 
+        private void Window_MausRunter(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                if (e.ChangedButton == MouseButton.Left)
+                {
+                    this.DragMove();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Platzhalter");
+            }
+        }
+
+        private void fensterSchließen(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void fensterMinimieren(object sender, MouseButtonEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
 
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
