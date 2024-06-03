@@ -32,6 +32,7 @@ namespace Trainingscoach_Projekt
             taskErledigtPlayer = new MediaPlayer();
             kleinePausePlayer = new MediaPlayer();
             felderBefuelleLeereKartons();
+            Aktualisieren();
 
             this.Closing += HauptprogrammTimer_Closing;
         }
@@ -138,6 +139,14 @@ namespace Trainingscoach_Projekt
             time = TimeSpan.FromMinutes(Convert.ToDouble(laengeEinheit.Text));
             TimerTextBlock.Text = time.ToString(@"mm\:ss");
             timer.Start();
+        }
+
+        private void Aktualisieren()
+        {
+            if(derzeitigeTrainingEinheitTextBox.Text == "Zeit für eine Pause!")
+            {
+                derzeitigeUebungen.Items.RemoveAt(0);
+            }
         }
 
         private void taskErledigtSound()
