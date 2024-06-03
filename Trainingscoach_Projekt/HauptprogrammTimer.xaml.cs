@@ -13,7 +13,10 @@ namespace Trainingscoach_Projekt
         private TimeSpan time;
         private List<nutzerEingabe> timerDaten = new List<nutzerEingabe>();
         private MediaPlayer pausenMusikPlayer;
-        private bool pause = false; 
+        private MediaPlayer countDownPlayer;
+        private MediaPlayer taskErledigtPlayer;
+        private MediaPlayer kleinePausePlayer;
+        private bool pause = false;
         private int naechsteSets;
 
         public HauptprogrammTimer(List<nutzerEingabe> timerDaten)
@@ -25,6 +28,9 @@ namespace Trainingscoach_Projekt
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timerJaDerTicktSchoen;
             pausenMusikPlayer = new MediaPlayer();
+            countDownPlayer = new MediaPlayer();
+            taskErledigtPlayer = new MediaPlayer();
+            kleinePausePlayer = new MediaPlayer();
             felderBefuelleLeereKartons();
 
             this.Closing += HauptprogrammTimer_Closing;
@@ -115,10 +121,9 @@ namespace Trainingscoach_Projekt
 
         private void setsPause()
         {
-            Uri uri = new Uri("src/sounds/pausenMusik.mp3", UriKind.Relative);
-            var hoerKasette = new MediaPlayer();
-            hoerKasette.Open(uri);
-            hoerKasette.Play();
+            Uri uri = new Uri("src/sounds/kleinePause.mp3", UriKind.Relative);
+            kleinePausePlayer.Open(uri);
+            kleinePausePlayer.Play();
 
             derzeitigeTrainingEinheitTextBox.Text = "Kleine Verschnaufpause ";
             time = TimeSpan.FromSeconds(15);
@@ -138,17 +143,15 @@ namespace Trainingscoach_Projekt
         private void taskErledigtSound()
         {
             Uri uri = new Uri("src/sounds/taskFertig.mp3", UriKind.Relative);
-            var hoerKasette = new MediaPlayer();
-            hoerKasette.Open(uri);
-            hoerKasette.Play();
+            taskErledigtPlayer.Open(uri);
+            taskErledigtPlayer.Play();
         }
 
         private void countDownSound()
         {
             Uri uri = new Uri("src/sounds/3secs.mp3", UriKind.Relative);
-            var hoerKasette = new MediaPlayer();
-            hoerKasette.Open(uri);
-            hoerKasette.Play();
+            countDownPlayer.Open(uri);
+            countDownPlayer.Play();
         }
 
         private void pausenMusik()
@@ -178,12 +181,21 @@ namespace Trainingscoach_Projekt
 
         private void HauptprogrammTimer_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            musikStoppen();
+        }
+
+        private void musikStoppen()
+        {
             pausenMusikPlayer.Stop();
+            countDownPlayer.Stop();
+            taskErledigtPlayer.Stop();
+            kleinePausePlayer.Stop();
         }
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
+            musikStoppen();
         }
 
         private void Button_Click_Spotify(object sender, RoutedEventArgs e)
@@ -202,8 +214,6 @@ namespace Trainingscoach_Projekt
                 MessageBox.Show($"Fehler beim Öffnen des Standard-Browsers: {ex.Message}");
             }
         }
-
-
 
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)
         {
