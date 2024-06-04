@@ -91,7 +91,7 @@ namespace Trainingscoach_Projekt
                             }
                             else
                             {
-                                MessageBox.Show("Ende (to do: öffne statistik fenster und schließ dieses fenster ");
+                                MessageBox.Show("Du hast erfolgreich dein Training beendet! ");
                             }
                         }
                     }
