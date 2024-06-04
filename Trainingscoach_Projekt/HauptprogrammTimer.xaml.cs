@@ -17,6 +17,7 @@ namespace Trainingscoach_Projekt
         private MediaPlayer taskErledigtPlayer;
         private MediaPlayer kleinePausePlayer;
         private bool pause = false;
+        private bool grossepause = false;
         private int naechsteSets;
 
         public HauptprogrammTimer(List<nutzerEingabe> timerDaten)
@@ -32,8 +33,6 @@ namespace Trainingscoach_Projekt
             taskErledigtPlayer = new MediaPlayer();
             kleinePausePlayer = new MediaPlayer();
             felderBefuelleLeereKartons();
-            Aktualisieren();
-
             this.Closing += HauptprogrammTimer_Closing;
         }
 
@@ -66,6 +65,12 @@ namespace Trainingscoach_Projekt
                         pause = false;
                         startNaechstesSet();
                     }
+                    else if (grossepause)
+                    {
+                        grossepause = false;
+                        felderBefuelleLeereKartons();
+                        startNaechstesSet();
+                    }
                     else
                     {
                         naechsteSets--;
@@ -77,7 +82,17 @@ namespace Trainingscoach_Projekt
                         }
                         else
                         {
-                            verdientePause();
+                            timerDaten.Remove(timerDaten[0]);
+
+                            if (timerDaten.Count > 0)
+                            {
+                                grossepause = true;
+                                verdientePause();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ende (to do: öffne statistik fenster und schließ dieses fenster ");
+                            }
                         }
                     }
                 }
@@ -114,7 +129,7 @@ namespace Trainingscoach_Projekt
             derzeitigeTrainingEinheitTextBox.Text = "Zeit für eine Pause!";
             setsAnzahl.Text = "Schwing doch gerne dein Tanzbein!";
             laengeEinheit.Text = "5";
-            time = TimeSpan.FromMinutes(5);
+            time = TimeSpan.FromMinutes(0.2);
             TimerTextBlock.Text = time.ToString(@"mm\:ss");
             timer.Start();
             pausenMusik();
@@ -139,14 +154,6 @@ namespace Trainingscoach_Projekt
             time = TimeSpan.FromMinutes(Convert.ToDouble(laengeEinheit.Text));
             TimerTextBlock.Text = time.ToString(@"mm\:ss");
             timer.Start();
-        }
-
-        private void Aktualisieren()
-        {
-            if(derzeitigeTrainingEinheitTextBox.Text == "Zeit für eine Pause!")
-            {
-                derzeitigeUebungen.Items.RemoveAt(0);
-            }
         }
 
         private void taskErledigtSound()
