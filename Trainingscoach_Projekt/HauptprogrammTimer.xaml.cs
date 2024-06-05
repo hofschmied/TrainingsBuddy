@@ -173,14 +173,16 @@ namespace Trainingscoach_Projekt
 
         private void pausenMusik()
         {
-           Uri uri = new Uri("src/sounds/pausenMusik.mp3", UriKind.Relative);
-           pausenMusikPlayer.Open(uri);
-           pausenMusikPlayer.Play();
+            Uri uri = new Uri("src/sounds/pausenMusik.mp3", UriKind.Relative);
+            pausenMusikPlayer.Open(uri);
+            pausenMusikPlayer.Play();
         }
 
         private void HauptprogrammTimer_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            timer.Stop();
             musikStoppen();
+            timer.Tick -= timerJaDerTicktSchoen;
         }
 
         private void musikStoppen()

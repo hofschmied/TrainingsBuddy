@@ -33,9 +33,6 @@ namespace Trainingscoach_Projekt
                     Values = new ChartValues<double> { 60, 35, 20, 55, 30, 90, 25  }
                 }
             };
-
-            
-            //also adding values updates and animates the chart automatically
             
             Labels = new[] { "Armtraining", "Beintraining", "Bauchtraining", "Brusttraining", "Rückentraining", "Ganzkörpertraining", "Cardiotraining" };
             Formatter = value => value.ToString("N");
