@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -12,6 +13,7 @@ namespace Trainingscoach_Projekt
         private DispatcherTimer timer;
         private TimeSpan time;
         private List<nutzerEingabe> timerDaten = new List<nutzerEingabe>();
+        public List<double> dauerListe = new List<double>();
         private MediaPlayer pausenMusikPlayer;
         private MediaPlayer countDownPlayer;
         private MediaPlayer taskErledigtPlayer;
@@ -33,8 +35,24 @@ namespace Trainingscoach_Projekt
             taskErledigtPlayer = new MediaPlayer();
             kleinePausePlayer = new MediaPlayer();
             felderBefuelleLeereKartons();
+            dauerListHinzu();
             this.Closing += HauptprogrammTimer_Closing;
         }
+
+        public void dauerListHinzu()
+        {
+            for (int i = 0; i < timerDaten.Count; i++)
+            {
+                double dauer = timerDaten[i].dauer;
+                dauerListe.Add(dauer);
+            }
+        }
+
+
+
+
+
+
 
         private void felderBefuelleLeereKartons()
         {

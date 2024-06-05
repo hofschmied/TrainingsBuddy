@@ -19,6 +19,7 @@ namespace Trainingscoach_Projekt
     /// </summary>
     public partial class TrainingBeendetFenster : Window
     {
+        //public HauptprogrammTimer timer;
         public TrainingBeendetFenster()
         {
             InitializeComponent();
@@ -58,6 +59,7 @@ namespace Trainingscoach_Projekt
         {
             Statistik statistik = new Statistik();
             this.Close();
+            //timer.dauerListHinzu();
             statistik.ShowDialog();
         }
     }

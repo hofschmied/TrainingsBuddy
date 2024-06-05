@@ -157,7 +157,7 @@ namespace Trainingscoach_Projekt
                     timerDaten.timerDaten.Add((nutzerEingabe)item);
                 }
 
-                HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten);
+                timer = new HauptprogrammTimer(timerDaten.timerDaten);
                 this.Close();
                 timer.ShowDialog();
             }
