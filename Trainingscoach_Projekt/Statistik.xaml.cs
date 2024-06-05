@@ -30,13 +30,14 @@ namespace Trainingscoach_Projekt
                 new ColumnSeries
                 {
                     Title = "Trainingsdauer",
-                    Values = new ChartValues<double> { 60, 35, 20, 55, 30, 90, 25  }
+                    Values = new ChartValues<double> { 60, 35, 20, 55, 30, 90, 25  },
+                    
                 }
             };
             
             Labels = new[] { "Armtraining", "Beintraining", "Bauchtraining", "Brusttraining", "Rückentraining", "Ganzkörpertraining", "Cardiotraining" };
             Formatter = value => value.ToString("N");
-            this.Background = new SolidColorBrush(Colors.SlateGray);
+            this.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF383838"));
             DataContext = this;
         }
 
