@@ -39,14 +39,11 @@ namespace Trainingscoach_Projekt
             this.Closing += HauptprogrammTimer_Closing;
         }
 
-        private void dauerListHinzu()
+        public void dauerListHinzu()
         {
             for (int i = 0; i < timerDaten.Count; i++)
             {
-                // Zugriff auf die 'dauer'-Eigenschaft des 'nutzerEingabe'-Objekts
                 double dauer = timerDaten[i].dauer;
-
-                // Füge die Dauer zur Liste hinzu
                 dauerListe.Add(dauer);
             }
         }

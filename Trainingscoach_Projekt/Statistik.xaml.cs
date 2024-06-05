@@ -21,14 +21,14 @@ namespace Trainingscoach_Projekt
     /// </summary>
     public partial class Statistik : Window
     {
-        public HauptprogrammTimer timer;
+        public HauptprogrammTimer timer = ArmTrainingsFenster.timer;
         public Statistik()
         {
             InitializeComponent();
 
             double armdauer = 0;
 
-            foreach (int zahl in timer.dauerListe)
+            foreach (double zahl in timer.dauerListe)
             {
                 armdauer += zahl;
             }
