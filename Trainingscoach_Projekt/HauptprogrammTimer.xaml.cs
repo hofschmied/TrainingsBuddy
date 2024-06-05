@@ -91,8 +91,9 @@ namespace Trainingscoach_Projekt
                             }
                             else
                             {
+                                TrainingBeendetFenster training = new TrainingBeendetFenster();
                                 this.Close();
-                                MessageBox.Show("Du hast erfolgreich dein Training beendet! Klicke 'Statistik ansehen' um deine Statistik für die heutige Trainingssession zu begutachten ");
+                                training.ShowDialog();
                             }
                         }
                     }
@@ -130,7 +131,7 @@ namespace Trainingscoach_Projekt
             derzeitigeTrainingEinheitTextBox.Text = "Zeit für eine Pause!";
             setsAnzahl.Text = "Schwing doch gerne dein Tanzbein!";
             laengeEinheit.Text = "5";
-            time = TimeSpan.FromMinutes(0.2);
+            time = TimeSpan.FromSeconds(10);
             TimerTextBlock.Text = time.ToString(@"mm\:ss");
             timer.Start();
             pausenMusik();
@@ -197,9 +198,6 @@ namespace Trainingscoach_Projekt
         {
             timer.Stop();
             musikStoppen();
-
-            var statistik = new Statistik();
-            statistik.ShowDialog();
         }
 
         private void Button_Click_Spotify(object sender, RoutedEventArgs e)
