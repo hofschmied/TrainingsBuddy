@@ -20,6 +20,8 @@ namespace Trainingscoach_Projekt
     /// </summary>
     public partial class BrustTrainingsFenster : Window
     {
+
+        TimerDaten timerDaten = new TimerDaten();
         public BrustTrainingsFenster()
         {
             InitializeComponent();
@@ -121,6 +123,27 @@ namespace Trainingscoach_Projekt
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+
+        private void buttonOK_Click(object sender, RoutedEventArgs e)
+        {
+            if (uebungListBox.Items.Count == 0)
+            {
+                MessageBox.Show("Bitte tragen Sie Übungen ein. ");
+            }
+
+            else
+            {
+                foreach (var item in uebungListBox.Items)
+                {
+                    timerDaten.timerDaten.Add((nutzerEingabe)item);
+                }
+
+                HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten);
+                this.Close();
+                timer.ShowDialog();
+            }
         }
 
         private void buttonLoeschen_Click(object sender, RoutedEventArgs e)

@@ -19,7 +19,7 @@ namespace Trainingscoach_Projekt
     /// </summary>
     public partial class RueckenTrainingsFenster : Window
     {
-        ListBox listbox;
+        TimerDaten timerDaten = new TimerDaten();
 
         public RueckenTrainingsFenster()
         {
@@ -150,6 +150,26 @@ namespace Trainingscoach_Projekt
             if (uebungListBox.SelectedItem != null)
             {
                 uebungListBox.Items.Remove(uebungListBox.SelectedItem);
+            }
+        }
+
+        private void buttonOK_Click(object sender, RoutedEventArgs e)
+        {
+            if (uebungListBox.Items.Count == 0)
+            {
+                MessageBox.Show("Bitte tragen Sie Übungen ein. ");
+            }
+
+            else
+            {
+                foreach (var item in uebungListBox.Items)
+                {
+                    timerDaten.timerDaten.Add((nutzerEingabe)item);
+                }
+
+                HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten);
+                this.Close();
+                timer.ShowDialog();
             }
         }
     }
