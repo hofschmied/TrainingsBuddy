@@ -91,7 +91,8 @@ namespace Trainingscoach_Projekt
                             }
                             else
                             {
-                                MessageBox.Show("Du hast erfolgreich dein Training beendet! ");
+                                this.Close();
+                                MessageBox.Show("Du hast erfolgreich dein Training beendet! Klicke 'Statistik ansehen' um deine Statistik für die heutige Trainingssession zu begutachten ");
                             }
                         }
                     }
