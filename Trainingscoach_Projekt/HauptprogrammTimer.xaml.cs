@@ -195,6 +195,9 @@ namespace Trainingscoach_Projekt
         {
             timer.Stop();
             musikStoppen();
+
+            var statistik = new Statistik();
+            statistik.ShowDialog();
         }
 
         private void Button_Click_Spotify(object sender, RoutedEventArgs e)
