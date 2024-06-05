@@ -21,16 +21,24 @@ namespace Trainingscoach_Projekt
     /// </summary>
     public partial class Statistik : Window
     {
+        public HauptprogrammTimer timer;
         public Statistik()
         {
             InitializeComponent();
+
+            double armdauer = 0;
+
+            foreach (int zahl in timer.dauerListe)
+            {
+                armdauer += zahl;
+            }
 
             SeriesCollection = new SeriesCollection
             {
                 new ColumnSeries
                 {
                     Title = "Trainingsdauer",
-                    Values = new ChartValues<double> { 60, 35, 20, 55, 30, 90, 25  },
+                    Values = new ChartValues<double> { armdauer, 0, 0, 0, 0, 0, 0  },
                     
                 }
             };
