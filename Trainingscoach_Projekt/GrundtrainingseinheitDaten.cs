@@ -13,6 +13,8 @@ namespace Trainingscoach_Projekt
 
         public string sessionName;
         public ComboBox grundEinheit;
+        public List<nutzerEingabe> einheitenList = new List<nutzerEingabe>();
+        
         public GrundtrainingseinheitDaten()
         {
             this.sessionName = string.Empty;

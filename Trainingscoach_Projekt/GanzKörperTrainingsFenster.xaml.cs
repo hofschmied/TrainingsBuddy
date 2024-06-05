@@ -20,10 +20,16 @@ namespace Trainingscoach_Projekt
     public partial class GanzKörperTrainingsFenster : Window
     {
         TimerDaten timerDaten = new TimerDaten();
+        public GrundtrainingseinheitDaten einheiten;
 
-        public GanzKörperTrainingsFenster()
+        public GanzKörperTrainingsFenster(GrundtrainingseinheitDaten einheiten)
         {
             InitializeComponent();
+            this.einheiten = einheiten;
+            foreach (var item in einheiten.einheitenList)
+            {
+                uebungListBox.Items.Add(item);
+            }
         }
 
         private void infoButtonPushUps(object sender, MouseButtonEventArgs e)
@@ -62,10 +68,10 @@ namespace Trainingscoach_Projekt
 
         private void zeigeDataFenster(string nachricht)
         {
-            DatenFenster daten = new DatenFenster();
+            DatenFenster daten = new DatenFenster(einheiten, uebungListBox);
             daten.einheitenName.Text = nachricht;
             daten.ShowDialog();
-            uebungListBox.Items.Add(daten.nutzer);
+            // uebungListBox.Items.Add(daten.nutzer);
         }
 
         private void addButtonPushUps(object sender, MouseButtonEventArgs e)

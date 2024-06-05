@@ -15,16 +15,19 @@ using System.Windows.Shapes;
 
 namespace Trainingscoach_Projekt
 {
-    /// <summary>
-    /// Interaction logic for BrustTrainingsFenster.xaml
-    /// </summary>
     public partial class BrustTrainingsFenster : Window
     {
 
         TimerDaten timerDaten = new TimerDaten();
-        public BrustTrainingsFenster()
+        public GrundtrainingseinheitDaten einheiten;
+        public BrustTrainingsFenster(GrundtrainingseinheitDaten einheiten)
         {
             InitializeComponent();
+            this.einheiten = einheiten;
+            foreach (var item in einheiten.einheitenList)
+            {
+                uebungListBox.Items.Add(item);
+            }
         }
 
         private void infoButtonPushUps(object sender, RoutedEventArgs e)
@@ -84,10 +87,10 @@ namespace Trainingscoach_Projekt
 
         private void zeigeDataFenster(string nachricht)
         {
-            DatenFenster daten = new DatenFenster();
+            DatenFenster daten = new DatenFenster(einheiten, uebungListBox);
             daten.einheitenName.Text = nachricht;
             daten.ShowDialog();
-            uebungListBox.Items.Add(daten.nutzer);
+            // uebungListBox.Items.Add(daten.nutzer);
         }
 
         private void addButtonPushUps(object sender, MouseButtonEventArgs e)

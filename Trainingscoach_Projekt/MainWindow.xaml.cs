@@ -15,13 +15,12 @@ using System.Windows.Shapes;
 
 namespace Trainingscoach_Projekt
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        // Das ist die dekleration Zone
         public GrundtrainingseinheitDaten daten = new GrundtrainingseinheitDaten();
         private bool buttonClicked = false;
+        List<Session> sessions = new List<Session>();
 
         public MainWindow()
         {
@@ -40,42 +39,42 @@ namespace Trainingscoach_Projekt
 
                 if (selectedItem.Contains("Bein-Training"))
                 {
-                    BeinTrainingsFenster beinTrainingsFenster = new BeinTrainingsFenster();
+                    BeinTrainingsFenster beinTrainingsFenster = new BeinTrainingsFenster(daten);
                     beinTrainingsFenster.ShowDialog();
                 }
                 else if (selectedItem.Contains("Arm-Training"))
                 {
-                    ArmTrainingsFenster armTrainingsFenster = new ArmTrainingsFenster();
+                    ArmTrainingsFenster armTrainingsFenster = new ArmTrainingsFenster(daten);
                     armTrainingsFenster.ShowDialog();
                 }
 
                 else if (selectedItem.Contains("Rücken-Training"))
                 {
-                    RueckenTrainingsFenster rueckenTrainingsFenster = new RueckenTrainingsFenster();
+                    RueckenTrainingsFenster rueckenTrainingsFenster = new RueckenTrainingsFenster(daten);
                     rueckenTrainingsFenster.ShowDialog();
                 }
 
                 else if (selectedItem.Contains("Brust-Training"))
                 {
-                    BrustTrainingsFenster brustTrainingsFenster = new BrustTrainingsFenster();
+                    BrustTrainingsFenster brustTrainingsFenster = new BrustTrainingsFenster(daten);
                     brustTrainingsFenster.ShowDialog();
                 }
 
                 else if (selectedItem.Contains("Bauch-Training"))
                 {
-                    BauchTrainingsFenster bauchTrainingsFenster = new BauchTrainingsFenster();
+                    BauchTrainingsFenster bauchTrainingsFenster = new BauchTrainingsFenster(daten);
                     bauchTrainingsFenster.ShowDialog();
                 }
 
                 else if (selectedItem.Contains("Ganzkörper-Training"))
                 {
-                    GanzKörperTrainingsFenster ganzKörperTrainingsFenster = new GanzKörperTrainingsFenster();
+                    GanzKörperTrainingsFenster ganzKörperTrainingsFenster = new GanzKörperTrainingsFenster(daten);
                     ganzKörperTrainingsFenster.ShowDialog();
                 }
 
                 else if (selectedItem.Contains("Cardio"))
                 {
-                    CardioFenster cardioFenster = new CardioFenster();
+                    CardioFenster cardioFenster = new CardioFenster(daten);
                     cardioFenster.ShowDialog();
                 }
             }
@@ -87,6 +86,8 @@ namespace Trainingscoach_Projekt
             window.ShowDialog();
             string uebergabeText = window.uebergabeText;
             ListBoxGrundeinheit.Items.Add(uebergabeText);
+            Session sozialesExperiment = new Session(uebergabeText);
+            sessions.Add(sozialesExperiment);
         }
 
 

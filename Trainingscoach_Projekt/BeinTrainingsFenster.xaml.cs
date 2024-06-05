@@ -24,9 +24,15 @@ namespace Trainingscoach_Projekt
     {
 
         TimerDaten timerDaten = new TimerDaten();
-        public BeinTrainingsFenster()
+        public GrundtrainingseinheitDaten einheiten;
+        public BeinTrainingsFenster(GrundtrainingseinheitDaten einheiten)
         {
             InitializeComponent();
+            this.einheiten = einheiten;
+            foreach (var item in einheiten.einheitenList)
+            {
+                uebungListBox.Items.Add(item);
+            }
         }
 
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)
@@ -101,10 +107,10 @@ namespace Trainingscoach_Projekt
 
         private void zeigeDataFenster(string nachricht)
         {
-            DatenFenster daten = new DatenFenster();
+            DatenFenster daten = new DatenFenster(einheiten, uebungListBox);
             daten.einheitenName.Text = nachricht;
             daten.ShowDialog();
-            uebungListBox.Items.Add(daten.nutzer);
+            // uebungListBox.Items.Add(daten.nutzer);
         }
 
         private void addButtonSquats(object sender, MouseButtonEventArgs e)

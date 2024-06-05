@@ -22,17 +22,6 @@ namespace Trainingscoach_Projekt;
         {
             return $"Übungsname: {einheitenName}, Anzahl Sets: {anzahlSets}, Dauer: {dauer} min";
         }
-    
-        public void Remove()
-        {
-            GanzKörperTrainingsFenster ganzKoerper = new GanzKörperTrainingsFenster();
-
-            ListBox listBox = ganzKoerper.uebungListBox;
-            if (listBox.SelectedItem != null)
-            {
-                listBox.Items.Remove(listBox.SelectedItem);
-            }
-        }
 
         public nutzerEingabe(string einheitenName, int anzahlSets, double dauer)
         {
