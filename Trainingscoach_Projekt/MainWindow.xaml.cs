@@ -85,9 +85,11 @@ namespace Trainingscoach_Projekt
             GrundtrainingseinheitenWindow window = new GrundtrainingseinheitenWindow();
             window.ShowDialog();
             string uebergabeText = window.uebergabeText;
-            ListBoxGrundeinheit.Items.Add(uebergabeText);
+            
             Session sozialesExperiment = new Session(uebergabeText);
+            sozialesExperiment.Grundeinheit = window.uebergabeText.Split(" ")[1];
             sessions.Add(sozialesExperiment);
+            ListBoxGrundeinheit.Items.Add(sozialesExperiment.ToString());
         }
 
 

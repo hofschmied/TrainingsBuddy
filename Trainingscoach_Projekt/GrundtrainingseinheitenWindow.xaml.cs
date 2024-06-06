@@ -58,7 +58,7 @@ namespace Trainingscoach_Projekt
 
                 grundtrainingseinheitDaten.sessionName = TextBoxTrainingsName.Text;
 
-                this.uebergabeText = grundtrainingseinheitDaten.sessionName + " (" + selectedGrundEinheit + ") (" + DateTime.Now + ")";
+                this.uebergabeText = grundtrainingseinheitDaten.sessionName + " " + selectedGrundEinheit;
 
                 strings.Add(grundtrainingseinheitDaten.sessionName);
 

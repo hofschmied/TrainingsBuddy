@@ -11,8 +11,13 @@ namespace Trainingscoach_Projekt
 
         public Session(string uebergabetext)
         {
-            Einheiten = new List<string>();
-            this.Name = uebergabetext;
+            
+            this.Name = uebergabetext.Split(" ")[0];
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}, {Grundeinheit}";
         }
     }
 }

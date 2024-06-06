@@ -22,6 +22,7 @@ namespace Trainingscoach_Projekt
 
         TimerDaten timerDaten = new TimerDaten();
         public GrundtrainingseinheitDaten einheiten;
+        public static HauptprogrammTimer timer;
 
         public ArmTrainingsFenster(GrundtrainingseinheitDaten einheiten)
         {
