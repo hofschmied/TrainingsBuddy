@@ -21,6 +21,7 @@ namespace Trainingscoach_Projekt
         private bool pause = false;
         private bool grossepause = false;
         private int naechsteSets;
+        public int anzahlsets = 1;
 
         public HauptprogrammTimer(List<nutzerEingabe> timerDaten)
         {
@@ -43,9 +44,15 @@ namespace Trainingscoach_Projekt
         {
             for (int i = 0; i < timerDaten.Count; i++)
             {
-                double dauer = timerDaten[i].dauer;
+                int anzahl = timerDaten[i].anzahlSets;
+                anzahlsets *= anzahl;
+
+                double dauer = timerDaten[i].dauer * anzahlsets;
                 dauerListe.Add(dauer);
+
+                
             }
+
         }
 
         private void felderBefuelleLeereKartons()
