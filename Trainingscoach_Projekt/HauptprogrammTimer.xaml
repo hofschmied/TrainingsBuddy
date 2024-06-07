@@ -22,13 +22,6 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Menu Grid.Row="0" Grid.Column="0" Background="#333333">
-            <MenuItem Header="_Datei" Background="LightGray">
-                <MenuItem Name="MenuItemLoad" Header="_Laden"/>
-                <MenuItem Name="MenuItemSave" Header="_Speichern"/>
-            </MenuItem>
-        </Menu>
-
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Los-gehts! " 
                    HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" 
                    Margin="0,20,0,20">

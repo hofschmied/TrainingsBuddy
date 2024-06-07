@@ -88,5 +88,13 @@
         <Button Grid.Row="3" Grid.Column="1" x:Name="buttonAuswaehlen" Content="Auswählen" Style="{StaticResource ModernButtonStyle}" Click="buttonAuswaehlen_Click"/>
 
         <ListBox x:Name="ListBoxGrundeinheit" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="1" Grid.RowSpan="2" Margin="10" Background="#FFEEEEEE" BorderBrush="#FF737373" Foreground="Black" BorderThickness="3" Padding="5"/>
+
+        <Menu Grid.Row="0" Grid.Column="0" Background="#333333">
+            <MenuItem Header="_Datei" Background="LightGray">
+                <MenuItem Name="MenuItemLoad" Header="_Laden"/>
+                <MenuItem Name="MenuItemSave" Header="_Speichern"/>
+            </MenuItem>
+        </Menu>
+        
     </Grid>
 </Window>
