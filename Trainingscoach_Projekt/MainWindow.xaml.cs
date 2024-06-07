@@ -1,20 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using Newtonsoft.Json;
 
 namespace Trainingscoach_Projekt
 {
     public partial class MainWindow : Window
     {
-        // Deklaration Zone
         public GrundtrainingseinheitDaten daten = new GrundtrainingseinheitDaten();
         private bool buttonClicked = false;
         List<Session> sessions = new List<Session>();
 
+        private string filePath = "sessions.json";
+
         public MainWindow()
         {
             InitializeComponent();
+
+            sessionLaden();
         }
 
         public void FensterAuswahl()
@@ -73,11 +78,13 @@ namespace Trainingscoach_Projekt
             GrundtrainingseinheitenWindow window = new GrundtrainingseinheitenWindow();
             window.ShowDialog();
             string uebergabeText = window.uebergabeText;
-            
+
             Session neueSession = new Session(uebergabeText);
             neueSession.Grundeinheit = window.uebergabeText.Split("-|~#+*")[1];
             sessions.Add(neueSession);
             ListBoxGrundeinheit.Items.Add(neueSession.ToString());
+
+            sessionSpeichern();
         }
 
         private void buttonAuswaehlen_Click(object sender, RoutedEventArgs e)
@@ -96,8 +103,29 @@ namespace Trainingscoach_Projekt
                 int selectedIndex = ListBoxGrundeinheit.SelectedIndex;
                 ListBoxGrundeinheit.Items.RemoveAt(selectedIndex);
                 sessions.RemoveAt(selectedIndex);
+
+                sessionSpeichern();
             }
         }
 
+        public void sessionSpeichern()
+        {
+            string json = JsonConvert.SerializeObject(sessions);
+            File.WriteAllText(filePath, json);
+        }
+
+        public void sessionLaden()
+        {
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                sessions = JsonConvert.DeserializeObject<List<Session>>(json);
+                ListBoxGrundeinheit.Items.Clear();
+                foreach (Session session in sessions)
+                {
+                    ListBoxGrundeinheit.Items.Add(session.ToString());
+                }
+            }
+        }
     }
-}
+}/L
