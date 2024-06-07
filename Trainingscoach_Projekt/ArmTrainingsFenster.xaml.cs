@@ -21,16 +21,18 @@ namespace Trainingscoach_Projekt
     {
 
         TimerDaten timerDaten = new TimerDaten();
-        public GrundtrainingseinheitDaten einheiten;
+        public Session einheiten;
         public static HauptprogrammTimer timer;
+        Session session = new Session();
 
-        public ArmTrainingsFenster(GrundtrainingseinheitDaten einheiten)
+        public ArmTrainingsFenster(Session einheiten)
         {
             InitializeComponent();
             this.einheiten = einheiten;
-            foreach (var item in einheiten.einheitenList)
+            foreach (var item in einheiten.Einheiten)
             {
                 uebungListBox.Items.Add(item);
+                session.Einheiten.Add(item);
             }
         }
 
@@ -165,12 +167,24 @@ namespace Trainingscoach_Projekt
         }
 
         private void buttonLoeschen_Click(object sender, RoutedEventArgs e)
-        {            
+        {
             if (uebungListBox.SelectedItem != null)
             {
-                uebungListBox.Items.Remove(uebungListBox.SelectedItem);
+                int selectedIndex = uebungListBox.SelectedIndex;
+
+                uebungListBox.Items.RemoveAt(selectedIndex);
+
+                if (selectedIndex >= 0 && selectedIndex < session.Einheiten.Count)
+                {
+                    session.Einheiten.RemoveAt(selectedIndex);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bitte wählen Sie eine Übung aus, die Sie löschen möchten.");
             }
         }
+
     }
 
 }

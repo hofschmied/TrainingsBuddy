@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Media.Media3D;
 using System.Windows.Shapes;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Trainingscoach_Projekt
 {
@@ -24,14 +25,16 @@ namespace Trainingscoach_Projekt
     {
 
         TimerDaten timerDaten = new TimerDaten();
-        public GrundtrainingseinheitDaten einheiten;
-        public BeinTrainingsFenster(GrundtrainingseinheitDaten einheiten)
+        public Session einheiten;
+        Session session = new Session();
+        public BeinTrainingsFenster(Session einheiten)
         {
             InitializeComponent();
             this.einheiten = einheiten;
-            foreach (var item in einheiten.einheitenList)
+            foreach (var item in einheiten.Einheiten)
             {
                 uebungListBox.Items.Add(item);
+                session.Einheiten.Add(item);
             }
         }
 

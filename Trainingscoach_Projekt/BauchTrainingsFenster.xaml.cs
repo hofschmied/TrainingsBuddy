@@ -17,14 +17,16 @@ namespace Trainingscoach_Projekt
     public partial class BauchTrainingsFenster : Window
     {
         TimerDaten timerDaten = new TimerDaten();
-        public GrundtrainingseinheitDaten einheiten;
-        public BauchTrainingsFenster(GrundtrainingseinheitDaten einheiten)
+        public Session einheiten;
+        Session session = new Session();
+        public BauchTrainingsFenster(Session einheiten)
         {
             InitializeComponent();
             this.einheiten = einheiten;
-            foreach (var item in einheiten.einheitenList)
+            foreach (var item in einheiten.Einheiten)
             {
                 uebungListBox.Items.Add(item);
+                session.Einheiten.Add(item);
             }
         }   
 

@@ -17,16 +17,18 @@ namespace Trainingscoach_Projekt
     public partial class RueckenTrainingsFenster : Window
     {
         TimerDaten timerDaten = new TimerDaten();
-        public GrundtrainingseinheitDaten einheiten;
+        public Session einheiten;
+        Session session = new Session();
 
-        public RueckenTrainingsFenster(GrundtrainingseinheitDaten einheiten)
+        public RueckenTrainingsFenster(Session einheiten)
         {
             InitializeComponent();
             
             this.einheiten = einheiten;
-            foreach (var item in einheiten.einheitenList)
+            foreach (var item in einheiten.Einheiten)
             {
                 uebungListBox.Items.Add(item);
+                session.Einheiten.Add(item);
             }
         }
 
@@ -111,7 +113,7 @@ namespace Trainingscoach_Projekt
             DatenFenster daten = new DatenFenster(einheiten, uebungListBox);
             daten.einheitenName.Text = nachricht;
             daten.ShowDialog();
-            // uebungListBox.Items.Add(daten.nutzer);
+            //uebungListBox.Items.Add(daten.nutzer);
         }
 
         private void addButtonGoodMornings(object sender, MouseButtonEventArgs e)

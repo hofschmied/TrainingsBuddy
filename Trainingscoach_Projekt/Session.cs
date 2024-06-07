@@ -7,12 +7,17 @@ namespace Trainingscoach_Projekt
     {
         public string Name { get; set; }
         public string Grundeinheit { get; set; }
-        public List<string> Einheiten = new List<string>();
+        public List<nutzerEingabe> Einheiten = new List<nutzerEingabe>();
 
         public Session(string uebergabetext)
         {
             
-            this.Name = uebergabetext.Split(" ")[0];
+            this.Name = uebergabetext.Split("-|~#+*")[0];
+        }
+
+        public Session()
+        {
+
         }
 
         public override string ToString()

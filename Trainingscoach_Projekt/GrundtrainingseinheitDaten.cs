@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Xml;
 
 namespace Trainingscoach_Projekt
 {
@@ -14,7 +15,7 @@ namespace Trainingscoach_Projekt
         public string sessionName;
         public ComboBox grundEinheit;
         public List<nutzerEingabe> einheitenList = new List<nutzerEingabe>();
-        
+
         public GrundtrainingseinheitDaten()
         {
             this.sessionName = string.Empty;

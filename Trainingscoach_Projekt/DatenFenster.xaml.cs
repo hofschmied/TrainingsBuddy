@@ -7,10 +7,10 @@ namespace Trainingscoach_Projekt
     public partial class DatenFenster : Window
     {
         public nutzerEingabe nutzer;
-        public GrundtrainingseinheitDaten einheiten;
+        public Session einheiten;
         private ListBox uebungListBox;
 
-        public DatenFenster(GrundtrainingseinheitDaten einheiten, ListBox uebungListBox)
+        public DatenFenster(Session einheiten, ListBox uebungListBox)
         {
             InitializeComponent();
             this.einheiten = einheiten;
@@ -20,9 +20,9 @@ namespace Trainingscoach_Projekt
         private void ListBoxItemsAdd()
         {
             nutzer = new nutzerEingabe(einheitenName.Text, int.Parse(anzahlSets.Text), double.Parse(dauer.Text));
-            einheiten.einheitenList.Add(nutzer);
+            einheiten.Einheiten.Add(nutzer);
             uebungListBox.Items.Clear();
-            foreach (var item in einheiten.einheitenList)
+            foreach (var item in einheiten.Einheiten)
             {
                 uebungListBox.Items.Add(item);
             }

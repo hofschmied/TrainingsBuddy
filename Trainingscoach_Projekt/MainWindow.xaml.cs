@@ -1,23 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Trainingscoach_Projekt
 {
     public partial class MainWindow : Window
     {
-        // Das ist die dekleration Zone
+        // Deklaration Zone
         public GrundtrainingseinheitDaten daten = new GrundtrainingseinheitDaten();
         private bool buttonClicked = false;
         List<Session> sessions = new List<Session>();
@@ -35,46 +25,44 @@ namespace Trainingscoach_Projekt
             }
             else
             {
-                string selectedItem = ListBoxGrundeinheit.SelectedItem.ToString();
+                int selectedIndex = ListBoxGrundeinheit.SelectedIndex;
+                Session selectedSession = sessions[selectedIndex];
 
-                if (selectedItem.Contains("Bein-Training"))
+                string grundeinheit = selectedSession.Grundeinheit;
+
+                if (grundeinheit.Contains("Bein-Training"))
                 {
-                    BeinTrainingsFenster beinTrainingsFenster = new BeinTrainingsFenster(daten);
+                    BeinTrainingsFenster beinTrainingsFenster = new BeinTrainingsFenster(selectedSession);
                     beinTrainingsFenster.ShowDialog();
                 }
-                else if (selectedItem.Contains("Arm-Training"))
+                else if (grundeinheit.Contains("Arm-Training"))
                 {
-                    ArmTrainingsFenster armTrainingsFenster = new ArmTrainingsFenster(daten);
+                    ArmTrainingsFenster armTrainingsFenster = new ArmTrainingsFenster(selectedSession);
                     armTrainingsFenster.ShowDialog();
                 }
-
-                else if (selectedItem.Contains("Rücken-Training"))
+                else if (grundeinheit.Contains("Rücken-Training"))
                 {
-                    RueckenTrainingsFenster rueckenTrainingsFenster = new RueckenTrainingsFenster(daten);
+                    RueckenTrainingsFenster rueckenTrainingsFenster = new RueckenTrainingsFenster(selectedSession);
                     rueckenTrainingsFenster.ShowDialog();
                 }
-
-                else if (selectedItem.Contains("Brust-Training"))
+                else if (grundeinheit.Contains("Brust-Training"))
                 {
-                    BrustTrainingsFenster brustTrainingsFenster = new BrustTrainingsFenster(daten);
+                    BrustTrainingsFenster brustTrainingsFenster = new BrustTrainingsFenster(selectedSession);
                     brustTrainingsFenster.ShowDialog();
                 }
-
-                else if (selectedItem.Contains("Bauch-Training"))
+                else if (grundeinheit.Contains("Bauch-Training"))
                 {
-                    BauchTrainingsFenster bauchTrainingsFenster = new BauchTrainingsFenster(daten);
+                    BauchTrainingsFenster bauchTrainingsFenster = new BauchTrainingsFenster(selectedSession);
                     bauchTrainingsFenster.ShowDialog();
                 }
-
-                else if (selectedItem.Contains("Ganzkörper-Training"))
+                else if (grundeinheit.Contains("Ganzkörper-Training"))
                 {
-                    GanzKörperTrainingsFenster ganzKörperTrainingsFenster = new GanzKörperTrainingsFenster(daten);
+                    GanzKörperTrainingsFenster ganzKörperTrainingsFenster = new GanzKörperTrainingsFenster(selectedSession);
                     ganzKörperTrainingsFenster.ShowDialog();
                 }
-
-                else if (selectedItem.Contains("Cardio"))
+                else if (grundeinheit.Contains("Cardio"))
                 {
-                    CardioFenster cardioFenster = new CardioFenster(daten);
+                    CardioFenster cardioFenster = new CardioFenster(selectedSession);
                     cardioFenster.ShowDialog();
                 }
             }
@@ -86,22 +74,30 @@ namespace Trainingscoach_Projekt
             window.ShowDialog();
             string uebergabeText = window.uebergabeText;
             
-            Session sozialesExperiment = new Session(uebergabeText);
-            sozialesExperiment.Grundeinheit = window.uebergabeText.Split(" ")[1];
-            sessions.Add(sozialesExperiment);
-            ListBoxGrundeinheit.Items.Add(sozialesExperiment.ToString());
+            Session neueSession = new Session(uebergabeText);
+            neueSession.Grundeinheit = window.uebergabeText.Split("-|~#+*")[1];
+            sessions.Add(neueSession);
+            ListBoxGrundeinheit.Items.Add(neueSession.ToString());
         }
-
 
         private void buttonAuswaehlen_Click(object sender, RoutedEventArgs e)
         {
             FensterAuswahl();
         }
 
-
         private void buttonLoeschen_Click(object sender, RoutedEventArgs e)
         {
-            daten.Remove();
+            if (ListBoxGrundeinheit.SelectedIndex == -1)
+            {
+                MessageBox.Show("Bitte wählen Sie eine Trainings-Session aus, die Sie löschen möchten.");
+            }
+            else
+            {
+                int selectedIndex = ListBoxGrundeinheit.SelectedIndex;
+                ListBoxGrundeinheit.Items.RemoveAt(selectedIndex);
+                sessions.RemoveAt(selectedIndex);
+            }
         }
+
     }
 }

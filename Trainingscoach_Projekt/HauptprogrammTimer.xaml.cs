@@ -48,12 +48,6 @@ namespace Trainingscoach_Projekt
             }
         }
 
-
-
-
-
-
-
         private void felderBefuelleLeereKartons()
         {
             if (timerDaten[0] != null)
