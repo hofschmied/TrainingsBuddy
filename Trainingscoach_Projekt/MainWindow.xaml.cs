@@ -127,5 +127,11 @@ namespace Trainingscoach_Projekt
                 }
             }
         }
+
+        private void buttonAufgaben_Click(object sender, RoutedEventArgs e)
+        {
+            QuestFenster questFenster = new QuestFenster();
+            questFenster.ShowDialog();
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace Trainingscoach_Projekt
         private bool pause = false;
         private bool grossepause = false;
         private int naechsteSets;
+        private QuestFenster quest = new QuestFenster();
 
         public HauptprogrammTimer(List<nutzerEingabe> timerDaten)
         {
@@ -36,6 +37,7 @@ namespace Trainingscoach_Projekt
             kleinePausePlayer = new MediaPlayer();
             felderBefuelleLeereKartons();
             dauerListHinzu();
+            QuestsErfuellen();
             this.Closing += HauptprogrammTimer_Closing;
         }
 
@@ -226,6 +228,17 @@ namespace Trainingscoach_Projekt
             catch (Exception ex)
             {
                 MessageBox.Show($"Fehler beim Öffnen des Standard-Browsers: {ex.Message}");
+            }
+        }
+
+        private void QuestsErfuellen()
+        {
+            if (derzeitigeTrainingEinheitTextBox.Text == "Hammercurls" && setsAnzahl.Text == "3")
+            {
+                if (TimerTextBlock.Text == "00:00" && setsAnzahl.Text == "1")
+                {
+                    quest.aufgabe5.IsChecked = true;
+                }
             }
         }
 

@@ -83,7 +83,7 @@
 
         <Button Grid.Row="3" Grid.Column="3" x:Name="buttonLoeschen" Content="Löschen" Style="{StaticResource ModernButtonStyle}" Click="buttonLoeschen_Click"/>
 
-        <Button Grid.Row="2" Grid.Column="0" x:Name="buttonErrungenschaften" Content="Errungenschaften" Style="{StaticResource ModernButtonStyle}"/>
+        <Button Grid.Row="2" Grid.Column="0" x:Name="buttonAufgaben" Content="Aufgaben" Style="{StaticResource ModernButtonStyle}" Click="buttonAufgaben_Click"/>
 
         <Button Grid.Row="3" Grid.Column="1" x:Name="buttonAuswaehlen" Content="Auswählen" Style="{StaticResource ModernButtonStyle}" Click="buttonAuswaehlen_Click"/>
 

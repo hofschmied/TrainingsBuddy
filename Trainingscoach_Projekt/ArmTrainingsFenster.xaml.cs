@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
 
 namespace Trainingscoach_Projekt
 {
@@ -24,6 +26,8 @@ namespace Trainingscoach_Projekt
         public Session einheiten;
         public static HauptprogrammTimer timer;
         Session session = new Session();
+
+        private string filePath = "einheiten.json";
 
         public ArmTrainingsFenster(Session einheiten)
         {
@@ -184,6 +188,28 @@ namespace Trainingscoach_Projekt
                 MessageBox.Show("Bitte wählen Sie eine Übung aus, die Sie löschen möchten.");
             }
         }
+
+        /*
+        public void sessionSpeichern()
+        {
+            string json = JsonConvert.SerializeObject(session.Einheiten);
+            File.WriteAllText(filePath, json);
+        }
+
+        public void sessionLaden()
+        {
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                sessions = JsonConvert.DeserializeObject<List<Session>>(json);
+                uebungListBox.Items.Clear();
+                foreach (var item in session.Einheiten)
+                {
+                    uebungListBox.Items.Add(item.ToString());
+                }
+            }
+        }
+        */
 
     }
 
