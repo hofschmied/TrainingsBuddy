@@ -12,8 +12,8 @@ namespace Trainingscoach_Projekt
         public GrundtrainingseinheitDaten daten = new GrundtrainingseinheitDaten();
         private bool buttonClicked = false;
         List<Session> sessions = new List<Session>();
-
-        private string filePath = "sessions.json";
+        private string filePath = "sessions.txt";
+        public bool valid = false;
 
         public MainWindow()
         {
@@ -44,6 +44,7 @@ namespace Trainingscoach_Projekt
                 {
                     ArmTrainingsFenster armTrainingsFenster = new ArmTrainingsFenster(selectedSession);
                     armTrainingsFenster.ShowDialog();
+                    this.valid = armTrainingsFenster.valid;
                 }
                 else if (grundeinheit.Contains("Rücken-Training"))
                 {
@@ -77,19 +78,23 @@ namespace Trainingscoach_Projekt
         {
             GrundtrainingseinheitenWindow window = new GrundtrainingseinheitenWindow();
             window.ShowDialog();
-            string uebergabeText = window.uebergabeText;
+            if (window.uebergabeText != null)
+            {
+                string uebergabeText = window.uebergabeText;
 
-            Session neueSession = new Session(uebergabeText);
-            neueSession.Grundeinheit = window.uebergabeText.Split("-|~#+*")[1];
-            sessions.Add(neueSession);
-            ListBoxGrundeinheit.Items.Add(neueSession.ToString());
+                Session neueSession = new Session(uebergabeText);
+                neueSession.Grundeinheit = window.uebergabeText.Split("-|~#+*")[1];
+                sessions.Add(neueSession);
+                ListBoxGrundeinheit.Items.Add(neueSession.ToString());
 
-            sessionSpeichern();
+                sessionSpeichern();
+            }
         }
 
         private void buttonAuswaehlen_Click(object sender, RoutedEventArgs e)
         {
             FensterAuswahl();
+            sessionSpeichern();
         }
 
         private void buttonLoeschen_Click(object sender, RoutedEventArgs e)
@@ -112,6 +117,8 @@ namespace Trainingscoach_Projekt
         {
             string json = JsonConvert.SerializeObject(sessions);
             File.WriteAllText(filePath, json);
+
+
         }
 
         public void sessionLaden()
@@ -130,7 +137,7 @@ namespace Trainingscoach_Projekt
 
         private void buttonAufgaben_Click(object sender, RoutedEventArgs e)
         {
-            QuestFenster questFenster = new QuestFenster();
+            QuestFenster questFenster = new QuestFenster(valid);
             questFenster.ShowDialog();
         }
     }

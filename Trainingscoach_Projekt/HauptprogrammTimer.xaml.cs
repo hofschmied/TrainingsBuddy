@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Trainingscoach_Projekt
 {
@@ -22,6 +23,11 @@ namespace Trainingscoach_Projekt
         private bool grossepause = false;
         private int naechsteSets;
         public int anzahlsets = 1;
+        private QuestFenster quest;
+        private List<string> erledigteUebungenList = new List<string>();
+        public bool valid = false;
+        public bool valid2 = false;
+
 
         public HauptprogrammTimer(List<nutzerEingabe> timerDaten)
         {
@@ -37,7 +43,7 @@ namespace Trainingscoach_Projekt
             kleinePausePlayer = new MediaPlayer();
             felderBefuelleLeereKartons();
             dauerListHinzu();
-            QuestsErfuellen();
+            ÜberprüfeQuests();
             this.Closing += HauptprogrammTimer_Closing;
         }
 
@@ -50,10 +56,7 @@ namespace Trainingscoach_Projekt
 
                 double dauer = timerDaten[i].dauer * anzahlsets;
                 dauerListe.Add(dauer);
-
-                
             }
-
         }
 
         private void felderBefuelleLeereKartons()
@@ -111,9 +114,11 @@ namespace Trainingscoach_Projekt
                             }
                             else
                             {
-                                TrainingBeendetFenster training = new TrainingBeendetFenster();
+                                TrainingBeendetFenster trainingBeendet = new TrainingBeendetFenster();
                                 this.Close();
-                                training.ShowDialog();
+                                trainingBeendet.ShowDialog();
+
+                                ÜberprüfeQuests();
                             }
                         }
                     }
@@ -133,6 +138,7 @@ namespace Trainingscoach_Projekt
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
+
             try
             {
                 double zeit = Convert.ToDouble(laengeEinheit.Text);
@@ -237,16 +243,14 @@ namespace Trainingscoach_Projekt
             }
         }
 
-        private void QuestsErfuellen()
+        private void ÜberprüfeQuests()
         {
-            if (derzeitigeTrainingEinheitTextBox.Text == "Hammercurls" && setsAnzahl.Text == "3")
+            if (derzeitigeUebungen.Items.Contains("Anzahl"))
             {
-                if (TimerTextBlock.Text == "00:00" && setsAnzahl.Text == "1")
-                {
-                    quest.aufgabe5.IsChecked = true;
-                }
+                valid = true;
             }
         }
+
 
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)
         {

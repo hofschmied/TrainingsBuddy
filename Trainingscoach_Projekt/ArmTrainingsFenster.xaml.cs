@@ -26,6 +26,7 @@ namespace Trainingscoach_Projekt
         public Session einheiten;
         public static HauptprogrammTimer timer;
         Session session = new Session();
+        public bool valid = false;
 
         private string filePath = "einheiten.json";
 
@@ -167,6 +168,8 @@ namespace Trainingscoach_Projekt
                 timer = new HauptprogrammTimer(timerDaten.timerDaten);
                 this.Close();
                 timer.ShowDialog();
+                this.valid = timer.valid;
+                
             }
         }
 

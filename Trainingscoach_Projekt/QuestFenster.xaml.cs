@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Security;
 using System.Windows;
 using System.Windows.Threading;
 
@@ -8,12 +9,14 @@ namespace Trainingscoach_Projekt
     {
         private DispatcherTimer dispatcherTimer;
         private DateTime naechsteUebung;
-        HauptprogrammTimer timer;
+        public bool valid = false;
 
-        public QuestFenster()
+        public QuestFenster(bool valid)
         {
             InitializeComponent();
+            this.valid = valid;
             AktualisierungsTimer();
+            questErledigt();
         }
 
         private void AktualisierungsTimer()
@@ -36,6 +39,14 @@ namespace Trainingscoach_Projekt
             {
                 NextExerciseTime.Text = "Nächste Aufgaben in: 00:00:00";
                 dispatcherTimer.Stop();
+            }
+        }
+
+        private void questErledigt()
+        {
+            if (valid)
+            {
+                aufgabe1.IsChecked = true;
             }
         }
     }
