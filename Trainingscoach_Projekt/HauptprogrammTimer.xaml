@@ -38,8 +38,7 @@
             <Button Content="Öffnen" HorizontalAlignment="Left" Width="100" Height="30" Margin="10" Click="Button_Click_Spotify"/>
             <TextBlock Text="Deine Übungen:" Foreground="White" FontSize="16" Padding="10"/>
             <ListBox x:Name="derzeitigeUebungen" MinHeight="100" Background="LightGray"/>
-            <TextBlock Text="Erledigte Übungen:" Foreground="White" FontSize="16" Padding="10"/>
-            <ListBox x:Name="erledigteUebungen" MinHeight="100" Background="LightGray"></ListBox>
+            
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -57,12 +56,54 @@
             <TextBlock x:Name="setsAnzahl" FontSize="16" Background="LightGray" Margin="0,0,0,10" />
             <TextBlock Text="Länge der Gesamteinheit (min):" Foreground="White" FontSize="16" />
             <TextBlock x:Name="laengeEinheit" FontSize="16" Background="LightGray"/>
-
         </StackPanel>
 
         <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
-            <Button Content="Start" Width="100" Height="30" Margin="10" Click="StartButton_Click"/>
-            <Button Content="Stop" Width="100" Height="30" Margin="10" Click="StopButton_Click"/>
+            <Button Content="Start" Width="100" Margin="10,10,10,10" Click="StartButton_Click" Foreground="White" FontSize="17" FontWeight="Bold">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1, 0">
+                        <GradientStop Color="#FF3A6073" Offset="0.0"/>
+                        <GradientStop Color="#FF16222A" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FFA9EDFF"/>
+                </Button.BorderBrush>
+                <Button.BorderThickness>3</Button.BorderThickness>
+            </Button>
+
+            <Button Content="Stop" Width="100" Margin="10,10,10,10" Click="StopButton_Click" Foreground="White" FontSize="17" FontWeight="Bold">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1, 0">
+                        <GradientStop Color="#FF3A6073" Offset="0.0"/>
+                        <GradientStop Color="#FF16222A" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FFA9EDFF"/>
+                </Button.BorderBrush>
+                <Button.BorderThickness>3</Button.BorderThickness>
+            </Button>
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal" Grid.Row="0" Grid.Column="2">
@@ -71,3 +112,4 @@
         </StackPanel>
     </Grid>
 </Window>
+
