@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Security;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Media.TextFormatting;
 using System.Windows.Threading;
 
 namespace Trainingscoach_Projekt
@@ -9,13 +13,18 @@ namespace Trainingscoach_Projekt
     {
         private DispatcherTimer dispatcherTimer;
         private DateTime naechsteUebung;
-        public bool valid = false;
+        List<bool> validList;
+        List<CheckBox> checkBoxen = new List<CheckBox>();
 
-        public QuestFenster(bool valid)
+        public QuestFenster(List<bool> validList)
         {
             InitializeComponent();
-            this.valid = valid;
-            AktualisierungsTimer();
+            this.checkBoxen.Add(aufgabe1);
+            this.checkBoxen.Add(aufgabe2);
+            this.checkBoxen.Add(aufgabe3);
+            this.checkBoxen.Add(aufgabe4);
+            this.checkBoxen.Add(aufgabe5);
+            this.validList = validList;
             questErledigt();
         }
 
@@ -44,9 +53,9 @@ namespace Trainingscoach_Projekt
 
         private void questErledigt()
         {
-            if (valid)
+            for (int i = 0; i < validList.Count; i++)
             {
-                aufgabe1.IsChecked = true;
+                checkBoxen[i].IsChecked = validList[i];
             }
         }
     }

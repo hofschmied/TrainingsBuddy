@@ -19,6 +19,7 @@ namespace Trainingscoach_Projekt
         TimerDaten timerDaten = new TimerDaten();
         public Session einheiten;
         Session session = new Session();
+        List<bool> validList;
 
         public RueckenTrainingsFenster(Session einheiten)
         {
@@ -173,7 +174,7 @@ namespace Trainingscoach_Projekt
                     timerDaten.timerDaten.Add((nutzerEingabe)item);
                 }
 
-                HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten);
+                HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten, validList);
                 timer.derzeitigeGrundEinheitTextBox.Text = "Rückentraining";
                 this.Close();
                 timer.ShowDialog();

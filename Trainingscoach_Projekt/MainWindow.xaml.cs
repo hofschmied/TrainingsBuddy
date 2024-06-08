@@ -13,7 +13,10 @@ namespace Trainingscoach_Projekt
         private bool buttonClicked = false;
         List<Session> sessions = new List<Session>();
         private string filePath = "sessions.txt";
-        public bool valid = false;
+        List<bool> validList = new List<bool>() 
+        {
+            false, false, false, false, false
+        };
 
         public MainWindow()
         {
@@ -42,9 +45,9 @@ namespace Trainingscoach_Projekt
                 }
                 else if (grundeinheit.Contains("Arm-Training"))
                 {
-                    ArmTrainingsFenster armTrainingsFenster = new ArmTrainingsFenster(selectedSession);
+                    ArmTrainingsFenster armTrainingsFenster = new ArmTrainingsFenster(selectedSession, validList);
                     armTrainingsFenster.ShowDialog();
-                    this.valid = armTrainingsFenster.valid;
+                    this.validList = armTrainingsFenster.validList;
                 }
                 else if (grundeinheit.Contains("Rücken-Training"))
                 {
@@ -137,7 +140,7 @@ namespace Trainingscoach_Projekt
 
         private void buttonAufgaben_Click(object sender, RoutedEventArgs e)
         {
-            QuestFenster questFenster = new QuestFenster(valid);
+            QuestFenster questFenster = new QuestFenster(validList);
             questFenster.ShowDialog();
         }
     }

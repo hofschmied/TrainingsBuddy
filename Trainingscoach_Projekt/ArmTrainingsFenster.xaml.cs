@@ -26,13 +26,14 @@ namespace Trainingscoach_Projekt
         public Session einheiten;
         public static HauptprogrammTimer timer;
         Session session = new Session();
-        public bool valid = false;
+        public List<bool> validList;
 
 
-        public ArmTrainingsFenster(Session einheiten)
+        public ArmTrainingsFenster(Session einheiten, List<bool> validList)
         {
             InitializeComponent();
             this.einheiten = einheiten;
+            this.validList = validList;
             foreach (var item in einheiten.Einheiten)
             {
                 uebungListBox.Items.Add(item);
@@ -164,11 +165,11 @@ namespace Trainingscoach_Projekt
                     timerDaten.timerDaten.Add((nutzerEingabe)item);
                 }
 
-                timer = new HauptprogrammTimer(timerDaten.timerDaten);
+                timer = new HauptprogrammTimer(timerDaten.timerDaten, validList);
                 timer.derzeitigeGrundEinheitTextBox.Text = "Armtraining";
                 this.Close();
                 timer.ShowDialog();
-                this.valid = timer.valid;
+                //this.validList = timer.validList;
                 
             }
         }
