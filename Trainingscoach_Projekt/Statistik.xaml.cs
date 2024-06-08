@@ -22,6 +22,7 @@ namespace Trainingscoach_Projekt
     public partial class Statistik : Window
     {
         public HauptprogrammTimer timer = ArmTrainingsFenster.timer;
+
         public Statistik()
         {
             InitializeComponent();
@@ -33,14 +34,14 @@ namespace Trainingscoach_Projekt
             double rueckendauer = 0;
             double ganzkörperdauer = 0;
             double cardiodauer = 0;
-
+            
             foreach (double zahl in timer.dauerListe)
             {
                 armdauer += zahl;
                 beindauer += zahl;
                 bauchdauer += zahl;
             }
-            //armdauer *= timer.anzahlsets;
+       
             
             SeriesCollection = new SeriesCollection
             {
