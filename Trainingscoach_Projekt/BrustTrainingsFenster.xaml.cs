@@ -146,6 +146,7 @@ namespace Trainingscoach_Projekt
                 }
 
                 HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten);
+                timer.derzeitigeGrundEinheitTextBox.Text = "Brustraining";
                 this.Close();
                 timer.ShowDialog();
             }

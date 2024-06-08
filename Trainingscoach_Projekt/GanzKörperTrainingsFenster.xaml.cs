@@ -155,6 +155,7 @@ namespace Trainingscoach_Projekt
                 }
 
                 HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten);
+                timer.derzeitigeGrundEinheitTextBox.Text = "Ganzkörper";
                 this.Close();
                 timer.ShowDialog();
             }

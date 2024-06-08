@@ -138,7 +138,7 @@ namespace Trainingscoach_Projekt
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-
+            valid = true;
             try
             {
                 double zeit = Convert.ToDouble(laengeEinheit.Text);
@@ -247,7 +247,7 @@ namespace Trainingscoach_Projekt
         {
             if (derzeitigeUebungen.Items.Contains("Anzahl"))
             {
-                valid = true;
+                Console.WriteLine("yuh");
             }
         }
 

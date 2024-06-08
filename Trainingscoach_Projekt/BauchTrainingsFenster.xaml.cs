@@ -19,6 +19,7 @@ namespace Trainingscoach_Projekt
         TimerDaten timerDaten = new TimerDaten();
         public Session einheiten;
         Session session = new Session();
+        public static HauptprogrammTimer timer;
         public BauchTrainingsFenster(Session einheiten)
         {
             InitializeComponent();
@@ -151,6 +152,7 @@ namespace Trainingscoach_Projekt
                 }
 
                 HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten);
+                timer.derzeitigeGrundEinheitTextBox.Text = "Bauchtraining";
                 this.Close();
                 timer.ShowDialog();
             }

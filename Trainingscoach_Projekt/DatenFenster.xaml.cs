@@ -9,6 +9,7 @@ namespace Trainingscoach_Projekt
         public nutzerEingabe nutzer;
         public Session einheiten;
         private ListBox uebungListBox;
+        private MainWindow mainWindow;
 
         public DatenFenster(Session einheiten, ListBox uebungListBox)
         {

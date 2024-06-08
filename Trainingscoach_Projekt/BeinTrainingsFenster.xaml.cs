@@ -174,6 +174,7 @@ namespace Trainingscoach_Projekt
                 }
 
                 HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten);
+                timer.derzeitigeGrundEinheitTextBox.Text = "Beintraining";
                 this.Close();
                 timer.ShowDialog();
             }
