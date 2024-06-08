@@ -21,7 +21,9 @@ namespace Trainingscoach_Projekt
     /// </summary>
     public partial class Statistik : Window
     {
-        public HauptprogrammTimer timer = ArmTrainingsFenster.timer;
+        public HauptprogrammTimer timerArm = ArmTrainingsFenster.timer;
+        public HauptprogrammTimer timerBauch = BauchTrainingsFenster.timer;
+
         public Statistik()
         {
             InitializeComponent();
@@ -34,26 +36,40 @@ namespace Trainingscoach_Projekt
             double ganzkörperdauer = 0;
             double cardiodauer = 0;
 
-            foreach (double zahl in timer.dauerListe)
+            if (timerArm != null && timerArm.derzeitigeGrundEinheitTextBox != null)
             {
-                armdauer += zahl;
-                beindauer += zahl;
-                bauchdauer += zahl;
+                if (timerArm.derzeitigeGrundEinheitTextBox.Text == "Armtraining")
+                {
+                    foreach (double zahl in timerArm.dauerListe)
+                    {
+                        armdauer += zahl;
+                    }
+                }
             }
-            //armdauer *= timer.anzahlsets;
-            
+
+            if (timerBauch != null && timerBauch.derzeitigeGrundEinheitTextBox != null)
+            {
+                if (timerBauch.derzeitigeGrundEinheitTextBox.Text == "Bauchtraining")
+                {
+                    foreach (double zahl in timerBauch.dauerListe)
+                    {
+                        bauchdauer += zahl;
+                    }
+                }
+            }
+
             SeriesCollection = new SeriesCollection
             {
                 new ColumnSeries
                 {
                     Title = "Trainingsdauer",
-                    Values = new ChartValues<double> { armdauer, beindauer, bauchdauer, brustdauer, rueckendauer, ganzkörperdauer, cardiodauer  },
-                    
+                    Values = new ChartValues<double> { armdauer, beindauer, bauchdauer, brustdauer, rueckendauer, ganzkörperdauer, cardiodauer },
                 }
             };
-            
+
             Labels = new[] { "Armtraining", "Beintraining", "Bauchtraining", "Brusttraining", "Rückentraining", "Ganzkörpertraining", "Cardiotraining" };
             Formatter = value => value.ToString("N");
+
             this.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF383838"));
             DataContext = this;
         }
@@ -61,7 +77,5 @@ namespace Trainingscoach_Projekt
         public SeriesCollection SeriesCollection { get; set; }
         public string[] Labels { get; set; }
         public Func<double, string> Formatter { get; set; }
-
     }
 }
-

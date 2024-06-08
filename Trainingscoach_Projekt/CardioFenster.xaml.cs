@@ -161,6 +161,7 @@ namespace Trainingscoach_Projekt
                 }
 
                 HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten);
+                timer.derzeitigeGrundEinheitTextBox.Text = "Cardio";
                 this.Close();
                 timer.ShowDialog();
             }

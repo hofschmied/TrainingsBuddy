@@ -79,7 +79,7 @@
             <Border Background="#FFEEEEEE" BorderBrush="#FF737373" BorderThickness="3" CornerRadius="10" Padding="10" Margin="10">
                 <StackPanel Orientation="Horizontal">
                     <CheckBox x:Name="aufgabe1" Margin="10" VerticalAlignment="Center" IsEnabled="False"/>
-                    <TextBlock Text="Erledige 10 Push-Ups" FontSize="20" Foreground="Black" VerticalAlignment="Center"/>
+                    <TextBlock Text="Trainiere 10 Minuten" FontSize="20" Foreground="Black" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
 

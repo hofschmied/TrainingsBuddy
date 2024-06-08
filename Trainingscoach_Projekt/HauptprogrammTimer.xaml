@@ -48,7 +48,9 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2" Margin="20">
-            <TextBlock Text="Derzeitige Trainingseinheit:" Foreground="White" FontSize="16" Margin="0,0,0,5"/>
+            <TextBlock Text="Grundtrainingseinheit:" Foreground="White" FontSize="16" Margin="0,0,0,5"/>
+            <TextBlock x:Name="derzeitigeGrundEinheitTextBox" Background="LightGray" FontSize="16" Margin="0,0,0,10"/>
+            <TextBlock Text="Derzeitige Übung:" Foreground="White" FontSize="16" Margin="0,0,0,5"/>
             <TextBlock x:Name="derzeitigeTrainingEinheitTextBox" Background="LightGray" FontSize="16" Margin="0,0,0,10"/>
             <TextBlock Text="Übrige Sets:" Foreground="White" FontSize="16" Padding="5"/>
             <TextBlock x:Name="setsAnzahl" FontSize="16" Background="LightGray" Margin="0,0,0,10" />

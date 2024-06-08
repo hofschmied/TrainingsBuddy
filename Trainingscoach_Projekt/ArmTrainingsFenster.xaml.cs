@@ -28,7 +28,6 @@ namespace Trainingscoach_Projekt
         Session session = new Session();
         public bool valid = false;
 
-        private string filePath = "einheiten.json";
 
         public ArmTrainingsFenster(Session einheiten)
         {
@@ -166,6 +165,7 @@ namespace Trainingscoach_Projekt
                 }
 
                 timer = new HauptprogrammTimer(timerDaten.timerDaten);
+                timer.derzeitigeGrundEinheitTextBox.Text = "Armtraining";
                 this.Close();
                 timer.ShowDialog();
                 this.valid = timer.valid;
@@ -191,28 +191,6 @@ namespace Trainingscoach_Projekt
                 MessageBox.Show("Bitte wählen Sie eine Übung aus, die Sie löschen möchten.");
             }
         }
-
-        /*
-        public void sessionSpeichern()
-        {
-            string json = JsonConvert.SerializeObject(session.Einheiten);
-            File.WriteAllText(filePath, json);
-        }
-
-        public void sessionLaden()
-        {
-            if (File.Exists(filePath))
-            {
-                string json = File.ReadAllText(filePath);
-                sessions = JsonConvert.DeserializeObject<List<Session>>(json);
-                uebungListBox.Items.Clear();
-                foreach (var item in session.Einheiten)
-                {
-                    uebungListBox.Items.Add(item.ToString());
-                }
-            }
-        }
-        */
 
     }
 
