@@ -1,18 +1,8 @@
 ﻿using LiveCharts.Wpf;
 using LiveCharts;
+using Serilog;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Trainingscoach_Projekt
 {
@@ -21,6 +11,8 @@ namespace Trainingscoach_Projekt
     /// </summary>
     public partial class Statistik : Window
     {
+        private static readonly Serilog.ILogger logger = LoggerClass.logger;
+
         public HauptprogrammTimer timerArm = ArmTrainingsFenster.timer;
         public HauptprogrammTimer timerBauch = BauchTrainingsFenster.timer;
 
@@ -70,12 +62,19 @@ namespace Trainingscoach_Projekt
             Labels = new[] { "Armtraining", "Beintraining", "Bauchtraining", "Brusttraining", "Rückentraining", "Ganzkörpertraining", "Cardiotraining" };
             Formatter = value => value.ToString("N");
 
-            this.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF383838"));
+            this.Background = new System.Windows.Media.SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#FF383838"));
             DataContext = this;
+
+            logger.Information("Statistik Fenster initialisiert");
         }
 
         public SeriesCollection SeriesCollection { get; set; }
         public string[] Labels { get; set; }
         public Func<double, string> Formatter { get; set; }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            logger.Information("Statistik Fenster geschlossen");
+        }
     }
 }

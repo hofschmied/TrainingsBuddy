@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using Newtonsoft.Json;
+using Serilog;
 
 namespace Trainingscoach_Projekt
 {
@@ -13,15 +14,16 @@ namespace Trainingscoach_Projekt
         private bool buttonClicked = false;
         List<Session> sessions = new List<Session>();
         private string filePath = "sessions.txt";
-        List<bool> validList = new List<bool>() 
+        List<bool> validList = new List<bool>()
         {
             false, false, false, false, false
         };
+        private static readonly ILogger logger = LoggerClass.logger;
 
         public MainWindow()
         {
             InitializeComponent();
-
+            logger.Information("MainWindow initialisiert");
             sessionLaden();
         }
 
@@ -74,6 +76,7 @@ namespace Trainingscoach_Projekt
                     CardioFenster cardioFenster = new CardioFenster(selectedSession);
                     cardioFenster.ShowDialog();
                 }
+                logger.Information("Fensterauswahl getroffen");
             }
         }
 
@@ -92,6 +95,7 @@ namespace Trainingscoach_Projekt
 
                 sessionSpeichern();
             }
+            logger.Information("Neue Session hinzugefügt");
         }
 
         private void buttonAuswaehlen_Click(object sender, RoutedEventArgs e)
@@ -114,14 +118,14 @@ namespace Trainingscoach_Projekt
 
                 sessionSpeichern();
             }
+            logger.Information("Session gelöscht");
         }
 
         public void sessionSpeichern()
         {
             string json = JsonConvert.SerializeObject(sessions);
             File.WriteAllText(filePath, json);
-
-
+            logger.Information("Sessions gespeichert");
         }
 
         public void sessionLaden()
@@ -135,6 +139,7 @@ namespace Trainingscoach_Projekt
                 {
                     ListBoxGrundeinheit.Items.Add(session.ToString());
                 }
+                logger.Information("Sessions geladen");
             }
         }
 
@@ -142,6 +147,7 @@ namespace Trainingscoach_Projekt
         {
             QuestFenster questFenster = new QuestFenster(validList);
             questFenster.ShowDialog();
+            logger.Information("Quest-Fenster geöffnet");
         }
     }
 }

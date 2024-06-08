@@ -1,24 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.Globalization;
 
 namespace Trainingscoach_Projekt
 {
     public partial class GrundtrainingseinheitenWindow : Window
     {
         GrundtrainingseinheitDaten grundtrainingseinheitDaten;
+        private static readonly Serilog.ILogger logger = LoggerClass.logger;
 
         public string uebergabeText { get; set; }
 
@@ -27,46 +18,42 @@ namespace Trainingscoach_Projekt
         public GrundtrainingseinheitenWindow()
         {
             InitializeComponent();
-
-        }
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
+            logger.Information("GrundtrainingseinheitenWindow initialisiert");
         }
 
-        private void TextBoxTrainingsName_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void FachBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
         private void buttonOK_Click(object sender, RoutedEventArgs e)
         {
-            if (GrundTrainingsEinheitBox.SelectedItem != null)
+            try
             {
-                if (grundtrainingseinheitDaten == null)
+                if (GrundTrainingsEinheitBox.SelectedItem != null)
                 {
-                    grundtrainingseinheitDaten = new GrundtrainingseinheitDaten();
+                    if (grundtrainingseinheitDaten == null)
+                    {
+                        grundtrainingseinheitDaten = new GrundtrainingseinheitDaten();
+                    }
+
+                    grundtrainingseinheitDaten.grundEinheit = GrundTrainingsEinheitBox;
+
+                    string selectedGrundEinheit = (GrundTrainingsEinheitBox.SelectedItem as ComboBoxItem).Content.ToString();
+
+                    grundtrainingseinheitDaten.sessionName = TextBoxTrainingsName.Text;
+
+                    this.uebergabeText = grundtrainingseinheitDaten.sessionName + "-|~#+*" + selectedGrundEinheit;
+
+                    strings.Add(grundtrainingseinheitDaten.sessionName);
+
+                    this.Close();
+                    logger.Information("GrundtrainingseinheitenWindow geschlossen");
                 }
-
-                grundtrainingseinheitDaten.grundEinheit = GrundTrainingsEinheitBox;
-
-                string selectedGrundEinheit = (GrundTrainingsEinheitBox.SelectedItem as ComboBoxItem).Content.ToString();
-
-                grundtrainingseinheitDaten.sessionName = TextBoxTrainingsName.Text;
-
-                this.uebergabeText = grundtrainingseinheitDaten.sessionName + "-|~#+*" + selectedGrundEinheit;
-
-                strings.Add(grundtrainingseinheitDaten.sessionName);
-
-                this.Close();
+                else
+                {
+                    MessageBox.Show("Bitte wählen Sie eine Grund-Trainingseinheit aus.");
+                    logger.Warning("Keine Grund-Trainingseinheit ausgewählt");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Bitte wählen Sie eine Grund-Trainingseinheit aus.");
+                logger.Error(ex, "Fehler beim Klicken des OK-Buttons.");
             }
         }
 
@@ -81,7 +68,7 @@ namespace Trainingscoach_Projekt
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Platzhalter");
+                logger.Error(ex, "Fehler beim Bewegen des Fensters.");
             }
         }
 
@@ -98,6 +85,7 @@ namespace Trainingscoach_Projekt
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            logger.Information("GrundtrainingseinheitenWindow geschlossen");
         }
     }
 }

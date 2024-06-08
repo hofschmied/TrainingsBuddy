@@ -38,7 +38,10 @@
             <Button Content="Öffnen" HorizontalAlignment="Left" Width="100" Height="30" Margin="10" Click="Button_Click_Spotify"/>
             <TextBlock Text="Deine Übungen:" Foreground="White" FontSize="16" Padding="10"/>
             <ListBox x:Name="derzeitigeUebungen" MinHeight="100" Background="LightGray"/>
-            
+            <TextBlock Text="Erledigte Übungen:" Foreground="White" FontSize="16" Padding="10"/>
+            <ListBox x:Name="erledigteUebungen" MinHeight="100" Background="LightGray"/>
+
+
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">

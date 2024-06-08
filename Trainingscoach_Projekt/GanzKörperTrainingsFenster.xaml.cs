@@ -23,6 +23,8 @@ namespace Trainingscoach_Projekt
         public Session einheiten;
         Session session = new Session();
         List<bool> validList;
+        private static readonly Serilog.ILogger logger = LoggerClass.logger;
+
         public GanzKörperTrainingsFenster(Session einheiten)
         {
             InitializeComponent();
@@ -32,16 +34,19 @@ namespace Trainingscoach_Projekt
                 uebungListBox.Items.Add(item);
                 session.Einheiten.Add(item);
             }
+            logger.Information("GanzKörperTrainingsFenster initialisiert");
         }
 
         private void infoButtonPushUps(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Sie legen sich zunächst flach mit dem Bauch auf den Boden. Stützen sie sich anschließend auf ihern Händen und Zehen ab. Nun senken Sie sich wieder und wiederholen diese Übung. ");
+            MessageBox.Show("Sie legen sich zunächst flach mit dem Bauch auf den Boden. Stützen sie sich anschließend auf ihren Händen und Zehen ab. Nun senken Sie sich wieder und wiederholen diese Übung. ");
+            logger.Information("Push-Ups Info gezeigt");
         }
 
         private void infoButtonSitUps(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("Sie legen sich bei dieser Übung mit dem Rücken auf dem Boden und halten bei dieser Übung ihre Füße aufgestellt. Schließlich bewegen Sie ihren Oberkörper langsam nach oben.  ");
+            logger.Information("Sit-Ups Info gezeigt");
         }
 
         private void infoButtonSquats(object sender, MouseButtonEventArgs e)
@@ -50,22 +55,25 @@ namespace Trainingscoach_Projekt
             "Dabei wird der Rücken nicht gerundet oder überstreckt. Das erreicht man, " +
             "indem man die Hüfte beugt und den Oberkörper nach vorne neigt. " +
             "Von der Hocke aus geht man wieder gerade nach oben in die Ausgangslage");
+            logger.Information("Squats Info gezeigt");
         }
 
         private void infoButtonButterfly(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("Sie setzen sich aufrecht auf einem Gerät und bewegen das Gewicht, indem Sie Ihre gespreizten Arme vor Ihrem Oberkörper zusammendrücken .");
+            logger.Information("Butterfly Info gezeigt");
         }
-
 
         private void infoButtonBulgarianSplitsSquats(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("Bei dieser Übung stellst du eines deiner Beine auf eine Bank und gehst mit dem anderen Bein langsam nach in die Knie");
+            logger.Information("Bulgarian-Splits-Squats Info gezeigt");
         }
 
         private void infoButtonCrunches(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("Sie beginnen mit einer liegenden Ausgangsposition und heben den Oberkörper mit leichter Krümmung an. ");
+            logger.Information("Crunches Info gezeigt");
         }
 
         private void zeigeDataFenster(string nachricht)
@@ -74,34 +82,41 @@ namespace Trainingscoach_Projekt
             daten.einheitenName.Text = nachricht;
             daten.ShowDialog();
             // uebungListBox.Items.Add(daten.nutzer);
+            logger.Information("Datenfenster geöffnet");
         }
 
         private void addButtonPushUps(object sender, MouseButtonEventArgs e)
         {
             zeigeDataFenster("Push-Ups");
+            logger.Information("Push-Ups Button geklickt");
         }
 
         private void addButtonSitUps(object sender, MouseButtonEventArgs e)
         {
             zeigeDataFenster("Sit-Ups");
+            logger.Information("Sit-Ups Button geklickt");
         }
         private void addButtonSquats(object sender, MouseButtonEventArgs e)
         {
             zeigeDataFenster("Squats");
+            logger.Information("Squats Button geklickt");
         }
 
         private void addButtonButterfly(object sender, MouseButtonEventArgs e)
         {
             zeigeDataFenster("Butterfly");
+            logger.Information("Butterfly Button geklickt");
         }
         private void addButtonBulgarianSplitsSquats(object sender, MouseButtonEventArgs e)
         {
             zeigeDataFenster("Bulgarian-Splits-Squats");
+            logger.Information("Bulgarian-Splits-Squats Button geklickt");
         }
 
         private void addButtonCrunches(object sender, MouseButtonEventArgs e)
         {
             zeigeDataFenster("Crunches");
+            logger.Information("Crunches Button geklickt");
         }
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)
         {
@@ -115,22 +130,26 @@ namespace Trainingscoach_Projekt
             catch (Exception ex)
             {
                 Console.WriteLine("Platzhalter");
+                logger.Error("Fehler beim Verschieben des Fensters: " + ex.Message);
             }
         }
 
         private void fensterSchließen(object sender, MouseButtonEventArgs e)
         {
             this.Close();
+            logger.Information("Fenster geschlossen");
         }
 
         private void fensterMinimieren(object sender, MouseButtonEventArgs e)
         {
             WindowState = WindowState.Minimized;
+            logger.Information("Fenster minimiert");
         }
 
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            logger.Information("Abbrechen Button geklickt");
         }
 
         private void buttonLoeschen_Click(object sender, RoutedEventArgs e)
@@ -138,6 +157,7 @@ namespace Trainingscoach_Projekt
             if (uebungListBox.SelectedItem != null)
             {
                 uebungListBox.Items.Remove(uebungListBox.SelectedItem);
+                logger.Information("Eintrag in ListBox gelöscht");
             }
         }
 
@@ -159,6 +179,7 @@ namespace Trainingscoach_Projekt
                 timer.derzeitigeGrundEinheitTextBox.Text = "Ganzkörper";
                 this.Close();
                 timer.ShowDialog();
+                logger.Information("Timer gestartet");
             }
         }
     }

@@ -22,6 +22,8 @@ namespace Trainingscoach_Projekt
         public Session einheiten;
         Session session = new Session();
         List<bool> validList;
+        private static readonly Serilog.ILogger logger = LoggerClass.logger;
+
         public BrustTrainingsFenster(Session einheiten)
         {
             InitializeComponent();
@@ -31,36 +33,43 @@ namespace Trainingscoach_Projekt
                 uebungListBox.Items.Add(item);
                 session.Einheiten.Add(item);
             }
+            logger.Information("BrustTrainingsFenster initialisiert");
         }
 
         private void infoButtonPushUps(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Sie legen sich zunächst flach mit dem Bauch auf den Boden. Stützen sie sich anschließend auf ihern Händen und Zehen ab. Nun senken Sie sich wieder und wiederholen diese Übung. ");
+            logger.Information("Infos Push-Ups");
         }
 
         private void infoButtonButterfly(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Sie setzen sich aufrecht auf einem Gerät und bewegen das Gewicht, indem Sie Ihre gespreizten Arme vor Ihrem Oberkörper zusammendrücken .");
+            logger.Information("Infos Butterfly");
         }
 
         private void infoButtonCableFly(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Sie nehmen ein Seil an einem Gerät und halten es an beiden Armen. Nun spreitzen sie ihre Arme auseinander und ziehen es zusammen. Wiederholen Sie diese Übung am Besten.");
+            logger.Information("Infos Cable Fly");
         }
 
         private void infoButtonDumbbellPullover(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Strecken Sie Ihre Arme zur Decke über Ihre Brust. Ihre Handflächen sollten einander zugewandt sein und Ihre Ellbogen sollten leicht gebeugt sein. strecken Sie die Gewichte nach hinten und über Ihren Kopf und wieder zurück.");
+            logger.Information("Infos Dumbbell Pullover");
         }
 
         private void infoButtonDumbbellFlys(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Strecken Sie Ihre Arme zur Decke über Ihre Brust. Ihre Handflächen sollten einander zugewandt sein und Ihre Ellbogen sollten leicht gebeugt sein. strecken Sie die Gewichte nach außen und wieder nach innen.");
+            logger.Information("Infos Dumbbell Flys");
         }
 
         private void infoButtonBenchPress(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Legen Sie sich mit dem Rücken auf eine Bank und drücken Sie mit beiden Händen eine Großhantel nach oben und wieder zurück.");
+            logger.Information("Infos Bench Press");
         }
 
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)
@@ -75,12 +84,14 @@ namespace Trainingscoach_Projekt
             catch (Exception ex)
             {
                 Console.WriteLine("Platzhalter");
+                logger.Error(ex, "Fehler beim Bewegen des Fensters.");
             }
         }
 
         private void fensterSchließen(object sender, MouseButtonEventArgs e)
         {
             this.Close();
+            logger.Information("Fenster geschlossen");
         }
 
         private void fensterMinimieren(object sender, MouseButtonEventArgs e)
@@ -93,7 +104,6 @@ namespace Trainingscoach_Projekt
             DatenFenster daten = new DatenFenster(einheiten, uebungListBox);
             daten.einheitenName.Text = nachricht;
             daten.ShowDialog();
-            // uebungListBox.Items.Add(daten.nutzer);
         }
 
         private void addButtonPushUps(object sender, MouseButtonEventArgs e)
@@ -129,27 +139,35 @@ namespace Trainingscoach_Projekt
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            logger.Information("Fenster geschlossen");
         }
 
 
         private void buttonOK_Click(object sender, RoutedEventArgs e)
         {
-            if (uebungListBox.Items.Count == 0)
+            try
             {
-                MessageBox.Show("Bitte tragen Sie Übungen ein. ");
-            }
-
-            else
-            {
-                foreach (var item in uebungListBox.Items)
+                if (uebungListBox.Items.Count == 0)
                 {
-                    timerDaten.timerDaten.Add((nutzerEingabe)item);
+                    MessageBox.Show("Bitte tragen Sie Übungen ein. ");
+                    logger.Information("ListBox Werte sind leer");
                 }
+                else
+                {
+                    foreach (var item in uebungListBox.Items)
+                    {
+                        timerDaten.timerDaten.Add((nutzerEingabe)item);
+                    }
 
-                HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten, validList);
-                timer.derzeitigeGrundEinheitTextBox.Text = "Brustraining";
-                this.Close();
-                timer.ShowDialog();
+                    HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten, validList);
+                    timer.derzeitigeGrundEinheitTextBox.Text = "Beintraining";
+                    this.Close();
+                    timer.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Fehler beim Klicken des OK-Buttons.");
             }
         }
 
@@ -158,6 +176,7 @@ namespace Trainingscoach_Projekt
             if (uebungListBox.SelectedItem != null)
             {
                 uebungListBox.Items.Remove(uebungListBox.SelectedItem);
+                logger.Information("Item entfernt");
             }
         }
     }

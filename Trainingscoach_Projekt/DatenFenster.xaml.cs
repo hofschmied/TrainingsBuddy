@@ -10,12 +10,14 @@ namespace Trainingscoach_Projekt
         public Session einheiten;
         private ListBox uebungListBox;
         private MainWindow mainWindow;
+        private static readonly Serilog.ILogger logger = LoggerClass.logger;
 
         public DatenFenster(Session einheiten, ListBox uebungListBox)
         {
             InitializeComponent();
             this.einheiten = einheiten;
             this.uebungListBox = uebungListBox;
+            logger.Information("DatenFenster initialisiert");
         }
 
         private void ListBoxItemsAdd()
@@ -27,6 +29,7 @@ namespace Trainingscoach_Projekt
             {
                 uebungListBox.Items.Add(item);
             }
+            logger.Information("Einheit hinzugefügt zur ListBox");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -44,18 +47,19 @@ namespace Trainingscoach_Projekt
 
                 ListBoxItemsAdd();
                 this.Close();
+                logger.Information("Daten hinzugefügt und Fenster geschlossen");
             }
             catch (FormatException)
             {
                 MessageBox.Show("Bitte geben Sie gültige Zahlenwerte ein.");
+                logger.Error("Ungültige Zahlenwerte eingegeben");
             }
         }
 
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
             this.Close();
+            logger.Information("Fenster geschlossen");
         }
-
-        
     }
 }

@@ -26,6 +26,7 @@ namespace Trainingscoach_Projekt
         private List<string> erledigteUebungenList = new List<string>();
         public List<bool> validList;
         int count = 0;
+        private static readonly Serilog.ILogger logger = LoggerClass.logger;
 
         public HauptprogrammTimer(List<nutzerEingabe> timerDaten, List<bool> validList)
         {
@@ -43,6 +44,7 @@ namespace Trainingscoach_Projekt
             felderBefuelleLeereKartons();
             dauerListHinzu();
             this.Closing += HauptprogrammTimer_Closing;
+            logger.Information("HauptprogrammTimer initialisiert");
         }
 
         public void dauerListHinzu()
@@ -54,6 +56,7 @@ namespace Trainingscoach_Projekt
 
                 double dauer = timerDaten[i].dauer * anzahlsets;
                 dauerListe.Add(dauer);
+                logger.Information("Items wurden der Liste für die Statistik hinzugefügt");
             }
         }
 
@@ -66,6 +69,7 @@ namespace Trainingscoach_Projekt
                 setsAnzahl.Text = nutzer.anzahlSets.ToString();
                 laengeEinheit.Text = nutzer.dauer.ToString();
                 naechsteSets = nutzer.anzahlSets;
+                logger.Information("Felder befüllt");
             }
         }
 
@@ -142,10 +146,12 @@ namespace Trainingscoach_Projekt
                 time = TimeSpan.FromMinutes(zeit);
                 TimerTextBlock.Text = time.ToString(@"mm\:ss");
                 timer.Start();
+                logger.Information("Training gestartet");
             }
             catch (FormatException)
             {
                 MessageBox.Show("Bitte geben Sie eine gültige Zahl ein.");
+                logger.Error("Ungültige Zahl eingegeben");
             }
         }
 
@@ -158,7 +164,9 @@ namespace Trainingscoach_Projekt
             TimerTextBlock.Text = time.ToString(@"mm\:ss");
             timer.Start();
             pausenMusik();
+            logger.Information("Verdiente Pause gestartet");
         }
+
 
         private void setsPause()
         {
@@ -171,6 +179,7 @@ namespace Trainingscoach_Projekt
             TimerTextBlock.Text = time.ToString(@"mm\:ss");
             pause = true;
             timer.Start();
+            logger.Information("Kleine Verschnaufpause gestartet");
         }
 
         private void startNaechstesSet()
@@ -179,6 +188,7 @@ namespace Trainingscoach_Projekt
             time = TimeSpan.FromMinutes(Convert.ToDouble(laengeEinheit.Text));
             TimerTextBlock.Text = time.ToString(@"mm\:ss");
             timer.Start();
+            logger.Information("Starte nächstes Set");
         }
 
         private void taskErledigtSound()
@@ -186,6 +196,7 @@ namespace Trainingscoach_Projekt
             Uri uri = new Uri("src/sounds/taskFertig.mp3", UriKind.Relative);
             taskErledigtPlayer.Open(uri);
             taskErledigtPlayer.Play();
+            logger.Information("Aufgabe erledigt-Sound abgespielt");
         }
 
         private void countDownSound()
@@ -193,6 +204,7 @@ namespace Trainingscoach_Projekt
             Uri uri = new Uri("src/sounds/3secs.mp3", UriKind.Relative);
             countDownPlayer.Open(uri);
             countDownPlayer.Play();
+            logger.Information("Countdown-Sound abgespielt");
         }
 
         private void pausenMusik()
@@ -200,6 +212,7 @@ namespace Trainingscoach_Projekt
             Uri uri = new Uri("src/sounds/pausenMusik.mp3", UriKind.Relative);
             pausenMusikPlayer.Open(uri);
             pausenMusikPlayer.Play();
+            logger.Information("Pausenmusik gestartet");
         }
 
         private void HauptprogrammTimer_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -207,6 +220,7 @@ namespace Trainingscoach_Projekt
             timer.Stop();
             musikStoppen();
             timer.Tick -= timerJaDerTicktSchoen;
+            logger.Information("HauptprogrammTimer geschlossen");
         }
 
         private void musikStoppen()
@@ -215,12 +229,14 @@ namespace Trainingscoach_Projekt
             countDownPlayer.Stop();
             taskErledigtPlayer.Stop();
             kleinePausePlayer.Stop();
+            logger.Information("Musik gestoppt");
         }
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
             musikStoppen();
+            logger.Information("Timer gestoppt");
         }
 
         private void Button_Click_Spotify(object sender, RoutedEventArgs e)
@@ -237,14 +253,15 @@ namespace Trainingscoach_Projekt
             catch (Exception ex)
             {
                 MessageBox.Show($"Fehler beim Öffnen des Standard-Browsers: {ex.Message}");
+                logger.Error($"Fehler beim Öffnen des Standard-Browsers: {ex.Message}");
             }
         }
-
         private void ueberpruefeQuests()
         {
-         if (erledigteUebungenList.Contains("Übungsname: Hammercurls, Anzahl Sets: 3"))
+            if (erledigteUebungenList.Contains("Übungsname: Hammercurls, Anzahl Sets: 3"))
             {
                 validList[4] = true;
+                logger.Information("Quest überprüft und aktualisiert");
             }
         }
 
@@ -257,11 +274,13 @@ namespace Trainingscoach_Projekt
         private void fensterSchließen(object sender, MouseButtonEventArgs e)
         {
             this.Close();
+            logger.Information("Fenster geschlossen");
         }
 
         private void fensterMinimieren(object sender, MouseButtonEventArgs e)
         {
             WindowState = WindowState.Minimized;
+            logger.Information("Fenster minimiert");
         }
     }
 }

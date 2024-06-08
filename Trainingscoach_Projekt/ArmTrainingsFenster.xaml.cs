@@ -22,6 +22,8 @@ namespace Trainingscoach_Projekt
     public partial class ArmTrainingsFenster : Window
     {
 
+        private static readonly Serilog.ILogger logger = LoggerClass.logger;
+
         TimerDaten timerDaten = new TimerDaten();
         public Session einheiten;
         public static HauptprogrammTimer timer;
@@ -39,6 +41,7 @@ namespace Trainingscoach_Projekt
                 uebungListBox.Items.Add(item);
                 session.Einheiten.Add(item);
             }
+            logger.Information($"ArmTrainingsFenster initialisiert");
         }
 
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)
@@ -53,17 +56,32 @@ namespace Trainingscoach_Projekt
             catch (Exception ex)
             {
                 Console.WriteLine("Platzhalter");
+                logger.Error(ex, "Fehler beim Bewegen des Fensters.");
             }
         }
 
         private void fensterSchließen(object sender, MouseButtonEventArgs e)
         {
-            this.Close();
+            try
+            {
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Fehler beim Schließen des Fensters.");
+            }
         }
 
         private void fensterMinimieren(object sender, MouseButtonEventArgs e)
         {
-            WindowState = WindowState.Minimized;
+            try
+            {
+                WindowState = WindowState.Minimized;
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Fehler beim Minimieren des Fensters.");
+            }
         }
 
         private void InfoButtonHammercurls(object sender, MouseButtonEventArgs e)
@@ -71,18 +89,24 @@ namespace Trainingscoach_Projekt
             MessageBox.Show("Die Hanteln halten Sie während der gesamten Ausführung im Neutralgriff." +
                 " Der Bewegungsablauf ist ansonsten grundsätzlich gleich: " +
                 "Die Kurzhanteln heben Sie von seitlich des Körpers nach oben, indem Sie die Ellbogen beugen.");
+
+            logger.Information("Infos Hammercurls");
         }
 
         private void InfoButtonArnoldDips(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("Drücken Sie sich kräftig aus den Oberarmen nach oben in den Stütz zurück. " +
                 "Je tiefer Sie gehen, desto mehr beugen sich die Ellenbogen. Der Reiz für Ihren Trizeps wird stärker.");
+
+            logger.Information("Infos Arnold Dips");
         }
 
         private void InfoButtonPushups(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("Der Pushup ist eine Übung zur Kräftigung von Brust-, Schulter-, Arm- und Rumpfmuskulatur. " +
                 "Sie drücken sich dabei aus einer liegenden Position mit den Armen vom Boden weg.");
+
+            logger.Information("Infos Push Ups");
         }
 
         private void InfoButtonTricepPress(object sender, MouseButtonEventArgs e)
@@ -91,6 +115,8 @@ namespace Trainingscoach_Projekt
                 "Senken Sie die Unterarme nach hinten ab, bis sich diese leicht oberhalb deines Kopfes befinden. " +
                 "Die Oberarme bleiben gerade nach oben gestreckt und bewegen sich währen der Ausführung nicht. " +
                 "Im Anschluss ziehen Sie die Unterarme wieder nach oben.");
+
+            logger.Information("Infos Tricep Press");
         }
 
         private void InfoButtonKickbacks(object sender, MouseButtonEventArgs e)
@@ -99,6 +125,8 @@ namespace Trainingscoach_Projekt
                 "Sie beginnen indem Sie den linken Unterarm nach oben beugen. Sie bewegen dabei nur den Unterarm" +
                 "Anschließend sollte dein Arm fast vollständig gestreckt sein, Unter- und Oberarm bilden eine parallele Linie. " +
                 "Kehren Sie nun wieder in die Ausgangsposition zurück.");
+
+            logger.Information("Infos Kickbacks");
         }
 
         private void InfoButtonSZCurls(object sender, MouseButtonEventArgs e)
@@ -106,14 +134,22 @@ namespace Trainingscoach_Projekt
             MessageBox.Show("Stellen Sie sich aufrichrig hin. Die Beine ungefähr schulterbreit und die SZ-Stange vor Ihnen im Untergriff. " +
                 "Ziehen sie die SZ-Stange mit den Unterarme nach Oben, bis die Arme einen 90° Winkel haben. " +
                 "Danach wieder in Ausgangsposition zurückkehren.");
+
+            logger.Information("Infos SZ-Curls");
         }
 
         private void zeigeDataFenster(string nachricht)
         {
-            DatenFenster daten = new DatenFenster(einheiten, this.uebungListBox);
-            daten.einheitenName.Text = nachricht;
-            daten.ShowDialog();
-            // uebungListBox.Items.Add(daten.nutzer);
+            try
+            {
+                DatenFenster daten = new DatenFenster(einheiten, this.uebungListBox);
+                daten.einheitenName.Text = nachricht;
+                daten.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Fehler beim Anzeigen des Datenfensters.");
+            }
         }
 
         private void addButtonHammercurls(object sender, MouseButtonEventArgs e)
@@ -149,28 +185,33 @@ namespace Trainingscoach_Projekt
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            logger.Information("Fenster geschlossen");
         }
-
         private void buttonOK_Click(object sender, RoutedEventArgs e)
         {
-            if (uebungListBox.Items.Count == 0)
+            try
             {
-                MessageBox.Show("Bitte tragen Sie Übungen ein. ");
-            }
-
-            else
-            {
-                foreach (var item in uebungListBox.Items)
+                if (uebungListBox.Items.Count == 0)
                 {
-                    timerDaten.timerDaten.Add((nutzerEingabe)item);
+                    MessageBox.Show("Bitte tragen Sie Übungen ein. ");
+                    logger.Information("ListBox Werte sind leer");
                 }
+                else
+                {
+                    foreach (var item in uebungListBox.Items)
+                    {
+                        timerDaten.timerDaten.Add((nutzerEingabe)item);
+                    }
 
-                timer = new HauptprogrammTimer(timerDaten.timerDaten, validList);
-                timer.derzeitigeGrundEinheitTextBox.Text = "Armtraining";
-                this.Close();
-                timer.ShowDialog();
-                //this.validList = timer.validList;
-                
+                    timer = new HauptprogrammTimer(timerDaten.timerDaten, validList);
+                    timer.derzeitigeGrundEinheitTextBox.Text = "Armtraining";
+                    this.Close();
+                    timer.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Fehler beim Klicken des OK-Buttons.");
             }
         }
 
@@ -185,6 +226,7 @@ namespace Trainingscoach_Projekt
                 if (selectedIndex >= 0 && selectedIndex < session.Einheiten.Count)
                 {
                     session.Einheiten.RemoveAt(selectedIndex);
+                    logger.Information("Session entfernt");
                 }
             }
             else

@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Serilog;
 
 namespace Trainingscoach_Projekt
 {
@@ -19,10 +10,12 @@ namespace Trainingscoach_Projekt
     /// </summary>
     public partial class TrainingBeendetFenster : Window
     {
-        //public HauptprogrammTimer timer;
+        private static readonly Serilog.ILogger logger = LoggerClass.logger;
+
         public TrainingBeendetFenster()
         {
             InitializeComponent();
+            logger.Information("TrainingBeendetFenster initialisiert");
         }
 
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)
@@ -36,13 +29,14 @@ namespace Trainingscoach_Projekt
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Platzhalter");
+                logger.Error(ex, "Fehler beim Bewegen des Fensters.");
             }
         }
 
         private void fensterSchließen(object sender, MouseButtonEventArgs e)
         {
             this.Close();
+            logger.Information("TrainingBeendetFenster geschlossen");
         }
 
         private void fensterMinimieren(object sender, MouseButtonEventArgs e)
@@ -60,6 +54,7 @@ namespace Trainingscoach_Projekt
             Statistik statistik = new Statistik();
             this.Close();
             statistik.ShowDialog();
+            logger.Information("Statistik geöffnet von TrainingBeendetFenster aus");
         }
     }
 }
