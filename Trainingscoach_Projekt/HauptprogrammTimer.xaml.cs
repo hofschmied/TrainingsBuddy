@@ -50,7 +50,7 @@ namespace Trainingscoach_Projekt
                 double dauer = timerDaten[i].dauer * anzahlsets;
                 dauerListe.Add(dauer);
 
-                
+                anzahlsets = 1;
             }
 
         }
