@@ -27,18 +27,27 @@ namespace Trainingscoach_Projekt
             InitializeComponent();
 
             double armdauer = 0;
+            double beindauer = 0;
+            double bauchdauer = 0;
+            double brustdauer = 0;
+            double rueckendauer = 0;
+            double ganzkörperdauer = 0;
+            double cardiodauer = 0;
 
             foreach (double zahl in timer.dauerListe)
             {
                 armdauer += zahl;
+                beindauer += zahl;
+                bauchdauer += zahl;
             }
-
+            //armdauer *= timer.anzahlsets;
+            
             SeriesCollection = new SeriesCollection
             {
                 new ColumnSeries
                 {
                     Title = "Trainingsdauer",
-                    Values = new ChartValues<double> { armdauer, 0, 0, 0, 0, 0, 0  },
+                    Values = new ChartValues<double> { armdauer, beindauer, bauchdauer, brustdauer, rueckendauer, ganzkörperdauer, cardiodauer  },
                     
                 }
             };
