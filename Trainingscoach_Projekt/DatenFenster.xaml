@@ -5,40 +5,97 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="DatenFenster" Height="320" Width="460">
+        Title="DatenFenster" Height="350" Width="480">
     <Grid Background="#333333">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="130"/>
-            <ColumnDefinition Width="*"/>
-
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="60"/>
             <RowDefinition Height="60"/>
             <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="65"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="STEP 4:" FontSize="15" FontWeight="Bold" Foreground="White"></TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="STEP 4:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Foreground="White" FontWeight="Bold" Margin="14,10,0,0">
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF383838"/>
+                    <GradientStop Color="#FF2B5762" Offset="0.875"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+            <TextBlock.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="2"/>
+            </TextBlock.Effect>
+        </TextBlock>
 
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="Bestimmen Sie die Eigenschaften" FontSize="15" FontWeight="Bold" Foreground="White"></TextBlock>
-
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Einheiten Name: " Margin="10,15,4,15" FontSize="15" FontWeight="Bold" Foreground="White"></TextBlock>
-
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="Dauer (min): " Margin="10,15,4,15" FontSize="15" FontWeight="Bold" Foreground="White"></TextBlock>
-
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Anzahl Sets: " Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Foreground="White"></TextBlock>
-
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Bestimmen Sie die Eigenschaften" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Foreground="White" FontWeight="Bold" Margin="0,10,0,0">
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF383838"/>
+                    <GradientStop Color="#FF2B5762" Offset="0.875"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+            <TextBlock.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="2"/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <Label Grid.Column="0" Grid.Row="1" Content="Einheiten Name:" FontSize="15" FontWeight="Bold" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3" Margin="8,8,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Grid.Column="0" Grid.Row="2" Content="Anzahl Sets:" FontSize="15" FontWeight="Bold" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3" Margin="8,8,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Grid.Column="0" Grid.Row="3" Content="Dauer (min):" FontSize="15" FontWeight="Bold" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3" Margin="8,8,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBlock x:Name="einheitenName" Text=" " Grid.Row="1" Grid.Column="1" Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Background="LightGray"></TextBlock>
-
         <TextBox x:Name="anzahlSets" Grid.Row="2" Grid.Column="1" Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Background="LightGray"></TextBox>
-
         <TextBox x:Name="dauer" Grid.Row="3" Grid.Column="1" Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Background="LightGray"></TextBox>
-        <Button Grid.Column="1" Content="OK" HorizontalAlignment="Left" Margin="170,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="20" Width="60" Click="Button_Click"/>
-        <Button Grid.Column="1" Content="CANCEL" HorizontalAlignment="Left" Margin="245,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="20" Width="60" Click="Button_Click_Cancel"/>
 
-        
+        <!-- OK Button -->
+        <Button Grid.Column="1" Content="OK" Margin="125,15,125,5" Grid.Row="4" Click="Button_Click" Foreground="White" FontSize="17" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1, 0">
+                    <GradientStop Color="#FF3A6073" Offset="0.0"/>
+                    <GradientStop Color="#FF16222A" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FFA9EDFF"/>
+            </Button.BorderBrush>
+            <Button.BorderThickness>3</Button.BorderThickness>
+        </Button>
+
+        <!-- CANCEL Button -->
+        <Button Grid.Column="1" Content="CANCEL" HorizontalAlignment="Left" Margin="234,15,0,5" Grid.Row="4" Width="81" Click="Button_Click_Cancel" Foreground="White" FontSize="17" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#FF3A6073" Offset="0.0"/>
+                    <GradientStop Color="#FF16222A" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FFA9EDFF"/>
+            </Button.BorderBrush>
+            <Button.BorderThickness>3</Button.BorderThickness>
+        </Button>
     </Grid>
 </Window>
