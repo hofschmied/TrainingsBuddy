@@ -50,7 +50,7 @@ namespace Trainingscoach_Projekt
 
         private void infoButtonTouchToeTwist(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Diese Übung führen Sie im Stehen aus. Sie bewegen ihre Hand zum entgegengesetzt Fuß. Stärkt die seitlichen und geraden Bauchmuskeln. ");
+            MessageBox.Show("Diese Übung führen Sie im Stehen aus. Sie bewegen Ihre Hand zum entgegengesetzt Fuß. Stärkt die seitlichen und geraden Bauchmuskeln. ");
             logger.Information("Infos Touch-Toe-Twist");
         }
 
@@ -62,13 +62,13 @@ namespace Trainingscoach_Projekt
 
         private void infoButtonSitUps(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Sie legen sich bei dieser Übung mit dem Rücken auf dem Boden und halten bei dieser Übung ihre Füße aufgestellt. Schließlich bewegen Sie ihren Oberkörper langsam nach oben. ");
+            MessageBox.Show("Sie legen sich bei dieser Übung mit dem Rücken auf dem Boden und halten bei dieser Übung Ihre Füße aufgestellt. Schließlich bewegen Sie Ihren Oberkörper langsam nach oben. ");
             logger.Information("Infos Sit-Ups");
         }
 
         private void infoButtonSitUpsBall(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Sie legen sich bei dieser Übung auf einen Gymnastik-Ball und stellen ihre Füße auf den Boden. Schließlich bewegen Sie ihren Oberkörper langsam nach oben. ");
+            MessageBox.Show("Sie legen sich bei dieser Übung auf einen Gymnastik-Ball und stellen Ihre Füße auf den Boden. Schließlich bewegen Sie Ihren Oberkörper langsam nach oben. ");
             logger.Information("Infos Sit-Ups-Ball");
         }
 

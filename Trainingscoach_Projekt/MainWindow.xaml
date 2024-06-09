@@ -67,7 +67,7 @@
             <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="STEP 1: Erstelle neue Session" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" Margin="10,10,0,0">
+        <TextBlock Grid.Row="0" Text="STEP 1: Erstellen Sie eine neue Session" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="28" Foreground="White" FontWeight="Bold" Margin="164,10,0,0" Grid.ColumnSpan="3">
             <TextBlock.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF383838"/>

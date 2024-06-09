@@ -103,7 +103,7 @@ namespace Trainingscoach_Projekt
 
         private void InfoButtonPushups(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Der Pushup ist eine Übung zur Kräftigung von Brust-, Schulter-, Arm- und Rumpfmuskulatur. " +
+            MessageBox.Show("Der Push-Up ist eine Übung zur Kräftigung von Brust-, Schulter-, Arm- und Rumpfmuskulatur. " +
                 "Sie drücken sich dabei aus einer liegenden Position mit den Armen vom Boden weg.");
 
             logger.Information("Infos Push Ups");
@@ -113,7 +113,7 @@ namespace Trainingscoach_Projekt
         {
             MessageBox.Show("Sie beginnen das Trizepsdrücken über Kopf mit dem Seil, indem die Arme nach oben gestreckt sind. " +
                 "Senken Sie die Unterarme nach hinten ab, bis sich diese leicht oberhalb deines Kopfes befinden. " +
-                "Die Oberarme bleiben gerade nach oben gestreckt und bewegen sich währen der Ausführung nicht. " +
+                "Die Oberarme bleiben gerade nach oben gestreckt und bewegen sich während der Ausführung nicht. " +
                 "Im Anschluss ziehen Sie die Unterarme wieder nach oben.");
 
             logger.Information("Infos Tricep Press");
@@ -123,7 +123,7 @@ namespace Trainingscoach_Projekt
         {
             MessageBox.Show("Bei dieser Übung gibt es 2 Varianten, einmal die stehenden und einmal die knienden Kickbacks. " +
                 "Sie beginnen indem Sie den linken Unterarm nach oben beugen. Sie bewegen dabei nur den Unterarm" +
-                "Anschließend sollte dein Arm fast vollständig gestreckt sein, Unter- und Oberarm bilden eine parallele Linie. " +
+                "Anschließend sollte Ihr Arm fast vollständig gestreckt sein, Unter- und Oberarm bilden eine parallele Linie. " +
                 "Kehren Sie nun wieder in die Ausgangsposition zurück.");
 
             logger.Information("Infos Kickbacks");
