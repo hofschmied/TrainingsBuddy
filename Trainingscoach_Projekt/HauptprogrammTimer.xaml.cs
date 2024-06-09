@@ -7,6 +7,7 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using System.IO;
 using System.Text.Json;
+using System.Windows.Shapes;
 
 namespace Trainingscoach_Projekt
 {
@@ -14,6 +15,7 @@ namespace Trainingscoach_Projekt
     {
         private DispatcherTimer timer;
         private TimeSpan time;
+        private TimeSpan initialPauseTime;
         private List<nutzerEingabe> timerDaten = new List<nutzerEingabe>();
         public List<double> dauerListe = new List<double>();
         private MediaPlayer pausenMusikPlayer;
@@ -29,6 +31,7 @@ namespace Trainingscoach_Projekt
         public List<bool> validList;
         int count = 0;
         private static readonly Serilog.ILogger logger = LoggerClass.logger;
+        private bool muted = false;
 
         public HauptprogrammTimer(List<nutzerEingabe> timerDaten, List<bool> validList)
         {
@@ -75,78 +78,89 @@ namespace Trainingscoach_Projekt
             }
         }
 
-        private void timerJaDerTicktSchoen(object sender, EventArgs e)
+private void timerJaDerTicktSchoen(object sender, EventArgs e)
+{
+    if (time > TimeSpan.Zero)
+    {
+        time = time.Add(TimeSpan.FromSeconds(-1));
+        TimerTextBlock.Text = time.ToString(@"mm\:ss");
+        TimerProgressBar.Value = 100 * (time.TotalSeconds / (pause ? 15 : Convert.ToDouble(laengeEinheit.Text) * 60));
+
+        if (time == TimeSpan.FromSeconds(3))
         {
-            if (time > TimeSpan.Zero)
+            musikStoppen();
+        }
+
+        if (TimerTextBlock.Text == "00:00")
+        {
+            timer.Stop();
+
+            if (pause)
             {
-                time = time.Add(TimeSpan.FromSeconds(-1));
-                TimerTextBlock.Text = time.ToString(@"mm\:ss");
-                TimerProgressBar.Value = 100 * (time.TotalSeconds / (pause ? 15 : Convert.ToDouble(laengeEinheit.Text) * 60));
-
-                if (TimerTextBlock.Text == "00:00")
-                {
-                    timer.Stop();
-
-                    if (pause)
-                    {
-                        pause = false;
-                        startNaechstesSet();
-                    }
-                    else if (grossepause)
-                    {
-                        grossepause = false;
-                        felderBefuelleLeereKartons();
-                        startNaechstesSet();
-                    }
-                    else
-                    {
-                        naechsteSets--;
-                        setsAnzahl.Text = naechsteSets.ToString();
-
-                        if (naechsteSets > 0)
-                        {
-                            setsPause();
-                        }
-                        else
-                        {
-                            erledigteUebungen.Items.Add(derzeitigeUebungen.Items[count]);
-                            ueberpruefeQuests();
-
-                            timerDaten.Remove(timerDaten[0]);
-
-                            if (timerDaten.Count > 0)
-                            {
-                                grossepause = true;
-                                verdientePause();
-                            }
-                            else
-                            {
-                                TrainingBeendetFenster trainingBeendet = new TrainingBeendetFenster();
-                                this.Close();
-                                trainingBeendet.ShowDialog();
-                            }
-                        }
-                    }
-                }
-
-                if (TimerTextBlock.Text == "00:03")
-                {
-                    countDownSound();
-                }
+                pause = false;
+                startNaechstesSet();
+            }
+            else if (grossepause)
+            {
+                grossepause = false;
+                felderBefuelleLeereKartons();
+                startNaechstesSet();
             }
             else
             {
-                timer.Stop();
-                TimerTextBlock.Text = "00:00";
+                naechsteSets--;
+                setsAnzahl.Text = naechsteSets.ToString();
+
+                if (naechsteSets > 0)
+                {
+                    setsPause();
+                }
+                else
+                {
+                    erledigteUebungen.Items.Add(derzeitigeUebungen.Items[count]);
+                    ueberpruefeQuests();
+
+                    timerDaten.Remove(timerDaten[0]);
+
+                    if (timerDaten.Count > 0)
+                    {
+                        grossepause = true;
+                        verdientePause();
+                    }
+                    else
+                    {
+                        TrainingBeendetFenster trainingBeendet = new TrainingBeendetFenster();
+                        this.Close();
+                        trainingBeendet.ShowDialog();
+                    }
+                }
             }
         }
 
+        if (TimerTextBlock.Text == "00:03")
+        {
+            countDownSound();
+        }
+    }
+    else
+    {
+        timer.Stop();
+        TimerTextBlock.Text = "00:00";
+    }
+}
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                double zeit = Convert.ToDouble(laengeEinheit.Text);
-                time = TimeSpan.FromMinutes(zeit);
+                if (pause || grossepause)
+                {
+                    time = initialPauseTime;
+                }
+                else
+                {
+                    double zeit = Convert.ToDouble(laengeEinheit.Text);
+                    time = TimeSpan.FromMinutes(zeit);
+                }
                 TimerTextBlock.Text = time.ToString(@"mm\:ss");
                 timer.Start();
                 logger.Information("Training gestartet");
@@ -166,6 +180,7 @@ namespace Trainingscoach_Projekt
             time = TimeSpan.FromSeconds(10);
             TimerTextBlock.Text = time.ToString(@"mm\:ss");
             timer.Start();
+            initialPauseTime = time; // Ursprüngliche Zeit speichern
             pausenMusik();
             logger.Information("Verdiente Pause gestartet");
         }
@@ -173,17 +188,33 @@ namespace Trainingscoach_Projekt
 
         private void setsPause()
         {
-            Uri uri = new Uri("src/sounds/kleinePause.mp3", UriKind.Relative);
-            kleinePausePlayer.Open(uri);
-            kleinePausePlayer.Play();
+            if (!muted)
+            {
+                Uri uri = new Uri("src/sounds/kleinePause.mp3", UriKind.Relative);
+                kleinePausePlayer.Open(uri);
+                kleinePausePlayer.Play();
+            }
 
-            derzeitigeTrainingEinheitTextBox.Text = "Kleine Verschnaufpause ";
+            derzeitigeTrainingEinheitTextBox.Text = "Kleine Verschnaufpause";
             time = TimeSpan.FromSeconds(15);
             TimerTextBlock.Text = time.ToString(@"mm\:ss");
             pause = true;
+            initialPauseTime = time;
             timer.Start();
             logger.Information("Kleine Verschnaufpause gestartet");
+
+            if (derzeitigeTrainingEinheitTextBox.Text == "Kleine Verschnaufpause")
+            {
+                derzeitigeTrainingEinheitTextBox.Background = Brushes.Yellow;
+            }
+
+            else
+            {
+                derzeitigeTrainingEinheitTextBox.Background = Brushes.LightGray;
+            }
         }
+
+
 
         private void startNaechstesSet()
         {
@@ -212,10 +243,13 @@ namespace Trainingscoach_Projekt
 
         private void pausenMusik()
         {
-            Uri uri = new Uri("src/sounds/pausenMusik.mp3", UriKind.Relative);
-            pausenMusikPlayer.Open(uri);
-            pausenMusikPlayer.Play();
-            logger.Information("Pausenmusik gestartet");
+            if (!muted)
+            {
+                Uri uri = new Uri("src/sounds/pausenMusik.mp3", UriKind.Relative);
+                pausenMusikPlayer.Open(uri);
+                pausenMusikPlayer.Play();
+                logger.Information("Pausenmusik gestartet");
+            }
         }
 
         private void HauptprogrammTimer_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -334,6 +368,21 @@ namespace Trainingscoach_Projekt
         {
             WindowState = WindowState.Minimized;
             logger.Information("Fenster minimiert");
+        }
+
+        private void Button_Click_Musik_Muten(object sender, RoutedEventArgs e)
+        {
+            muted = !muted;
+
+            if (muted)
+            {
+                musikStoppen();
+                logger.Information("Musik stummgeschaltet");
+            }
+            else
+            {
+                logger.Information("Musik wieder eingeschaltet");
+            }
         }
     }
 }
