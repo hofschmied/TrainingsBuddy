@@ -177,10 +177,10 @@ private void timerJaDerTicktSchoen(object sender, EventArgs e)
             derzeitigeTrainingEinheitTextBox.Text = "Zeit für eine Pause!";
             setsAnzahl.Text = "Schwing doch gerne dein Tanzbein!";
             laengeEinheit.Text = "5";
-            time = TimeSpan.FromSeconds(10);
+            time = TimeSpan.FromMinutes(1);
             TimerTextBlock.Text = time.ToString(@"mm\:ss");
             timer.Start();
-            initialPauseTime = time; // Ursprüngliche Zeit speichern
+            initialPauseTime = time;
             pausenMusik();
             logger.Information("Verdiente Pause gestartet");
         }
@@ -202,16 +202,6 @@ private void timerJaDerTicktSchoen(object sender, EventArgs e)
             initialPauseTime = time;
             timer.Start();
             logger.Information("Kleine Verschnaufpause gestartet");
-
-            if (derzeitigeTrainingEinheitTextBox.Text == "Kleine Verschnaufpause")
-            {
-                derzeitigeTrainingEinheitTextBox.Background = Brushes.Yellow;
-            }
-
-            else
-            {
-                derzeitigeTrainingEinheitTextBox.Background = Brushes.LightGray;
-            }
         }
 
 
