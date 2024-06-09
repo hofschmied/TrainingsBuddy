@@ -5,6 +5,8 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using System.IO;
+using System.Text.Json;
 
 namespace Trainingscoach_Projekt
 {
@@ -109,6 +111,7 @@ namespace Trainingscoach_Projekt
                         {
                             erledigteUebungen.Items.Add(derzeitigeUebungen.Items[count]);
                             ueberpruefeQuests();
+
                             timerDaten.Remove(timerDaten[0]);
 
                             if (timerDaten.Count > 0)
@@ -258,10 +261,51 @@ namespace Trainingscoach_Projekt
         }
         private void ueberpruefeQuests()
         {
-            if (erledigteUebungenList.Contains("Übungsname: Hammercurls, Anzahl Sets: 3"))
+            foreach (nutzerEingabe item in erledigteUebungen.Items)
             {
-                validList[4] = true;
-                logger.Information("Quest überprüft und aktualisiert");
+                if (item.einheitenName == "Kickbacks" && item.anzahlSets >= 5)
+                {
+                    MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 5 Sets Kickbacks");
+                    validList[0] = true;
+                }
+
+                if (item.einheitenName == "SZ-Curls" && item.anzahlSets >= 20)
+                {
+                    MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 20 Sets SZ-Curls");
+                    validList[1] = true;
+                }
+
+                if (item.anzahlSets * item.dauer >= 15)
+                {
+                    MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: Trainiere 10 Minuten");
+                    validList[2] = true;
+                }
+
+                if (erledigteUebungen.Items.Count >= 2)
+                {
+                    MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 2 Armübungen deiner Wahl");
+                    validList[3] = true;
+                    logger.Information("Quest überprüft und aktualisiert");
+                }
+
+                if (item.einheitenName == "Hammercurls" && item.anzahlSets >= 3)
+                {
+                    MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 3 Sets Hammercurls");
+                    validList[4] = true;
+                    logger.Information("Quest überprüft und aktualisiert");
+                }
+            }
+
+            if (quest != null)
+            {
+                quest.QuestSpeichern();
+            }
+            else
+            {
+                string filePath = "questStatus.json";
+                string json = JsonSerializer.Serialize(validList);
+                File.WriteAllText(filePath, json);
+                logger.Information("Quest-Zustand direkt aus HauptprogrammTimer gespeichert");
             }
         }
 

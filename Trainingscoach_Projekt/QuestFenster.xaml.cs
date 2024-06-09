@@ -4,6 +4,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
 using Serilog;
+using System.IO;
+using System.Text.Json;
 
 namespace Trainingscoach_Projekt
 {
@@ -14,6 +16,7 @@ namespace Trainingscoach_Projekt
         private List<bool> validList;
         private List<CheckBox> checkBoxes = new List<CheckBox>();
         private static readonly ILogger logger = LoggerClass.logger;
+        private const string filePath = "questStatus.json";
 
         public QuestFenster(List<bool> validList)
         {
@@ -23,10 +26,10 @@ namespace Trainingscoach_Projekt
             this.checkBoxes.Add(aufgabe3);
             this.checkBoxes.Add(aufgabe4);
             this.checkBoxes.Add(aufgabe5);
-            this.validList = validList;
+            this.validList = validList ?? new List<bool> { false, false, false, false, false };
+            QuestLaden();
             logger.Information("QuestFenster initialisiert");
             questErledigt();
-            AktualisierungsTimer();
         }
 
         private void AktualisierungsTimer()
@@ -34,24 +37,8 @@ namespace Trainingscoach_Projekt
             nextExercise = DateTime.Now.AddHours(24);
             dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
-            dispatcherTimer.Tick += DispatcherTimer_Tick;
             dispatcherTimer.Start();
             logger.Information("Aktualisierungs-Timer gestartet");
-        }
-
-        private void DispatcherTimer_Tick(object sender, EventArgs e)
-        {
-            TimeSpan timeLeft = nextExercise - DateTime.Now;
-            if (timeLeft > TimeSpan.Zero)
-            {
-                NextExerciseTime.Text = $"Nächste Aufgaben in: {timeLeft:hh\\:mm\\:ss}";
-            }
-            else
-            {
-                NextExerciseTime.Text = "Nächste Aufgaben in: 00:00:00";
-                dispatcherTimer.Stop();
-                logger.Information("Aktualisierungs-Timer gestoppt");
-            }
         }
 
         private void questErledigt()
@@ -61,6 +48,39 @@ namespace Trainingscoach_Projekt
                 checkBoxes[i].IsChecked = validList[i];
             }
             logger.Information("Quests aktualisiert");
+        }
+
+        public void QuestSpeichern()
+        {
+            List<bool> states = new List<bool>();
+            foreach (var checkBox in checkBoxes)
+            {
+                states.Add(checkBox.IsChecked ?? false);
+            }
+            string json = JsonSerializer.Serialize(states);
+            File.WriteAllText(filePath, json);
+            logger.Information("Quest-Zustand gespeichert");
+        }
+
+        private void QuestLaden()
+        {
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                validList = JsonSerializer.Deserialize<List<bool>>(json);
+                if (validList.Count != checkBoxes.Count)
+                {
+                    validList = new List<bool> { false, false, false, false, false };
+                }
+                questErledigt();
+                logger.Information("Quest-Zustand geladen");
+            }
+        }
+
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            QuestSpeichern();
         }
     }
 }

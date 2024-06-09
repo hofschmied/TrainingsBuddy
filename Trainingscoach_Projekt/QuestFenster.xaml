@@ -60,47 +60,49 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
-            <TextBlock Text="Deine Aufgaben: " FontSize="28" Foreground="White" FontWeight="Bold" Margin="10">
-                <TextBlock.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF383838"/>
-                        <GradientStop Color="#FF2B5762" Offset="0.875"/>
-                    </LinearGradientBrush>
-                </TextBlock.Background>
-                <TextBlock.Effect>
-                    <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="2"/>
-                </TextBlock.Effect>
-            </TextBlock>
-            <TextBlock FontSize="18" Foreground="White" VerticalAlignment="Center" Margin="10,0,0,0"/>
-            <TextBlock x:Name="NextExerciseTime" FontSize="18" Foreground="White" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBlock Text="Deine Aufgaben: " FontSize="28" Foreground="White" FontWeight="Bold" Margin="10"/>
         </StackPanel>
+
+        <TextBlock Text="Sei gespannt, denn bald kommen neue Aufgaben" 
+                   FontSize="14" Foreground="White" HorizontalAlignment="Right" 
+                   VerticalAlignment="Top" Margin="0,0,10,0">
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF383838"/>
+                    <GradientStop Color="#FF2B5762" Offset="0.875"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+            <TextBlock.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="2"/>
+            </TextBlock.Effect>
+        </TextBlock>
 
         <StackPanel Grid.Row="1" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border Background="#FFEEEEEE" BorderBrush="#FF737373" BorderThickness="3" CornerRadius="10" Padding="10" Margin="10">
                 <StackPanel Orientation="Horizontal">
                     <CheckBox x:Name="aufgabe1" Margin="10" VerticalAlignment="Center" IsEnabled="False"/>
-                    <TextBlock Text="Trainiere 10 Minuten" FontSize="20" Foreground="Black" VerticalAlignment="Center"/>
+                    <TextBlock Text="Mach 5 Sets Kickbacks" FontSize="20" Foreground="Black" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
 
             <Border Background="#FFEEEEEE" BorderBrush="#FF737373" BorderThickness="3" CornerRadius="10" Padding="10" Margin="10">
                 <StackPanel Orientation="Horizontal">
                     <CheckBox x:Name="aufgabe2" Margin="10" VerticalAlignment="Center" IsEnabled="False"/>
-                    <TextBlock Text="Mach 20 Sit-Ups" FontSize="20" Foreground="Black" VerticalAlignment="Center"/>
+                    <TextBlock Text="Mach 20 Sets SZ-Curls" FontSize="20" Foreground="Black" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
 
             <Border Background="#FFEEEEEE" BorderBrush="#FF737373" BorderThickness="3" CornerRadius="10" Padding="10" Margin="10">
                 <StackPanel Orientation="Horizontal">
                     <CheckBox x:Name="aufgabe3" Margin="10" VerticalAlignment="Center" IsEnabled="False"/>
-                    <TextBlock Text="Trainiere 10 Minuten" FontSize="20" Foreground="Black" VerticalAlignment="Center"/>
+                    <TextBlock Text="Trainiere 15 Minuten" FontSize="20" Foreground="Black" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
 
             <Border Background="#FFEEEEEE" BorderBrush="#FF737373" BorderThickness="3" CornerRadius="10" Padding="10" Margin="10">
                 <StackPanel Orientation="Horizontal">
                     <CheckBox x:Name="aufgabe4" Margin="10" VerticalAlignment="Center" IsEnabled="False"/>
-                    <TextBlock Text="2 Übungen deiner Wahl" FontSize="20" Foreground="Black" VerticalAlignment="Center"/>
+                    <TextBlock Text="2 Armübungen deiner Wahl" FontSize="20" Foreground="Black" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
 
