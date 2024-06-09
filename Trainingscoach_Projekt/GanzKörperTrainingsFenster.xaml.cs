@@ -171,6 +171,12 @@ namespace Trainingscoach_Projekt
                 uebungListBox.Items.Remove(uebungListBox.SelectedItem);
                 logger.Information("Eintrag in ListBox gelöscht");
             }
+
+            einheiten.Einheiten.Clear();
+            foreach (nutzerEingabe item in uebungListBox.Items)
+            {
+                einheiten.Einheiten.Add(item);
+            }
         }
 
         private void buttonOK_Click(object sender, RoutedEventArgs e)

@@ -240,6 +240,12 @@ namespace Trainingscoach_Projekt
 
                 uebungListBox.Items.RemoveAt(selectedIndex);
 
+                einheiten.Einheiten.Clear();
+                foreach (nutzerEingabe item in uebungListBox.Items)
+                {
+                    einheiten.Einheiten.Add(item);
+                }
+
                 if (selectedIndex >= 0 && selectedIndex < session.Einheiten.Count)
                 {
 
