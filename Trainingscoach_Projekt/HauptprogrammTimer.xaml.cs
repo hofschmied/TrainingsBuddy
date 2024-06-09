@@ -177,7 +177,7 @@ private void timerJaDerTicktSchoen(object sender, EventArgs e)
             derzeitigeTrainingEinheitTextBox.Text = "Zeit für eine Pause!";
             setsAnzahl.Text = "Schwing doch gerne dein Tanzbein!";
             laengeEinheit.Text = "5";
-            time = TimeSpan.FromMinutes(1);
+            time = TimeSpan.FromSeconds(60);
             TimerTextBlock.Text = time.ToString(@"mm\:ss");
             timer.Start();
             initialPauseTime = time;
@@ -291,32 +291,32 @@ private void timerJaDerTicktSchoen(object sender, EventArgs e)
                 {
                     if (item.einheitenName == "Kickbacks" && item.anzahlSets >= 5 && derzeitigeGrundEinheitTextBox.Text == "Armtraining")
                     {
-                        MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 5 Sets Kickbacks");
+                        //MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 5 Sets Kickbacks");
                         validList[0] = true;
                     }
 
                     if (item.einheitenName == "SZ-Curls" && item.anzahlSets >= 20 && derzeitigeGrundEinheitTextBox.Text == "Armtraining")
                     {
-                        MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 20 Sets SZ-Curls");
+                        //MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 20 Sets SZ-Curls");
                         validList[1] = true;
                     }
 
                     if (item.anzahlSets * item.dauer >= 15 && derzeitigeGrundEinheitTextBox.Text == "Armtraining")
                     {
-                        MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: Trainiere 10 Minuten");
+                        //MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: Trainiere 10 Minuten");
                         validList[2] = true;
                     }
 
                     if (erledigteUebungen.Items.Count >= 2 && derzeitigeGrundEinheitTextBox.Text == "Armtraining")
                     {
-                        MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 2 Armübungen deiner Wahl");
+                        //MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 2 Armübungen deiner Wahl");
                         validList[3] = true;
                         logger.Information("Quest überprüft und aktualisiert");
                     }
 
                     if (item.einheitenName == "Hammercurls" && item.anzahlSets >= 3 && derzeitigeGrundEinheitTextBox.Text == "Armtraining")
                     {
-                        MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 3 Sets Hammercurls");
+                        //MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 3 Sets Hammercurls");
                         validList[4] = true;
                         logger.Information("Quest überprüft und aktualisiert");
                     }

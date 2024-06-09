@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
         Title="DatenFenster" Height="350" Width="500"
-           WindowStyle="None"
+           WindowStyle="ThreeDBorderWindow"
    ResizeMode="NoResize"
    MouseDown="Window_MausRunter">
     <Grid Background="#333333">
@@ -78,7 +78,7 @@
         </Button>
 
         <!-- CANCEL Button -->
-        <Button Grid.Column="1" Content="CANCEL" HorizontalAlignment="Left" Margin="210,15,0,5" Grid.Row="4" Width="81" Click="Button_Click_Cancel" Foreground="White" FontSize="17" FontWeight="Bold" Cursor="Hand">
+        <Button Grid.Column="1" Content="CANCEL" HorizontalAlignment="Left" Margin="244,15,0,5" Grid.Row="4" Width="81" Click="Button_Click_Cancel" Foreground="White" FontSize="17" FontWeight="Bold" Cursor="Hand" RenderTransformOrigin="0.321,0.544">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" 
@@ -100,10 +100,5 @@
             </Button.BorderBrush>
             <Button.BorderThickness>3</Button.BorderThickness>
         </Button>
-
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal" Grid.Column="1">
-            <Image Source="/src/pictures/minimizeButton.png" Width="20" Height="Auto" Margin="0,0,10,10" Cursor="Hand" MouseDown="fensterMinimieren" RenderTransformOrigin="0.6,0.828"/>
-            <Image Source="/src/pictures/closeButton.png" Width="20" Height="Auto" Margin="0,0,0,10" Cursor="Hand" MouseDown="fensterSchließen"/>
-        </StackPanel>
     </Grid>
 </Window>

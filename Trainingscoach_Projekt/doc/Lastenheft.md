@@ -1,20 +1,15 @@
 # Trainingsplaner TODO-Liste:
-
 ## Must-Haves;
-
-### Menüfenster:
-- Hauptfenster bei dem man neue Task erstellen kann, Task starten, Task löschen kann, Task Laden, Speicher kann
-- Im Hauptfenster wird per erstellter Task die Grund-Trainingseinheit vom Benutzer angezeigt
--  Z.B: 30 Sets Liegestütze pro Set 3 Minuten
--  - 1 Set Hanteln pro Set 10 Minuten
-
-### Auswahl Fenster
-- Sobald die richtige Grundeinheit angegeben wurde, werden dir zu der jeweiligen Grundeinheit Übungen vorgeschlagen. Diese kannst du dann hinzufügen und per Übung sagen
-  wie lange sie pro Set gehen soll und wie viel Sets
-
-### Main Programm Fenster
-- Hier wird das "richtige" Programm ausgeführt. Die genau eingeplante Reihenfolge des Auswahl Fenster wird hier abgespielt.
-- Z.B: 30 Sets Liegestütze pro Set 3 Minuten die nächsten 10 Minuten werden 1 Set gehantelt, dannach ist 2 Minuten Pause. Die Trainingseinheiten erfolgen per Timer.
+- Fenster bei der die Grundtrainingseinheit gewählt wird
+- Laden/Speichern
+- per ausgewählter Grundtrainingseinheit wird das richtige Fenster gewählt und die passenden Übungen vorgeschlagen
+- Man kann sich "einplanen" wie viel Sets man pro Übung haben möchte und wie lange ein Set dauern kann
+- Dannach soll man mit den jeweiligen Daten in ein Timer Fenster kommen, bei der Quasi der Timer richtig funktioniert
+- Felder richtig befüllen
+- Timer soll richtig ticken
+- Timer soll richtig geupdatet werden
+- visualisierter Timer
+- Pause nach jeder Übung (1 Min)
 - Logging Datei
 
 ## Nice-To-Haves
@@ -22,10 +17,10 @@
 - übersichtliches Menü Fenster
 - passende Bilder zu den jeweiligen Übungen
 - beschreibung zu den jeweiligen Übungen
-- visualisierter Timer
-- Statistik
-- Aufgabensystem (Nutzer muss Aufgaben erledigen)
+- nach jeder fertigen Trainingssession eine Statistik
+- Aufgabensystem (Nutzer kann Aufgaben erledigen)
 - Timer spielt Töne ab
+- bei Pause Musik
 - zwischen den Sets befindet sich automatisch eine Verschnaufpause (15 Sekunden)
 
 ## Not-To-Haves
@@ -33,44 +28,76 @@
 - Anmelde System
 - Sehr gutes Design
 
+# Planung und Umsetzung
+### Menüfenster:
+- Hauptfenster bei der man neue Grundtrainingseinheit Task erstellen kann, Task starten, Task löschen kann, Task Laden, Speicher kann
+- Im Hauptfenster wird auch per erstellter Task die Grund-Trainingseinheit vom Benutzer angezeigt
+-  Z.B: Session Name: "Trainingsstunde", Grundtrainingseinheit: "Amtraining"
+
+### Auswahl Fenster
+- Sobald die richtige Grundeinheit angegeben wurde, werden dir zu der jeweiligen Grundeinheit Übungen vorgeschlagen. Sprich wenn du im Hauptprogramm Arm-Training als Grundeinheit festgelegt hast, werden dann auch Arm Übungen vorgeschlagen
+- Diese kannst du dann hinzufügen und per Übung sagen wie lange sie pro Set gehen soll und wie viel Sets
+
+### Main Programm Fenster
+- Hier wird das "richtige" Programm ausgeführt. Die genau eingeplante Reihenfolge des Auswahl Fenster wird hier abgespielt.
+- Z.B: 30 Sets Liegestütze pro Set 3 Minuten die nächsten 10 Minuten werden 1 Set gehantelt, dannach ist 2 Minuten Pause. 
+- Die Trainingseinheiten erfolgen per Timer.
+
 # Klassendiagramm
 
- Grundfenster
+ MainWindow
 ------------------|
 | - <get;set> Trainingsname: string|
-| - <get;set> Grundeinheit: liste|
+| - <get;set> Grundeinheit: ComboBox|
+| - <get;set> Session: Liste|
 ------------------|
-Grundfenster(Trainingsname, Grundeinheit)
-Grundfenster(Grundeinheit)
+MainWindow(Trainingsname, Grundeinheit)
+MainWindow(Grundeinheit)
 ------------------|
 | - neueGrundEinheitHinzufuegen()
-| -     
+| - neueGrundEinheitAuswählen()
+| - Speichern   
 | - Laden()
 
-Ausführung
+Auswahl(Trainingsname, Grundeinheit)
 ------------------|
 | - <get;set> spezifizierteEinheit: liste|
 | - <get;set> BeschreibungSpezifizierteEinheit: string|
-| - <get;> Startzeit: double|
-| - <get;> Endzeit: double|
-| - <get;> Timer: timer|
-| - <get;> Pause: const|
+| - <get;> Dauer pro Set: double|
+| - <get;> Anzahl Sets: int|
+| - <get;> große Pause: const|
+| - <get;> kleine Pause: const|
+------------------|
+Aufgaben(Trainingsname, Grundeinheit)
+------------------|
+| - <get;set> aufgabenListe: liste|
+| - <get;set> status: Combobox|
 ------------------|
 Ausführung(Startzeit, Endzeit, Timer, Pause)
 ------------------|
+| - <get;set> timerDaten: list|
+------------------|
+| - richtigeFelderBefüllen()
+| - felderRichtigUpdaten()
+| - Aufgabenueberpruefen(aufgabenListe, status)
 | - neueSpezifischeEinheitHinzufuegen()
 | - ErstelleTimer()
-| - SetzerTimerVonBis()
-| - SetzePausen()
+| - musikAbspielen()
+| - SetzerTimerVonBis(Dauer pro Set)
+| - SetzePausen(große Pause)
+| - SetzeSetsPausen(kleine Pause)
 | - ResetTimer()
-| - Serialize()
-| - Deserialize()
+------------------|
+Statistik(timerDaten)
+------------------|
+| - statistikZeichnen(timerDaten)
+
 
 -----------------------------
 # TageBuch:
 
 ## Eintrag 1 (1.Mai-6.Mai 2024):
-- Projekt wurde erstellt und beide Teammitglieder haben nun über Git Zugriff auf das Projekt
+- Projekt wurde erstellt und beide Teammitglieder haben nun über Git Zugriff auf das Projekt | Zustä
 
 ## Eintrag 2 (7.Mai 2024)
 - Die Überblick und Planung zu unserem Projekt wurde bearbeitet. Das Startfenster wurde erstellt. Start mit dem Design des Startfensters
@@ -178,14 +205,5 @@ Ausführung(Startzeit, Endzeit, Timer, Pause)
 - Alles geloggt
 - Quests werden nun vom Benutzer abgehackt wenn er sie erledigt hat und sie werden gespeichert und geladen
 - Bug gefixt dass Programm beim Laden Speichern der erldigten Quests abstürzt
-
-# Probleme
-- Wir hatten vor allem zuerst Probleme dass es den Timer richtig mit den nächsten Übungen aktualisiert und dann richtig tickt
-  - hat länger gedauert
-  - 
-- Unser größtes Problem hatten wir aber mit den Speicherständen, dass es die Daten in der ListBox in jedem einzelnen Fenster richtig speichert und dann unserer Session zuordnet
-  - hat 3 Tage gebraucht mit Hilfe zu fixen
-  
-# Fazit
-- Wir sind im großen und ganzen sehr zufrieden mit unserem Projekt, da es im Grunde gut funktioniert und auch brauchbar ist. Wir haben vor allem viel neues dazugelernt
-  und der Spaßfaktor war natürlich auch dabei.
+- Statistik funktioniert nun perfekt
+- Speicherstände beim Löschen funktionieren nun perfekt 
