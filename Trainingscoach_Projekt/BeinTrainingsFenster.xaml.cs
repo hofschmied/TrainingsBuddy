@@ -62,6 +62,11 @@ namespace Trainingscoach_Projekt
 
         private void fensterSchließen(object sender, MouseButtonEventArgs e)
         {
+            einheiten.Einheiten.Clear();
+            foreach (nutzerEingabe item in uebungListBox.Items)
+            {
+                einheiten.Einheiten.Add(item);
+            }
             this.Close();
             logger.Information("Fenster geschlossen");
         }
@@ -174,6 +179,11 @@ namespace Trainingscoach_Projekt
 
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
+            einheiten.Einheiten.Clear();
+            foreach (nutzerEingabe item in uebungListBox.Items)
+            {
+                einheiten.Einheiten.Add(item);
+            }
             this.Close();
             logger.Information("Fenster geschlossen");
         }
@@ -206,6 +216,11 @@ namespace Trainingscoach_Projekt
 
                     timer = new HauptprogrammTimer(timerDaten.timerDaten, validList);
                     timer.derzeitigeGrundEinheitTextBox.Text = "Beintraining";
+                    einheiten.Einheiten.Clear();
+                    foreach (nutzerEingabe item in uebungListBox.Items)
+                    {
+                        einheiten.Einheiten.Add(item);
+                    }
                     this.Close();
                     timer.ShowDialog();
                 }

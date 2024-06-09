@@ -65,8 +65,13 @@ namespace Trainingscoach_Projekt
             try
             {
                 this.Close();
+                einheiten.Einheiten.Clear();
+                foreach (nutzerEingabe item in uebungListBox.Items)
+                {
+                    einheiten.Einheiten.Add(item);
+                }
             }
-            catch (Exception ex)
+            catch (NullReferenceException ex)
             {
                 logger.Error(ex, "Fehler beim Schließen des Fensters.");
             }
@@ -184,6 +189,11 @@ namespace Trainingscoach_Projekt
 
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
+            einheiten.Einheiten.Clear();
+            foreach (nutzerEingabe item in uebungListBox.Items)
+            {
+                einheiten.Einheiten.Add(item);
+            }
             this.Close();
             logger.Information("Fenster geschlossen");
         }
@@ -205,6 +215,11 @@ namespace Trainingscoach_Projekt
 
                     timer = new HauptprogrammTimer(timerDaten.timerDaten, validList);
                     timer.derzeitigeGrundEinheitTextBox.Text = "Armtraining";
+                    einheiten.Einheiten.Clear();
+                    foreach (nutzerEingabe item in uebungListBox.Items)
+                    {
+                        einheiten.Einheiten.Add(item);
+                    }
                     this.Close();
                     timer.ShowDialog();
                 }
