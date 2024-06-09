@@ -47,11 +47,11 @@
         <Label Grid.Column="0" Grid.Row="2" Content="Anzahl Sets:" FontSize="15" FontWeight="Bold" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3" Margin="8,8,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label Grid.Column="0" Grid.Row="3" Content="Dauer (min):" FontSize="15" FontWeight="Bold" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3" Margin="8,8,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBlock x:Name="einheitenName" Text=" " Grid.Row="1" Grid.Column="1" Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Background="LightGray"></TextBlock>
-        <TextBox x:Name="anzahlSets" Grid.Row="2" Grid.Column="1" Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Background="LightGray"></TextBox>
-        <TextBox x:Name="dauer" Grid.Row="3" Grid.Column="1" Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Background="LightGray"></TextBox>
+        <TextBox x:Name="anzahlSets" Grid.Row="2" Grid.Column="1" Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Background="LightGray" Cursor="Hand"></TextBox>
+        <TextBox x:Name="dauer" Grid.Row="3" Grid.Column="1" Margin="10,15,15,15" FontSize="15" FontWeight="Bold" Background="LightGray" Cursor="Hand"></TextBox>
 
         <!-- OK Button -->
-        <Button Grid.Column="1" Content="OK" Margin="118,15,125,5" Grid.Row="4" Click="Button_Click" Foreground="White" FontSize="17" FontWeight="Bold">
+        <Button Grid.Column="1" Content="OK" Margin="118,15,125,5" Grid.Row="4" Click="Button_Click" Foreground="White" FontSize="17" FontWeight="Bold" Cursor="Hand">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" 
@@ -75,7 +75,7 @@
         </Button>
 
         <!-- CANCEL Button -->
-        <Button Grid.Column="1" Content="CANCEL" HorizontalAlignment="Left" Margin="210,15,0,5" Grid.Row="4" Width="81" Click="Button_Click_Cancel" Foreground="White" FontSize="17" FontWeight="Bold">
+        <Button Grid.Column="1" Content="CANCEL" HorizontalAlignment="Left" Margin="210,15,0,5" Grid.Row="4" Width="81" Click="Button_Click_Cancel" Foreground="White" FontSize="17" FontWeight="Bold" Cursor="Hand">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" 

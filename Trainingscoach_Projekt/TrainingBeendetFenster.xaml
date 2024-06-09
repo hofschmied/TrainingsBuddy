@@ -59,8 +59,8 @@
         </TextBlock>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="buttonOK" Content="OK" Style="{StaticResource ModernButtonStyle}" Width="100" Click="buttonOK_Click"/>
-            <Button x:Name="buttonStatistik" Content="Statistik anzeigen" Style="{StaticResource ModernButtonStyle}" Width="150" Click="buttonStatistik_Click"/>
+            <Button x:Name="buttonOK" Content="OK" Style="{StaticResource ModernButtonStyle}" Width="100" Click="buttonOK_Click" Cursor="Hand"/>
+            <Button x:Name="buttonStatistik" Content="Statistik anzeigen" Style="{StaticResource ModernButtonStyle}" Width="150" Click="buttonStatistik_Click" Cursor="Hand"/>
         </StackPanel>
     </Grid>
 </Window>

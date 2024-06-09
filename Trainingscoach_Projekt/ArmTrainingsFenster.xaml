@@ -92,7 +92,7 @@
         </ScrollViewer>
 
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,10">
-            <Button x:Name="buttonLoeschen" Content="Löschen" Width="100" Margin="10,10,10,10" Click="buttonLoeschen_Click" Foreground="White" FontSize="17" FontWeight="Bold">
+            <Button x:Name="buttonLoeschen" Content="Löschen" Width="100" Margin="10,10,10,10" Click="buttonLoeschen_Click" Foreground="White" FontSize="17" FontWeight="Bold" Cursor="Hand">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}" 
@@ -115,7 +115,7 @@
                 <Button.BorderThickness>3</Button.BorderThickness>
             </Button>
 
-            <Button x:Name="buttonOK" Content="Start" Width="100" Margin="10,10,10,10" Click="buttonOK_Click" Foreground="White" FontSize="17" FontWeight="Bold">
+            <Button x:Name="buttonOK" Content="Start" Width="100" Margin="10,10,10,10" Click="buttonOK_Click" Foreground="White" FontSize="17" FontWeight="Bold" Cursor="Hand">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}" 
@@ -138,7 +138,7 @@
                 <Button.BorderThickness>3</Button.BorderThickness>
             </Button>
 
-            <Button x:Name="buttonCancel" Content="Cancel" Width="100" Margin="10,10,10,10" Click="buttonCancel_Click" Foreground="White" FontSize="17" FontWeight="Bold">
+            <Button x:Name="buttonCancel" Content="Cancel" Width="100" Margin="10,10,10,10" Click="buttonCancel_Click" Foreground="White" FontSize="17" FontWeight="Bold" Cursor="Hand">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}" 

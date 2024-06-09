@@ -221,11 +221,13 @@ namespace Trainingscoach_Projekt
             if (uebungListBox.SelectedItem != null)
             {
                 int selectedIndex = uebungListBox.SelectedIndex;
+                //session.Einheiten.RemoveAt(selectedIndex);
 
                 uebungListBox.Items.RemoveAt(selectedIndex);
 
                 if (selectedIndex >= 0 && selectedIndex < session.Einheiten.Count)
                 {
+
                     session.Einheiten.RemoveAt(selectedIndex);
                     logger.Information("Session entfernt");
                 }

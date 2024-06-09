@@ -83,9 +83,9 @@
         <Label Grid.Column="0" Grid.Row="1" Content="Session Name" FontSize="20" FontWeight="Bold" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3" Margin="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label Grid.Column="0" Grid.Row="2" Content="Trainingseinheit" FontSize="20" FontWeight="Bold" Foreground="White" BorderBrush="#FFA9EDFF" BorderThickness="3" Margin="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-        <TextBox x:Name="TextBoxTrainingsName" Grid.Column="1" Grid.Row="1" Margin="45,8,0,12" HorizontalAlignment="Left" Width="410" Background="#FFEEEEEE" BorderBrush="#FF737373" Foreground="Black" BorderThickness="3"/>
+        <TextBox x:Name="TextBoxTrainingsName" Grid.Column="1" Grid.Row="1" Margin="45,8,0,12" HorizontalAlignment="Left" Width="410" Background="#FFEEEEEE" BorderBrush="#FF737373" Foreground="Black" BorderThickness="3" Cursor="Hand"/>
 
-        <ComboBox x:Name="GrundTrainingsEinheitBox" Grid.Column="1" Grid.Row="2" Margin="45,8,0,12" HorizontalAlignment="Left" Width="410" Background="#FFEEEEEE" BorderBrush="#FF737373" Foreground="Black" BorderThickness="3">
+        <ComboBox x:Name="GrundTrainingsEinheitBox" Grid.Column="1" Grid.Row="2" Margin="45,8,0,12" HorizontalAlignment="Left" Width="410" Background="#FFEEEEEE" BorderBrush="#FF737373" Foreground="Black" BorderThickness="3" Cursor="Hand">
             <ComboBoxItem Content="Bein-Training"/>
             <ComboBoxItem Content="Arm-Training"/>
             <ComboBoxItem Content="Rücken-Training"/>
@@ -96,8 +96,8 @@
         </ComboBox>
 
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="45,0,0,0">
-            <Button x:Name="buttonOK" FontSize="17" Content="OK" Style="{StaticResource ModernButtonStyle}" Width="80" Height="35" Click="buttonOK_Click"/>
-            <Button x:Name="buttonCancel" FontSize="17" Content="CANCEL" Style="{StaticResource ModernButtonStyle}" Width="80" Height="35" Click="buttonCancel_Click"/>
+            <Button x:Name="buttonOK" FontSize="17" Content="OK" Style="{StaticResource ModernButtonStyle}" Width="80" Height="35" Click="buttonOK_Click" Cursor="Hand"/>
+            <Button x:Name="buttonCancel" FontSize="17" Content="CANCEL" Style="{StaticResource ModernButtonStyle}" Width="80" Height="35" Click="buttonCancel_Click" Cursor="Hand" />
         </StackPanel>
 
         <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,10,10,0">
