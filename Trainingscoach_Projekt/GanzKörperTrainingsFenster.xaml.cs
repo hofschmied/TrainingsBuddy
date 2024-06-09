@@ -41,13 +41,13 @@ namespace Trainingscoach_Projekt
 
         private void infoButtonPushUps(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Sie legen sich zunächst flach mit dem Bauch auf den Boden. Stützen sie sich anschließend auf ihren Händen und Zehen ab. Nun senken Sie sich wieder und wiederholen diese Übung. ");
+            MessageBox.Show("Sie legen sich zunächst flach mit dem Bauch auf den Boden. Stützen Sie sich anschließend auf Ihren Händen und Zehen ab. Nun senken Sie sich wieder und wiederholen diese Übung. ");
             logger.Information("Push-Ups Info gezeigt");
         }
 
         private void infoButtonSitUps(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Sie legen sich bei dieser Übung mit dem Rücken auf dem Boden und halten bei dieser Übung ihre Füße aufgestellt. Schließlich bewegen Sie ihren Oberkörper langsam nach oben.  ");
+            MessageBox.Show("Sie legen sich bei dieser Übung mit dem Rücken auf dem Boden und halten bei dieser Übung Ihre Füße aufgestellt. Schließlich bewegen Sie Ihren Oberkörper langsam nach oben.  ");
             logger.Information("Sit-Ups Info gezeigt");
         }
 

@@ -111,9 +111,9 @@ namespace Trainingscoach_Projekt
 
         private void InfoButtonBulgarianSplitsSquats(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Bei den Bulgarian Split Squats bewegst du ausschließlich deine Beine. " +
+            MessageBox.Show("Bei den Bulgarian Split Squats bewegen Sie ausschließlich Ihre Beine. " +
                 "Kraft aus dem hinteren Bein: Die Kraft für die Auf- und Abwärtsbewegung stammt bei den Bulgarian Split Squats nur aus dem vorderen Bein, " +
-                "da du beide Körperseiten alternierend bewegst. Achte darauf, dass du das hintere Bein nicht beanspruchst.");
+                "da Sir beide Körperseiten alternierend bewegen. Achte darauf, dass Sie das hintere Bein nicht beanspruchen.");
 
             logger.Information("Infos Bulgarian Splits Squats");
         }
