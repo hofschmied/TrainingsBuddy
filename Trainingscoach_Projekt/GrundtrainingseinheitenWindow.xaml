@@ -100,9 +100,9 @@
             <Button x:Name="buttonCancel" FontSize="17" Content="CANCEL" Style="{StaticResource ModernButtonStyle}" Width="80" Height="35" Click="buttonCancel_Click" Cursor="Hand" />
         </StackPanel>
 
-        <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,10,10,0">
-            <Image Source="/src/pictures/minimizeButton.png" Width="50" Height="Auto" Margin="0,0,10,10" Cursor="Hand" MouseDown="fensterMinimieren"/>
-            <Image Source="/src/pictures/closeButton.png" Width="50" Height="Auto" Margin="0,0,0,10" Cursor="Hand" MouseDown="fensterSchließen"/>
+        <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,0,0,10">
+            <Image Source="/src/pictures/minimizeButton.png" Width="30" Height="Auto" Margin="0,0,10,10" Cursor="Hand" MouseDown="fensterMinimieren"/>
+            <Image Source="/src/pictures/closeButton.png" Width="30" Height="Auto" Margin="0,0,0,10" Cursor="Hand" MouseDown="fensterSchließen"/>
         </StackPanel>
     </Grid>
 </Window>

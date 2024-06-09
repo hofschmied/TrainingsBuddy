@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Trainingscoach_Projekt
 {
@@ -18,6 +19,33 @@ namespace Trainingscoach_Projekt
             this.einheiten = einheiten;
             this.uebungListBox = uebungListBox;
             logger.Information("DatenFenster initialisiert");
+        }
+
+        private void Window_MausRunter(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                if (e.ChangedButton == MouseButton.Left)
+                {
+                    this.DragMove();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Platzhalter");
+                logger.Error(ex, "Fehler beim Bewegen des Fensters.");
+            }
+        }
+
+        private void fensterSchließen(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+            logger.Information("Fenster geschlossen");
+        }
+
+        private void fensterMinimieren(object sender, MouseButtonEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
         }
 
         private void ListBoxItemsAdd()

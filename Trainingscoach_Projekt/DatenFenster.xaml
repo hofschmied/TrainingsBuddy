@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trainingscoach_Projekt"
         mc:Ignorable="d"
-        Title="DatenFenster" Height="350" Width="480">
+        Title="DatenFenster" Height="350" Width="500"
+           WindowStyle="None"
+   ResizeMode="NoResize"
+   MouseDown="Window_MausRunter">
     <Grid Background="#333333">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
@@ -97,5 +100,10 @@
             </Button.BorderBrush>
             <Button.BorderThickness>3</Button.BorderThickness>
         </Button>
+
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal" Grid.Column="1">
+            <Image Source="/src/pictures/minimizeButton.png" Width="20" Height="Auto" Margin="0,0,10,10" Cursor="Hand" MouseDown="fensterMinimieren" RenderTransformOrigin="0.6,0.828"/>
+            <Image Source="/src/pictures/closeButton.png" Width="20" Height="Auto" Margin="0,0,0,10" Cursor="Hand" MouseDown="fensterSchließen"/>
+        </StackPanel>
     </Grid>
 </Window>
