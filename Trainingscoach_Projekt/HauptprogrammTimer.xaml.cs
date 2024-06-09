@@ -261,53 +261,62 @@ namespace Trainingscoach_Projekt
         }
         private void ueberpruefeQuests()
         {
-            foreach (nutzerEingabe item in erledigteUebungen.Items)
+            if (validList != null)
             {
-                if (item.einheitenName == "Kickbacks" && item.anzahlSets >= 5)
+                foreach (nutzerEingabe item in erledigteUebungen.Items)
                 {
-                    MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 5 Sets Kickbacks");
-                    validList[0] = true;
+                    if (item.einheitenName == "Kickbacks" && item.anzahlSets >= 5 && derzeitigeGrundEinheitTextBox.Text == "Armtraining")
+                    {
+                        MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 5 Sets Kickbacks");
+                        validList[0] = true;
+                    }
+
+                    if (item.einheitenName == "SZ-Curls" && item.anzahlSets >= 20 && derzeitigeGrundEinheitTextBox.Text == "Armtraining")
+                    {
+                        MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 20 Sets SZ-Curls");
+                        validList[1] = true;
+                    }
+
+                    if (item.anzahlSets * item.dauer >= 15 && derzeitigeGrundEinheitTextBox.Text == "Armtraining")
+                    {
+                        MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: Trainiere 10 Minuten");
+                        validList[2] = true;
+                    }
+
+                    if (erledigteUebungen.Items.Count >= 2 && derzeitigeGrundEinheitTextBox.Text == "Armtraining")
+                    {
+                        MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 2 Armübungen deiner Wahl");
+                        validList[3] = true;
+                        logger.Information("Quest überprüft und aktualisiert");
+                    }
+
+                    if (item.einheitenName == "Hammercurls" && item.anzahlSets >= 3 && derzeitigeGrundEinheitTextBox.Text == "Armtraining")
+                    {
+                        MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 3 Sets Hammercurls");
+                        validList[4] = true;
+                        logger.Information("Quest überprüft und aktualisiert");
+                    }
                 }
 
-                if (item.einheitenName == "SZ-Curls" && item.anzahlSets >= 20)
+                if (quest != null)
                 {
-                    MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 20 Sets SZ-Curls");
-                    validList[1] = true;
+                    quest.QuestSpeichern();
                 }
-
-                if (item.anzahlSets * item.dauer >= 15)
+                else
                 {
-                    MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: Trainiere 10 Minuten");
-                    validList[2] = true;
+                    string filePath = "questStatus.json";
+                    string json = JsonSerializer.Serialize(validList);
+                    File.WriteAllText(filePath, json);
+                    logger.Information("Quest-Zustand direkt aus HauptprogrammTimer gespeichert");
                 }
-
-                if (erledigteUebungen.Items.Count >= 2)
-                {
-                    MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 2 Armübungen deiner Wahl");
-                    validList[3] = true;
-                    logger.Information("Quest überprüft und aktualisiert");
-                }
-
-                if (item.einheitenName == "Hammercurls" && item.anzahlSets >= 3)
-                {
-                    MessageBox.Show("Glückwunsch! Aufgabe abgeschlossen: erledige 3 Sets Hammercurls");
-                    validList[4] = true;
-                    logger.Information("Quest überprüft und aktualisiert");
-                }
-            }
-
-            if (quest != null)
-            {
-                quest.QuestSpeichern();
             }
             else
             {
-                string filePath = "questStatus.json";
-                string json = JsonSerializer.Serialize(validList);
-                File.WriteAllText(filePath, json);
-                logger.Information("Quest-Zustand direkt aus HauptprogrammTimer gespeichert");
+                logger.Error("validList is null");
             }
         }
+
+
 
         private void Window_MausRunter(object sender, MouseButtonEventArgs e)
         {

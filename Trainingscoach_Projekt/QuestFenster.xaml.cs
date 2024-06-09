@@ -64,17 +64,46 @@ namespace Trainingscoach_Projekt
 
         private void QuestLaden()
         {
-            if (File.Exists(filePath))
+            try
             {
-                string json = File.ReadAllText(filePath);
-                validList = JsonSerializer.Deserialize<List<bool>>(json);
+                if (File.Exists(filePath))
+                {
+                    string json = File.ReadAllText(filePath);
+                    if (string.IsNullOrWhiteSpace(json))
+                    {
+                        InitializeQuestFile();
+                    }
+                    else
+                    {
+                        validList = JsonSerializer.Deserialize<List<bool>>(json);
+                    }
+                }
+                else
+                {
+                    InitializeQuestFile();
+                }
+
                 if (validList.Count != checkBoxes.Count)
                 {
                     validList = new List<bool> { false, false, false, false, false };
                 }
+
                 questErledigt();
                 logger.Information("Quest-Zustand geladen");
             }
+            catch (JsonException ex)
+            {
+                logger.Error($"Fehler beim Laden des Quest-Zustands: {ex.Message}");
+                validList = new List<bool> { false, false, false, false, false };
+                InitializeQuestFile();
+            }
+        }
+
+        private void InitializeQuestFile()
+        {
+            validList = new List<bool> { false, false, false, false, false };
+            QuestSpeichern();
+            logger.Information("Quest-Zustand initialisiert");
         }
 
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
