@@ -79,13 +79,13 @@
             </TextBlock.Effect>
         </TextBlock>
 
-        <Button Grid.Row="1" Grid.Column="0" x:Name="buttonHinzufuegen" Content="Hinzufügen" Style="{StaticResource ModernButtonStyle}" Click="buttonHinzufuegen_Click"/>
+        <Button Grid.Row="1" Grid.Column="0" x:Name="buttonHinzufuegen" Content="Hinzufügen" Style="{StaticResource ModernButtonStyle}" Click="buttonHinzufuegen_Click" Cursor="Hand"/>
 
-        <Button Grid.Row="3" Grid.Column="3" x:Name="buttonLoeschen" Content="Löschen" Style="{StaticResource ModernButtonStyle}" Click="buttonLoeschen_Click"/>
+        <Button Grid.Row="3" Grid.Column="3" x:Name="buttonLoeschen" Content="Löschen" Style="{StaticResource ModernButtonStyle}" Click="buttonLoeschen_Click" Cursor="Hand"/>
 
-        <Button Grid.Row="2" Grid.Column="0" x:Name="buttonAufgaben" Content="Aufgaben" Style="{StaticResource ModernButtonStyle}" Click="buttonAufgaben_Click"/>
+        <Button Grid.Row="2" Grid.Column="0" x:Name="buttonAufgaben" Content="Aufgaben" Style="{StaticResource ModernButtonStyle}" Click="buttonAufgaben_Click" Cursor="Hand"/>
 
-        <Button Grid.Row="3" Grid.Column="1" x:Name="buttonAuswaehlen" Content="Auswählen" Style="{StaticResource ModernButtonStyle}" Click="buttonAuswaehlen_Click"/>
+        <Button Grid.Row="3" Grid.Column="1" x:Name="buttonAuswaehlen" Content="Auswählen" Style="{StaticResource ModernButtonStyle}" Click="buttonAuswaehlen_Click" Cursor="Hand"/>
 
         <ListBox x:Name="ListBoxGrundeinheit" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="1" Grid.RowSpan="2" Margin="10" Background="#FFEEEEEE" BorderBrush="#FF737373" Foreground="Black" BorderThickness="3" Padding="5"/>
 
