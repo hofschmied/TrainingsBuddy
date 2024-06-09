@@ -27,7 +27,9 @@ namespace Trainingscoach_Projekt
         TimerDaten timerDaten = new TimerDaten();
         public Session einheiten;
         Session session = new Session();
+        public static HauptprogrammTimer timer;
         List<bool> validList;
+
         private static readonly Serilog.ILogger logger = LoggerClass.logger;
 
         public BeinTrainingsFenster(Session einheiten)
@@ -202,7 +204,7 @@ namespace Trainingscoach_Projekt
                         timerDaten.timerDaten.Add((nutzerEingabe)item);
                     }
 
-                    HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten, validList);
+                    timer = new HauptprogrammTimer(timerDaten.timerDaten, validList);
                     timer.derzeitigeGrundEinheitTextBox.Text = "Beintraining";
                     this.Close();
                     timer.ShowDialog();

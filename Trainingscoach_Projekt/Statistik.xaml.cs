@@ -15,6 +15,13 @@ namespace Trainingscoach_Projekt
 
         public HauptprogrammTimer timerArm = ArmTrainingsFenster.timer;
         public HauptprogrammTimer timerBauch = BauchTrainingsFenster.timer;
+        public HauptprogrammTimer timerBein = BeinTrainingsFenster.timer;
+        public HauptprogrammTimer timerBrust = BrustTrainingsFenster.timer;
+        public HauptprogrammTimer timerCardio = CardioFenster.timer;
+        public HauptprogrammTimer timerGanzKoerper = GanzKörperTrainingsFenster.timer;
+        public HauptprogrammTimer timerRuecken = RueckenTrainingsFenster.timer;
+
+
 
         public Statistik()
         {
@@ -25,7 +32,7 @@ namespace Trainingscoach_Projekt
             double bauchdauer = 0;
             double brustdauer = 0;
             double rueckendauer = 0;
-            double ganzkörperdauer = 0;
+            double ganzkoerperdauer = 0;
             double cardiodauer = 0;
 
             if (timerArm != null && timerArm.derzeitigeGrundEinheitTextBox != null)
@@ -50,12 +57,67 @@ namespace Trainingscoach_Projekt
                 }
             }
 
+            if (timerBein != null && timerBein.derzeitigeGrundEinheitTextBox != null)
+            {
+                if (timerBein.derzeitigeGrundEinheitTextBox.Text == "Beintraining")
+                {
+                    foreach (double zahl in timerBein.dauerListe)
+                    {
+                        beindauer += zahl;
+                    }
+                }
+            }
+
+            if (timerBrust != null && timerBrust.derzeitigeGrundEinheitTextBox != null)
+            {
+                if (timerBrust.derzeitigeGrundEinheitTextBox.Text == "Brusttraining")
+                {
+                    foreach (double zahl in timerBrust.dauerListe)
+                    {
+                        brustdauer += zahl;
+                    }
+                }
+            }
+
+            if (timerCardio != null && timerCardio.derzeitigeGrundEinheitTextBox != null)
+            {
+                if (timerCardio.derzeitigeGrundEinheitTextBox.Text == "Cardiotraining")
+                {
+                    foreach (double zahl in timerCardio.dauerListe)
+                    {
+                        cardiodauer += zahl;
+                    }
+                }
+            }
+
+            if (timerGanzKoerper != null && timerGanzKoerper.derzeitigeGrundEinheitTextBox != null)
+            {
+                if (timerGanzKoerper.derzeitigeGrundEinheitTextBox.Text == "Ganzkörpertraining")
+                {
+                    foreach (double zahl in timerGanzKoerper.dauerListe)
+                    {
+                        ganzkoerperdauer += zahl;
+                    }
+                }
+            }
+
+            if (timerRuecken != null && timerRuecken.derzeitigeGrundEinheitTextBox != null)
+            {
+                if (timerRuecken.derzeitigeGrundEinheitTextBox.Text == "Rückentraining")
+                {
+                    foreach (double zahl in timerRuecken.dauerListe)
+                    {
+                        rueckendauer += zahl;
+                    }
+                }
+            }
+
             SeriesCollection = new SeriesCollection
             {
                 new ColumnSeries
                 {
                     Title = "Trainingsdauer",
-                    Values = new ChartValues<double> { armdauer, beindauer, bauchdauer, brustdauer, rueckendauer, ganzkörperdauer, cardiodauer },
+                    Values = new ChartValues<double> { armdauer, beindauer, bauchdauer, brustdauer, rueckendauer, ganzkoerperdauer, cardiodauer },
                 }
             };
 

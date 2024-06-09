@@ -22,7 +22,9 @@ namespace Trainingscoach_Projekt
         TimerDaten timerDaten = new TimerDaten();
         public Session einheiten;
         Session session = new Session();
+        public static HauptprogrammTimer timer;
         List<bool> validList;
+
         private static readonly Serilog.ILogger logger = LoggerClass.logger;
 
         public GanzKörperTrainingsFenster(Session einheiten)
@@ -163,24 +165,34 @@ namespace Trainingscoach_Projekt
 
         private void buttonOK_Click(object sender, RoutedEventArgs e)
         {
-            if (uebungListBox.Items.Count == 0)
+            try
             {
-                MessageBox.Show("Bitte tragen Sie Übungen ein. ");
-            }
-
-            else
-            {
-                foreach (var item in uebungListBox.Items)
+                if (uebungListBox.Items.Count == 0)
                 {
-                    timerDaten.timerDaten.Add((nutzerEingabe)item);
+                    MessageBox.Show("Bitte tragen Sie Übungen ein. ");
                 }
 
-                HauptprogrammTimer timer = new HauptprogrammTimer(timerDaten.timerDaten, validList);
-                timer.derzeitigeGrundEinheitTextBox.Text = "Ganzkörper";
-                this.Close();
-                timer.ShowDialog();
-                logger.Information("Timer gestartet");
+                else
+                {
+                    foreach (var item in uebungListBox.Items)
+                    {
+                        timerDaten.timerDaten.Add((nutzerEingabe)item);
+                    }
+
+                    timer = new HauptprogrammTimer(timerDaten.timerDaten, validList);
+                    timer.derzeitigeGrundEinheitTextBox.Text = "Ganzkörpertraining";
+                    this.Close();
+                    timer.ShowDialog();
+                    logger.Information("Timer gestartet");
+                }
             }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Fehler beim Klicken des OK-Buttons.");
+
+            }
+
+
         }
     }
 }
