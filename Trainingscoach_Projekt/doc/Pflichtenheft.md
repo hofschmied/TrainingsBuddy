@@ -1,5 +1,4 @@
 # Pflichtenheft
-
 ## Softwarevoraussetzungen
 - Betriebssystem: Windows 10 oder höher
 - .NET Framework 4.7.2 oder höher
@@ -32,7 +31,6 @@ Das Projekt ist in 6 Hauptfenster unterteilt:
 ------------------------------------------------------------------------------------------------------------------------------------------------------------|
 11. **Quest Fenster** Das Quest Fenster gibt dir Übungsaufgaben die erfüllt werden können.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
 
 ## Verknüpfung
 Die Anwendung besteht aus mehreren Fenstern, die durch Klassen und Methoden miteinander verbunden sind. Jedes Fenster hat spezifische Funktionen zur Verwaltung der Trainingseinheiten, Speicherung und Laden der Daten sowie die Durchführung der Trainingssessions in einem Hauptprogramm mit Timer und einer Statistik.

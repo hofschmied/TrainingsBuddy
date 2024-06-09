@@ -97,19 +97,18 @@ Statistik(timerDaten)
 # TageBuch:
 
 ## Eintrag 1 (1.Mai-6.Mai 2024):
-- Projekt wurde erstellt und beide Teammitglieder haben nun über Git Zugriff auf das Projekt | Zustä
+- Projekt wurde erstellt und beide Teammitglieder haben nun über Git Zugriff auf das Projekt.
 
 ## Eintrag 2 (7.Mai 2024)
-- Die Überblick und Planung zu unserem Projekt wurde bearbeitet. Das Startfenster wurde erstellt. Start mit dem Design des Startfensters
+- Die Überblick und Planung zu unserem Projekt wurde bearbeitet. Das Startfenster wurde erstellt. Start mit dem Design des Startfensters.
 
--## Eintrag 3 (8.Mai 2024)
-- Das Design des Startfenster wurde bearbeitet. Auch die Funktionalität wurde eingeführt. Z.B: Hinzufügen der Buttons. 
+## Eintrag 3 (8.Mai 2024)
+- Das Design des Startfenster wurde bearbeitet. Auch die Funktionalität wurde eingeführt. Z.B: Hinzufügen der Buttons.
 - Es wurde zudem ein neues Fenster für das Auswählen der Grund-Trainingseinheiten erstellt.
 - Die ausgewählten Daten werden nun auch in die ListBox des Start-Windows eingetragen. Design für das Grund-Trainingseinheit-Auswahl Fenster wurde erstellt
 
 ## Eintrag 4 (9.Mai 2024)
 - Die Daten der Fenster wurden mit Klassen-Objekte verknüpft.
-
 
 ## Eintrag 5 (12.Mai 2024)
 - Neues Fenster für die spezifische Trainingseinheit wurde erstellt und bearbeitet
